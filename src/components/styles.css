@@ -1,0 +1,43 @@
+/*! purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/*! purgecss end ignore */
+@tailwind utilities;
+
+body {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: DeiGratia;
+  font-weight: 400;
+}
+
+.spinner {
+  animation: spin 20s linear infinite;
+}
+
+@layer utilities {
+  .half-circle-text {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transform: rotate(-70deg);
+  }
+
+  .half-circle-text span {
+    position: absolute;
+    transform-origin: 200px 200px;
+    writing-mode: vertical-lr;
+  }
+}

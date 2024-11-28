@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
       spaceId: process.env.CONTENTFUL_SPACE_ID,
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     },
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", {
+  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", "gatsby-plugin-breakpoints", "gatsby-plugin-typescript", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
@@ -41,11 +41,41 @@ const config: GatsbyConfig = {
       ],
     },
     },
+    {
+      resolve: 'gatsby-plugin-webfonts',
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Roboto',
+              subsets: ['latin-ext'],
+              variants: ['100', '300', '400', '500', '700', '900'],
+              strategy: 'cdn',
+            },
+            {
+              family: 'Ballet',
+              variants: ['400'],
+              strategy: 'cdn',
+            },
+          ],
+          selfHosted: [
+            {
+              family: 'DeiGratia',
+              urls: {
+                ttf: `./src/assets/DeiGrat.ttf`,
+              },
+              fontStyle: "light",
+              fontWeight: 400,
+            },
+          ],
+        },
+      },
+    },
    {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "pages",
-      "path": "./src/pages/"
+      name: "assets",
+        path: "./src/assets",
     },
     __key: "pages"
   }]
