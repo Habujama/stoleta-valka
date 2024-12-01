@@ -1,6 +1,5 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, getSrc } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
-import { getSrc } from 'gatsby-plugin-image';
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -18,7 +17,7 @@ const Hero = () => {
 
   return (
     <div
-      className='md:h-dvh content-end px-32 w-full pt-16'
+      className='content-end lg:px-32 w-full pt-2 lg:pt-12'
       style={{
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: 'cover',

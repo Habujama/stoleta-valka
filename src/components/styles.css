@@ -13,7 +13,8 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
+h1,
+h2 {
   font-family: DeiGratia;
   font-weight: 400;
 }
