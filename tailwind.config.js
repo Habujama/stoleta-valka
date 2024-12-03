@@ -6,14 +6,16 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    colors: {
-      beige: "#EADDC7",
-      beigeDark: "#BF9F63",
-    },
-    fontFamily: {
-      sans: ['Roboto'],
-      serif: ['Ballet'],
-    },
+    extend: {
+      colors: {
+        beige: "#EADDC7",
+        beigeDark: "#BF9F63",
+      },
+      fontFamily: {
+        sans: ['Roboto', 'Arial', 'sans-serif'],
+        serif: ['DeiGratia', 'Georgia', 'serif'],
+      },
+    }
   },
   plugins: [],
 }

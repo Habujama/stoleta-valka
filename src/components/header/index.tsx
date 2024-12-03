@@ -5,7 +5,6 @@ import theme from 'tailwindcss/defaultTheme';
 
 import MobileNav from '../mobile-nav/index';
 import Hero from '../hero';
-import Cara from '../Cara';
 
 interface Props {
   siteTitle: string;
@@ -31,7 +30,7 @@ const Header = ({ siteTitle }: Props) => {
 
   return (
     <div
-      className='md:h-[calc(100vh-106px)] content-end px-32 w-full pt-12 pb-2'
+      className='xl:h-[calc(100vh-106px)] content-end px-16 xl:px-32 w-full pt-8 xl:pt-12'
       style={{
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: 'cover',
@@ -42,7 +41,6 @@ const Header = ({ siteTitle }: Props) => {
     >
       {isMobile && <MobileNav />}
       <Hero />
-      <Cara />
     </div>
   );
 };

@@ -5,17 +5,9 @@ import { Link } from 'gatsby';
 
 import ButtonImage from '../../static/button.svg';
 
-enum ButtonType {
-  GHOST = 'ghost',
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
-
-type ButtonStyle = 'ghost' | 'primary' | 'secondary';
 type Target = '_blank';
 export interface ButtonProps {
   children: ReactNode | string;
-  buttonStyle?: ButtonStyle;
   type?: 'button' | 'submit';
   target?: Target;
   href?: string;
@@ -34,7 +26,7 @@ const Button: FC<ButtonProps> = ({
   children,
 }) => {
   const css = classNames(
-    'transform text-center outline-none whitespace-no-wrap bg-contain bg-center bg-no-repeat px-4 pt-6 sm:pt-10 pb-3 px-3 leading-7 hover:scale-110 hover:ease-in-out',
+    'transform text-center font-serif outline-none whitespace-no-wrap bg-contain bg-center bg-no-repeat px-4 pt-10 sm:pt-10 pb-3 px-3 leading-7 hover:scale-110 hover:ease-in-out',
     className,
   );
 
@@ -44,7 +36,7 @@ const Button: FC<ButtonProps> = ({
         to={to}
         className={css}
         type={type}
-        style={{ backgroundImage: `url(${ButtonImage})` }}
+        style={{ display: 'block', backgroundImage: `url(${ButtonImage})` }}
       >
         {children}
       </Link>
@@ -61,7 +53,7 @@ const Button: FC<ButtonProps> = ({
         target={target}
         rel={rel}
         type={type}
-        style={{ backgroundImage: `url(${ButtonImage})` }}
+        style={{ display: 'block', backgroundImage: `url(${ButtonImage})` }}
       >
         {children}
       </a>

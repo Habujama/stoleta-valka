@@ -52,17 +52,13 @@ const config: GatsbyConfig = {
               variants: ['100', '300', '400', '500', '700', '900'],
               strategy: 'cdn',
             },
-            {
-              family: 'Ballet',
-              variants: ['400'],
-              strategy: 'cdn',
-            },
           ],
           selfHosted: [
             {
               family: 'DeiGratia',
               urls: {
                 ttf: `./src/assets/DeiGrat.ttf`,
+                woff: `./src/assets/DeiGrat.woff`,
               },
               fontStyle: "light",
               fontWeight: 400,
