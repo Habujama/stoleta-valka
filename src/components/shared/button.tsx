@@ -1,13 +1,20 @@
 import { FC, ReactNode } from 'react';
-import classNames from 'classnames';
-import { motion } from 'framer-motion';
 import { Link } from 'gatsby';
+import { motion } from 'framer-motion';
+import classNames from 'classnames';
 
-import ButtonImage from '../../static/button.svg';
+import ButtonImage from '../../assets/button.svg';
+import FlagImage from '../../assets/vrchni.svg';
 
 type Target = '_blank';
+export enum ButtonType {
+  GHOST = 'ghost',
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+}
 export interface ButtonProps {
   children: ReactNode | string;
+  buttonType?: ButtonType;
   type?: 'button' | 'submit';
   target?: Target;
   href?: string;
@@ -18,15 +25,36 @@ export interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({
+  buttonType = ButtonType.PRIMARY,
   type = 'button',
   href,
   target,
   to,
   className,
+  onClick,
   children,
 }) => {
+  const backgroundImageStyle: React.CSSProperties | undefined =
+    buttonType === ButtonType.PRIMARY
+      ? { backgroundImage: `url(${ButtonImage})` }
+      : buttonType === ButtonType.SECONDARY
+      ? {
+          backgroundImage: `url(${FlagImage})`,
+          backgroundSize: '110% 100%',
+          padding: '50px 80px 80px 80px',
+        }
+      : undefined;
+
   const css = classNames(
-    'transform text-center font-serif outline-none whitespace-no-wrap bg-contain bg-center bg-no-repeat px-4 pt-10 sm:pt-10 pb-3 px-3 leading-7 hover:scale-110 hover:ease-in-out',
+    'block text-center font-serifSmall outline-none whitespace-no-wrap hover:scale-110 hover:ease-in-out active:scale-90',
+    {
+      'bg-center bg-no-repeat':
+        ButtonType.PRIMARY === buttonType ||
+        buttonType === ButtonType.SECONDARY,
+    },
+    {
+      'bg-transparent p-4': ButtonType.GHOST === buttonType,
+    },
     className,
   );
 
@@ -34,9 +62,10 @@ const Button: FC<ButtonProps> = ({
     return (
       <Link
         to={to}
+        onClick={onClick}
         className={css}
         type={type}
-        style={{ display: 'block', backgroundImage: `url(${ButtonImage})` }}
+        style={{ ...backgroundImageStyle }}
       >
         {children}
       </Link>
@@ -49,11 +78,12 @@ const Button: FC<ButtonProps> = ({
     return (
       <a
         href={href}
+        onClick={onClick}
         className={css}
         target={target}
         rel={rel}
         type={type}
-        style={{ display: 'block', backgroundImage: `url(${ButtonImage})` }}
+        style={{ ...backgroundImageStyle }}
       >
         {children}
       </a>
@@ -61,7 +91,12 @@ const Button: FC<ButtonProps> = ({
   }
 
   return (
-    <motion.button className={css} type={type}>
+    <motion.button
+      className={css}
+      onClick={onClick}
+      type={type}
+      style={{ ...backgroundImageStyle }}
+    >
       {children}
     </motion.button>
   );

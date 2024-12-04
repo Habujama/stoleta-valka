@@ -66,18 +66,18 @@ const MobileNav: React.FC = () => {
             className='absolute left-0 top-0 flex flex-col space-y-4 items-center justify-between text-xl outline-none w-screen h-screen p-6 mt-12 z-20'
           >
             <motion.div variants={itemVariants}>
-              <Button to='/' onClick={toggleOpen} className='w-96'>
-                O hře
+              <Button to='/' onClick={toggleOpen} className='h-20 w-96'>
+                <p className='pt-10'>O hře</p>
               </Button>
             </motion.div>
             <motion.div variants={itemVariants}>
-              <Button to='/' onClick={toggleOpen} className='w-96'>
-                Praktické
+              <Button to='/' onClick={toggleOpen} className='h-20 w-96'>
+                <p className='pt-10'>Praktické</p>
               </Button>
             </motion.div>
             <motion.div variants={itemVariants}>
-              <Button to='/' onClick={toggleOpen} className='w-96'>
-                Registrace
+              <Button to='/' onClick={toggleOpen} className='h-20 w-96'>
+                <p className='pt-10'>Registrace</p>
               </Button>
             </motion.div>
             <motion.div variants={itemVariants}>

@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         sans: ['Roboto', 'Arial', 'sans-serif'],
         serif: ['DeiGratia', 'Georgia', 'serif'],
+        serifSmall: ['Trattatello', 'Georgia', 'serif' ]
       },
     }
   },

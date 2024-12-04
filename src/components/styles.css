@@ -13,12 +13,15 @@ body {
   overflow-x: hidden;
 }
 
-h1,
-h2 {
+h1 {
   font-family: DeiGratia;
   font-weight: 400;
 }
 
+h2 {
+  font-family: Trattatello;
+  font-size: 28px;
+}
 .spinner {
   animation: spin 20s linear infinite;
 }
