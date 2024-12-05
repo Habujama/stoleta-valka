@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import classNames from 'classnames';
 
 import ButtonImage from '../../assets/button.svg';
-import FlagImage from '../../assets/vrchni.svg';
+import FlagImage from '../../assets/banner-top-green.svg';
 
 type Target = '_blank';
 export enum ButtonType {

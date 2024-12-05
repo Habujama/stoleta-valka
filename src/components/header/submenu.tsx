@@ -1,7 +1,7 @@
-import { Dispatch, ReactElement, SetStateAction } from 'react';
+import { ReactElement } from 'react';
 import { motion } from 'framer-motion';
 
-import banner from '../../assets/bannener.svg';
+import blueBanner from '../../assets/banner-blue.svg';
 
 const containerVariants = {
   open: {
@@ -25,7 +25,10 @@ const SubMenu = ({ isOpen, children }: SubMenuProps) => (
     animate={isOpen ? 'open' : 'closed'}
     initial='closed'
     className='absolute items-center justify-center bg-contain bg-center bg-no-repeat text-white h-auto shadow-md mt-20 mx-auto pt-4 px-2 pb-12'
-    style={{ backgroundImage: `url(${banner})`, backgroundSize: '150% 100%' }}
+    style={{
+      backgroundImage: `url(${blueBanner})`,
+      backgroundSize: '150% 100%',
+    }}
   >
     {children}
   </motion.div>
