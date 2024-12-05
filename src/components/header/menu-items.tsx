@@ -4,7 +4,9 @@ import { AnimatePresence } from 'framer-motion';
 import Button, { ButtonType } from '../shared/button';
 import SubMenu from './submenu';
 import AboutGame from './about-game';
-import useClickOutside from '../../utilities/use-click-away';
+import useClickAway from '../../utilities/use-click-away';
+import Practical from './practical';
+import Register from './register';
 
 const MenuItems = () => {
   const [isGameOpen, setGameOpen] = useState<boolean>(false);
@@ -15,9 +17,9 @@ const MenuItems = () => {
   const practicalRef = useRef<HTMLDivElement>(null);
   const registerRef = useRef<HTMLDivElement>(null);
 
-  useClickOutside(gameRef, () => setGameOpen(false));
-  useClickOutside(practicalRef, () => setPracticalOpen(false));
-  useClickOutside(registerRef, () => setRegisterOpen(false));
+  useClickAway(gameRef, () => setGameOpen(false));
+  useClickAway(practicalRef, () => setPracticalOpen(false));
+  useClickAway(registerRef, () => setRegisterOpen(false));
 
   return (
     <div className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-center justify-between outline-none mt-2'>
@@ -48,7 +50,7 @@ const MenuItems = () => {
         <AnimatePresence>
           {isPracticalOpen && (
             <SubMenu isOpen={isPracticalOpen}>
-              <AboutGame toggleOpen={setPracticalOpen} />
+              <Practical toggleOpen={setPracticalOpen} />
             </SubMenu>
           )}
         </AnimatePresence>
@@ -64,7 +66,7 @@ const MenuItems = () => {
         <AnimatePresence>
           {isRegisterOpen && (
             <SubMenu isOpen={isRegisterOpen}>
-              <AboutGame toggleOpen={setRegisterOpen} />
+              <Register toggleOpen={setRegisterOpen} />
             </SubMenu>
           )}
         </AnimatePresence>

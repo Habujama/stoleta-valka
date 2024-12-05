@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, SetStateAction, Dispatch } from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
@@ -21,7 +21,7 @@ export interface ButtonProps {
   to?: string | void;
   disabled?: boolean;
   className?: string;
-  onClick?: () => void;
+  onClick?: () => void | Dispatch<SetStateAction<any>>;
 }
 
 const Button: FC<ButtonProps> = ({

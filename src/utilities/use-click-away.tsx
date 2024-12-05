@@ -4,7 +4,7 @@ type ClickOutside = {
   (ref: RefObject<HTMLElement>, callback: () => void): void;
 };
 
-const useClickOutside: ClickOutside = (ref, callback) => {
+const useClickAway: ClickOutside = (ref, callback) => {
   const handleClick = useCallback(
     (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
@@ -21,4 +21,4 @@ const useClickOutside: ClickOutside = (ref, callback) => {
   }, [handleClick]);
 };
 
-export default useClickOutside;
+export default useClickAway;
