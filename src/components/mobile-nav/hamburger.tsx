@@ -24,7 +24,7 @@ const Hamburger = ({ toggle }: Props) => {
   return (
     <button
       onClick={toggle}
-      className='active:outline-none focus:outline-none rounded fixed top-4 right-4 z-20'
+      className='active:outline-none focus:outline-none rounded fixed top-4 right-4 z-30'
     >
       <svg width='23' height='23' viewBox='0 0 23 23'>
         <Path

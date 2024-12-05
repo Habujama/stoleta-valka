@@ -1,49 +1,77 @@
-import { useEffect } from 'react';
-import { motion, usePresence } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
-import Button from '../shared/button';
-
-const variants = {
-  open: {
-    y: 0,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: -50,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
+import Button, { ButtonType } from '../shared/button';
+import SubMenu, { BannerColor } from './submenu';
+import AboutGame from './about-game';
+import useClickAway from '../../utilities/use-click-away';
+import Practical from './practical';
+import Register from './register';
 
 const MenuItems = () => {
-  const [isPresent, safeToRemove] = usePresence();
+  const [isGameOpen, setGameOpen] = useState<boolean>(false);
+  const [isPracticalOpen, setPracticalOpen] = useState<boolean>(false);
+  const [isRegisterOpen, setRegisterOpen] = useState<boolean>(false);
 
-  useEffect(() => {
-    !isPresent && setTimeout(safeToRemove, 1000);
-  }, [isPresent, safeToRemove]);
+  const gameRef = useRef<HTMLDivElement>(null);
+  const practicalRef = useRef<HTMLDivElement>(null);
+  const registerRef = useRef<HTMLDivElement>(null);
+
+  useClickAway(gameRef, () => setGameOpen(false));
+  useClickAway(practicalRef, () => setPracticalOpen(false));
+  useClickAway(registerRef, () => setRegisterOpen(false));
 
   return (
-    <>
-      <motion.div
-        variants={variants}
-        className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-center justify-between outline-none'
-      >
-        <Button to='/' buttonStyle='primary' className='sm:mr-4 w-80'>
+    <div className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-center justify-between outline-none mt-2'>
+      <div className='flex flex-col items-center' ref={gameRef}>
+        <Button
+          onClick={() => setGameOpen(!isGameOpen)}
+          buttonType={ButtonType.SECONDARY}
+          className='text-2xl w-80 z-20'
+        >
           <h2 className=''>O hře</h2>
         </Button>
-
-        <Button to='/' buttonStyle='primary' className='sm:mr-4 w-80'>
-          <h2 className=''>Praktické</h2>
+        <AnimatePresence>
+          {isGameOpen && (
+            <SubMenu isOpen={isGameOpen}>
+              <AboutGame toggleOpen={setGameOpen} />
+            </SubMenu>
+          )}
+        </AnimatePresence>
+      </div>
+      <div className='flex flex-col items-center' ref={practicalRef}>
+        <Button
+          onClick={() => setPracticalOpen(!isPracticalOpen)}
+          buttonType={ButtonType.SECONDARY}
+          className='text-2xl w-80 z-20'
+        >
+          <h2>Praktické</h2>
         </Button>
-
-        <Button to='/' buttonStyle='primary' className='sm:mr-4 w-80'>
-          <h2 className='whitespace-nowrap'>Registrace</h2>
+        <AnimatePresence>
+          {isPracticalOpen && (
+            <SubMenu isOpen={isPracticalOpen}>
+              <Practical toggleOpen={setPracticalOpen} />
+            </SubMenu>
+          )}
+        </AnimatePresence>
+      </div>
+      <div className='flex flex-col items-center' ref={registerRef}>
+        <Button
+          onClick={() => setRegisterOpen(!isRegisterOpen)}
+          buttonType={ButtonType.SECONDARY}
+          className='text-2xl w-80 z-20'
+        >
+          <h2>Registrace</h2>
         </Button>
-      </motion.div>
-    </>
+        <AnimatePresence>
+          {isRegisterOpen && (
+            <SubMenu isOpen={isRegisterOpen}>
+              <Register toggleOpen={setRegisterOpen} />
+            </SubMenu>
+          )}
+        </AnimatePresence>
+      </div>
+    </div>
   );
 };
 

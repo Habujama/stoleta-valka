@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <div
-      className='content-end xl:px-32 w-full pt-2 lg:pt-12'
+      className='content-end xl:px-32 w-full pt-2 lg:pt-9'
       style={{
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: 'cover',

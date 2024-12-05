@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", "gatsby-plugin-typescript", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "src/assets/rytir.png"
     }
     },
     {
@@ -57,8 +57,16 @@ const config: GatsbyConfig = {
             {
               family: 'DeiGratia',
               urls: {
-                ttf: `./src/assets/DeiGrat.ttf`,
-                woff: `./src/assets/DeiGrat.woff`,
+                ttf: `./src/assets/fonts/DeiGrat.ttf`,
+                woff: `./src/assets/fonts/DeiGrat.woff`,
+              },
+              fontStyle: "light",
+              fontWeight: 400,
+            },
+            {
+              family: 'Trattatello',
+              urls: {
+                ttf: `./src/assets/fonts/Trattatello.ttf`,
               },
               fontStyle: "light",
               fontWeight: 400,
