@@ -30,7 +30,7 @@ const Header = ({ siteTitle }: Props) => {
 
   return (
     <div
-      className='xl:h-[calc(100vh-180px)] content-end px-16 xl:px-32 w-full pt-8 xl:pt-12'
+      className='xl:h-[calc(100vh-180px)] content-end'
       style={{
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: 'cover',
