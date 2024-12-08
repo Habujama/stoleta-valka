@@ -95,6 +95,8 @@ const Button: FC<ButtonProps> = ({
     <motion.button
       className={css}
       onClick={onClick}
+      whileHover={{ scale: 1.05 }}
+      transition={{ ease: 'easeInOut' }}
       type={type}
       style={{ ...backgroundImageStyle }}
     >

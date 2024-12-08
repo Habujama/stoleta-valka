@@ -73,6 +73,21 @@ const MobileNav: React.FC = () => {
     }
   };
 
+  const clickOnGameItem = () => {
+    setGameOpen(false);
+    toggleOpen();
+  };
+
+  const clickOnPracticalItem = () => {
+    setPracticalOpen(false);
+    toggleOpen();
+  };
+
+  const clickOnRegisterItem = () => {
+    setRegisterOpen(false);
+    toggleOpen();
+  };
+
   return (
     <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}>
       <MobileOverlay onAnimationStart={handleOverlayComplete} />
@@ -94,7 +109,7 @@ const MobileNav: React.FC = () => {
                 >
                   <p className='pt-8'>O hře</p>
                 </Button>
-                {isGameOpen && <AboutGame toggleOpen={setGameOpen} />}
+                {isGameOpen && <AboutGame toggleOpen={clickOnGameItem} />}
               </motion.div>
               <motion.div variants={itemVariants} ref={practicalRef}>
                 <Button
@@ -103,7 +118,9 @@ const MobileNav: React.FC = () => {
                 >
                   <p className='pt-8'>Praktické</p>
                 </Button>
-                {isPracticalOpen && <Practical toggleOpen={setPracticalOpen} />}
+                {isPracticalOpen && (
+                  <Practical toggleOpen={clickOnPracticalItem} />
+                )}
               </motion.div>
               <motion.div variants={itemVariants} ref={registerRef}>
                 <Button
@@ -112,7 +129,9 @@ const MobileNav: React.FC = () => {
                 >
                   <p className='pt-8'>Registrace</p>
                 </Button>
-                {isRegisterOpen && <Register toggleOpen={setRegisterOpen} />}
+                {isRegisterOpen && (
+                  <Register toggleOpen={clickOnRegisterItem} />
+                )}
               </motion.div>
             </div>
             {isGameOpen || isPracticalOpen || isRegisterOpen ? null : (
