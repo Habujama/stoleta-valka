@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { motion } from 'framer-motion';
 
-import blueBanner from '../../assets/banner-blue.svg';
+import blueBanner from '../../assets/banner-red.svg';
 
 const containerVariants = {
   open: {

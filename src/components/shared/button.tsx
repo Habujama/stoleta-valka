@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import classNames from 'classnames';
 
 import ButtonImage from '../../assets/button.svg';
-import FlagImage from '../../assets/banner-top-green.svg';
+import FlagImage from '../../assets/banner-top-blue.svg';
 
 type Target = '_blank';
 export enum ButtonType {
@@ -42,6 +42,7 @@ const Button: FC<ButtonProps> = ({
           backgroundImage: `url(${FlagImage})`,
           backgroundSize: '110% 100%',
           padding: '50px 80px 80px 80px',
+          color: '#cba135',
         }
       : undefined;
 
@@ -94,6 +95,8 @@ const Button: FC<ButtonProps> = ({
     <motion.button
       className={css}
       onClick={onClick}
+      whileHover={{ scale: 1.05 }}
+      transition={{ ease: 'easeInOut' }}
       type={type}
       style={{ ...backgroundImageStyle }}
     >
