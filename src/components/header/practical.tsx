@@ -1,4 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
+import { motion } from 'framer-motion';
+
 import Button, { ButtonType } from '../shared/button';
 
 interface PracticalProps {
@@ -6,7 +8,12 @@ interface PracticalProps {
 }
 
 const Practical = ({ toggleOpen }: PracticalProps) => (
-  <div className='flex flex-col items-center'>
+  <motion.div
+    initial={{ opacity: 0, y: -100 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
+    className='flex flex-col items-center'
+  >
     <Button
       to='/'
       onClick={() => toggleOpen(false)}
@@ -42,7 +49,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
     >
       <p className='whitespace-nowrap text-2xl'>Kontakty</p>
     </Button>
-  </div>
+  </motion.div>
 );
 
 export default Practical;

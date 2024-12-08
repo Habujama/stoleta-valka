@@ -2,24 +2,13 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { useMedia } from 'react-use';
 import theme from 'tailwindcss/defaultTheme';
 
-import Title from '../assets/titulek.svg';
-
 const { screens } = theme;
 
 const Hero = () => {
   const isMobile = useMedia(`(max-width: ${screens.lg})`);
 
   return (
-    <div
-      className='content-end xl:px-32'
-      style={{
-        backgroundImage: !isMobile ? `url(${Title})` : '',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '50% 100%',
-        backgroundAttachment: 'fixed',
-        backgroundSize: '80% 120%',
-      }}
-    >
+    <div>
       {isMobile ? (
         <div className='flex items-center sm:gap-x-11'>
           <StaticImage
@@ -45,7 +34,7 @@ const Hero = () => {
           <StaticImage
             src='../assets/rytir.png'
             alt='Staň se chrabrým rytířem'
-            width={250}
+            width={220}
             placeholder='blurred'
           />
           <StaticImage

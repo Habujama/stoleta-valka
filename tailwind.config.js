@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         beige: "#EADDC7",
         beigeDark: "#BF9F63",
+        gold: "#cba135",
       },
       fontFamily: {
         sans: ['Roboto', 'Arial', 'sans-serif'],

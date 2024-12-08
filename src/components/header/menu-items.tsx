@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import Button, { ButtonType } from '../shared/button';
-import SubMenu, { BannerColor } from './submenu';
+import SubMenu from './submenu';
 import AboutGame from './about-game';
 import useClickAway from '../../utilities/use-click-away';
 import Practical from './practical';

@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import MobileOverlay from './mobile-overlay';
 import Hamburger from './hamburger';
-import Button, { ButtonType } from '../shared/button';
+import Button from '../shared/button';
 import useClickAway from '../../utilities/use-click-away';
 import AboutGame from '../header/about-game';
 import Register from '../header/register';
