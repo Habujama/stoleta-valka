@@ -14,7 +14,7 @@ const IndexPage = () => {
     <Layout>
       <PageWrapper>
         <main>
-          <h3 className='font-serifSmall text-5xl text-center mb-4'>
+          <h3 className='font-serifSmall text-2xl md:text-5xl text-center pb-4 pt-8 md:pt-0'>
             Přepište historii ve hře plné osudových rozhodnutí!
           </h3>
           <p>
@@ -53,7 +53,7 @@ const IndexPage = () => {
           />
 
           <div className='mt-6 mb-10'>
-            <h4 className='font-serifSmall text-5xl text-center mb-6'>
+            <h4 className='font-serifSmall text-2xl md:text-5xl text-center mb-6'>
               Co vás čeká?
             </h4>
             <ul className='grid grid-rows-4 gap-y-6 md:gap-y-0 md:grid-rows-1 md:grid-cols-4 md:gap-x-6 items-center'>
@@ -150,9 +150,11 @@ const IndexPage = () => {
           <Button
             to='/'
             buttonType={ButtonType.PRIMARY}
-            className='h-40 w-96 mx-auto mt-6 mb-4'
+            className='h-20 w-80 md:h-40 md:w-96 mx-auto mt-6 mb-4'
           >
-            <p className='text-3xl pt-20 font-serifSmall'>Přihlásit se</p>
+            <p className='md:text-3xl pt-10 md:pt-20 font-serifSmall'>
+              Přihlásit se
+            </p>
           </Button>
         </main>
       </PageWrapper>
