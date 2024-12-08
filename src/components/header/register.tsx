@@ -12,7 +12,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     initial={{ opacity: 0, y: -100 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
-    className='flex flex-col items-center'
+    className='flex flex-col items-center px-10'
   >
     <Button
       to='/'
@@ -20,7 +20,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40 mt-10'
     >
-      <p className='whitespace-nowrap text-2xl'>Hráči</p>
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Hráči</p>
     </Button>
 
     <Button
@@ -29,8 +29,9 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl'>Pomocníci</p>
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Pomocníci</p>
     </Button>
+    <div className='w-40 h-32' />
   </motion.div>
 );
 

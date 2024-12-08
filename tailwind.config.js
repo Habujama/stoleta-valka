@@ -11,6 +11,7 @@ module.exports = {
         beige: "#EADDC7",
         beigeDark: "#BF9F63",
         gold: "#cba135",
+        blueDark: "#283A4A",
       },
       fontFamily: {
         sans: ['Roboto', 'Arial', 'sans-serif'],

@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", "gatsby-plugin-typescript", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/assets/rytir.png"
+      "icon": "src/assets/koruna.png"
     }
     },
     {

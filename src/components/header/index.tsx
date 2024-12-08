@@ -13,7 +13,6 @@ interface Props {
 }
 
 const { screens } = theme;
-const transition = { duration: 2, type: 'spring', ease: 'easeInOut' };
 
 const Header = ({ siteTitle }: Props) => {
   const data = useStaticQuery(graphql`
