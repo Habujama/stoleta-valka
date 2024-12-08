@@ -6,11 +6,6 @@
 
 body {
   color: #000;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -21,6 +16,14 @@ h1 {
 h2 {
   font-family: Trattatello;
   font-size: 28px;
+}
+h3 {
+  font-family: Trattatello;
+  font-size: 22px
+}
+p {
+  font-family: Roboto;
+  font-size: 20px;
 }
 .spinner {
   animation: spin 20s linear infinite;

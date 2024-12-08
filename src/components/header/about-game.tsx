@@ -12,7 +12,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
     initial={{ opacity: 0, y: -100 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
-    className='flex flex-col items-center'
+    className='flex flex-col items-center px-10'
   >
     <Button
       to='/'
@@ -20,7 +20,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40 mt-10'
     >
-      <p className='whitespace-nowrap text-2xl'>Svět</p>
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Svět</p>
     </Button>
 
     <Button
@@ -29,7 +29,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl'>Postavy</p>
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Postavy</p>
     </Button>
 
     <Button
@@ -38,7 +38,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl'>Tablo</p>
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Tablo</p>
     </Button>
 
     <Button
@@ -47,7 +47,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl'>Pravidla</p>
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Pravidla</p>
     </Button>
   </motion.div>
 );

@@ -31,9 +31,8 @@ const PageWrapper = ({ children }: PageWrapper) => {
   return (
     <MotionConfig reducedMotion='user'>
       <div className='border-t-solid border-t-2 border-black' />
-
       <div
-        className='px-4 lg:px-32'
+        className='px-4 lg:px-32 pb-10'
         style={{
           backgroundImage: `url(${imageSrc})`,
           backgroundSize: 'cover',
@@ -41,7 +40,6 @@ const PageWrapper = ({ children }: PageWrapper) => {
           backgroundPosition: 'center center',
           backgroundAttachment: 'fixed',
           width: '100%',
-          height: '100vh',
         }}
       >
         {!isMobile && (
