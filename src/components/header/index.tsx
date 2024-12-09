@@ -32,7 +32,7 @@ const Header = ({ siteTitle }: Props) => {
 
   return (
     <div
-      className='content-end'
+      className='h-1/2 content-end'
       style={{
         backgroundImage: `url(${imageSrc})`,
         backgroundSize: 'cover',
@@ -44,14 +44,13 @@ const Header = ({ siteTitle }: Props) => {
       {isMobile && <MobileNav />}
       <motion.div
         layout
-        className='xl:h-[calc(100vh-200px)] content-end xl:px-32'
+        className='h-1/2 xl:h-[calc(100vh-98px)] content-end xl:px-32'
         style={{
           backgroundImage: !isMobile ? `url(${Title})` : '',
           backgroundSize: '80% 120%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '50% 100%',
           backgroundAttachment: 'fixed',
-          height: 'calc(100vh - 115px)',
         }}
       >
         <Hero />

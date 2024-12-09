@@ -5,6 +5,7 @@ import PageWrapper from '../components/page-wrapper';
 import Layout from '../components/layout';
 import Section from '../components/section';
 import Button, { ButtonType } from '../components/shared/button';
+import SellingPoint from '../components/selling-points';
 
 const IndexPage = () => {
   const sectionWithImage =
@@ -57,63 +58,57 @@ const IndexPage = () => {
               Co vás čeká?
             </h4>
             <ul className='grid grid-rows-4 gap-y-6 md:gap-y-0 md:grid-rows-1 md:grid-cols-4 md:gap-x-6 items-center'>
-              <li className={sectionWithImage}>
-                <StaticImage
-                  src='../assets/koruna.png'
-                  alt='Zahraj si středověkou deskovku'
-                  className='bg-contain mb-4'
-                  placeholder='blurred'
-                />
-                <div>
-                  <h3>Dynamická diplomacie</h3>
-                  <p>
-                    Vyjednávejte, intrikujte, utvářejte a&nbsp;ničte spojenectví
-                  </p>
-                </div>
-              </li>
-              <li className={sectionWithImage}>
-                <StaticImage
-                  src='../assets/koruna.png'
-                  alt='Zahraj si středověkou deskovku'
-                  className='bg-contain mb-4'
-                  placeholder='blurred'
-                />
-                <div>
-                  <h3>Osobní konflikty</h3>
-                  <p>
-                    Čelte cizím agentům, přepadejte cizí lodě, braňte svá města,
+              <SellingPoint
+                title='Dynamická diplomacie'
+                text='Vyjednávejte, intrikujte, utvářejte a&nbsp;ničte spojenectví.'
+                staticImage={
+                  <StaticImage
+                    src='../assets/bitva.png'
+                    alt='Vyzkoušejte si středověkou diplomacii na vlastní kůži!'
+                    className='bg-contain mb-4'
+                    placeholder='blurred'
+                  />
+                }
+              />
+              <SellingPoint
+                title='Osobní konflikty'
+                text='Čelte cizím agentům, přepadejte cizí lodě, braňte svá města,
                     nechte o&nbsp;sobě nebo o&nbsp;svém nepříteli skládat básně
-                    a&nbsp;hlavně - prožijte si&nbsp;dopady svých činů
-                  </p>
-                </div>
-              </li>
-              <li className={sectionWithImage}>
-                <StaticImage
-                  src='../assets/koruna.png'
-                  alt='Zahraj si středověkou deskovku'
-                  className='bg-contain mb-4'
-                  placeholder='blurred'
-                />
-                <div>
-                  <h3>Válečná strategie</h3>
-                  <p>Veďte své armády k&nbsp;vítězství... nebo k&nbsp;záhubě</p>
-                </div>
-              </li>
-              <li className={sectionWithImage}>
-                <StaticImage
-                  src='../assets/koruna.png'
-                  alt='Zahraj si středověkou deskovku'
-                  className='bg-contain mb-4'
-                  placeholder='blurred'
-                />
-                <div>
-                  <h3>Výběr z 39 rolí</h3>
-                  <p>
-                    27 mužských a 12 ženských postav, z nichž každá má vlastní
-                    propracovaný příběh a možnost ovlivnit svůj osud
-                  </p>
-                </div>
-              </li>
+                    a&nbsp;hlavně - prožijte si&nbsp;dopady svých činů.'
+                staticImage={
+                  <StaticImage
+                    src='../assets/diplomacie.png'
+                    alt='Vyzkoušejte si, jak složité bylo přežít na vrcholku středověkého světa.'
+                    className='bg-contain mb-4'
+                    placeholder='blurred'
+                  />
+                }
+              />
+              <SellingPoint
+                title='Válečná strategie'
+                text='Veďte své armády k&nbsp;vítězství... nebo k&nbsp;záhubě.'
+                staticImage={
+                  <StaticImage
+                    src='../assets/stategie.png'
+                    alt='Zahrajte si středověkou deskovku'
+                    className='bg-contain mb-4'
+                    placeholder='blurred'
+                  />
+                }
+              />
+              <SellingPoint
+                title='Výběr z 39 rolí'
+                text='27 mužských a 12 ženských postav, z nichž každá má vlastní
+                    propracovaný příběh a možnost ovlivnit svůj osud.'
+                staticImage={
+                  <StaticImage
+                    src='../assets/pribehy.png'
+                    alt='Prožijte si vlastní příběh'
+                    className='bg-contain mb-4'
+                    placeholder='blurred'
+                  />
+                }
+              />
             </ul>
           </div>
 

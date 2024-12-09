@@ -1,9 +1,8 @@
-import { Dispatch, SetStateAction } from 'react';
-import { AnimationDefinition, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const sidebar = {
   open: {
-    clipPath: `circle(2000px at 100% 0px)`,
+    clipPath: `circle(1000px at 100% 0px)`,
     transition: {
       type: 'spring',
       stiffness: 20,
@@ -22,13 +21,17 @@ const sidebar = {
 };
 
 interface MobileOverlayProps {
-  onAnimationStart: any;
+  onAnimationStart: () => void;
 }
 
 const MobileOverlay = ({ onAnimationStart }: MobileOverlayProps) => (
   <motion.div
     onAnimationStart={onAnimationStart}
-    className='fixed top-0 bottom-0 right-0 w-full bg-gradient-to-b from-beige to-beigeDark z-10'
+    className='fixed inset-0 bg-gradient-to-b from-beige to-beigeDark z-10'
+    style={{
+      height: '100vh',
+      overflow: 'hidden',
+    }}
     variants={sidebar}
   />
 );

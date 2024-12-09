@@ -1,6 +1,14 @@
-import { RefAttributes } from 'react';
+import { RefAttributes, useState } from 'react';
+import classnames from 'classnames';
 import { JSX } from 'react/jsx-runtime';
-import { motion, SVGMotionProps } from 'framer-motion';
+import {
+  motion,
+  SVGMotionProps,
+  useScroll,
+  useMotionValueEvent,
+} from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Path = (
   props: JSX.IntrinsicAttributes &
@@ -18,14 +26,24 @@ const Path = (
 
 interface Props {
   toggle(): void;
+  isOpen: boolean;
 }
 
-const Hamburger = ({ toggle }: Props) => {
+const Hamburger = ({ toggle, isOpen }: Props) => {
+  const { scrollY } = useScroll();
+  const [hasScrolled, setHasScrolled] = useState<boolean>();
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setHasScrolled(latest > 50);
+  });
+
+  const wrapper = classnames(
+    'flex gap-x-4 items-center active:outline-none focus:outline-none rounded fixed top-4 right-4 p-2 z-30',
+    hasScrolled ? 'bg-beige' : 'bg-transparent',
+  );
+
   return (
-    <button
-      onClick={toggle}
-      className='active:outline-none focus:outline-none rounded fixed top-4 right-4 z-30'
-    >
+    <button onClick={toggle} className={wrapper}>
       <svg width='23' height='23' viewBox='0 0 23 23'>
         <Path
           variants={{
