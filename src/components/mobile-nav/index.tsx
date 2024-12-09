@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useCycle, AnimatePresence } from 'framer-motion';
 import { StaticImage } from 'gatsby-plugin-image';
+import classNames from 'classnames';
 
 import MobileOverlay from './mobile-overlay';
 import Hamburger from './hamburger';
@@ -73,6 +74,25 @@ const MobileNav: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      const html = document.documentElement;
+      const body = document.body;
+
+      if (isOpen) {
+        html.style.overflow = 'hidden';
+        html.style.height = '100%';
+        body.style.overflow = 'hidden';
+        body.style.height = '100%';
+      } else {
+        html.style.overflow = '';
+        html.style.height = '';
+        body.style.overflow = '';
+        body.style.height = '';
+      }
+    }
+  }, [isOpen]);
+
   const clickOnGameItem = () => {
     setGameOpen(false);
     toggleOpen();
@@ -88,10 +108,16 @@ const MobileNav: React.FC = () => {
     toggleOpen();
   };
 
+  const navCSS = classNames(isOpen && 'h-screen overflow-hidden');
+
   return (
-    <motion.nav initial={false} animate={isOpen ? 'open' : 'closed'}>
+    <motion.nav
+      initial={false}
+      animate={isOpen ? 'open' : 'closed'}
+      className={navCSS}
+    >
       <MobileOverlay onAnimationStart={handleOverlayComplete} />
-      <Hamburger toggle={toggleOpen} />
+      <Hamburger toggle={toggleOpen} isOpen={isOpen} />
       <AnimatePresence>
         {isOpen && showContent && (
           <motion.div
@@ -99,7 +125,7 @@ const MobileNav: React.FC = () => {
             initial='closed'
             animate='open'
             exit='closed'
-            className='absolute overflow-hidden left-0 top-0 flex flex-col justify-between items-center text-xl outline-none w-screen h-screen pt-14 px-6 z-20'
+            className='absolute overflow-y-hidden left-0 top-0 flex flex-col justify-between items-center text-xl outline-none w-screen h-screen pt-14 px-6 z-20'
           >
             <div>
               <motion.div variants={itemVariants} ref={gameRef}>
