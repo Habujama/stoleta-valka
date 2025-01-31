@@ -24,21 +24,12 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
     </Button>
 
     <Button
-      to='/'
+      to='/postavy#title'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
       <p className='whitespace-nowrap text-2xl font-serifSmall'>Postavy</p>
-    </Button>
-
-    <Button
-      to='/'
-      onClick={() => toggleOpen(false)}
-      buttonType={ButtonType.GHOST}
-      className='w-40'
-    >
-      <p className='whitespace-nowrap text-2xl font-serifSmall'>Tablo</p>
     </Button>
 
     <Button
