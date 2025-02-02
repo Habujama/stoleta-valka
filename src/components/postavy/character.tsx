@@ -25,7 +25,10 @@ const Character = ({
   return (
     <div ref={characterRef} typeof='button' onClick={onClick}>
       {isOpen ? (
-        <div className='bg-beige p-4 rounded-md shadow-md'>{description}</div>
+        <div className='bg-beige p-4 rounded-lg shadow-lg w-full h-96 lg:w-72 lg:h-96 text-center overflow-scroll'>
+          <h3>{name}</h3>
+          {description}
+        </div>
       ) : (
         <GatsbyImage
           image={image}
@@ -33,7 +36,7 @@ const Character = ({
           style={{
             filter: taken ? 'grayscale(100%)' : 'none',
           }}
-          className='z-0 hover:cursor-pointer hover:scale-105 active:scale-95'
+          className='hover:cursor-pointer hover:scale-105 active:scale-95'
         />
       )}
     </div>

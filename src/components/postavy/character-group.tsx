@@ -3,16 +3,21 @@ import { getImage } from 'gatsby-plugin-image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
-import type { CharacterProps, Text } from './index';
+import type { CharacterProps, LandDataProps, Text } from './index';
 import Character from './character';
-import useClickAway from '../../utilities/use-click-away';
+import Land from './land';
 
 interface CharacterGroupProps {
   groupName: string;
+  landInfo: LandDataProps;
   group: CharacterProps[];
 }
 
-const CharacterGroupComponent = ({ groupName, group }: CharacterGroupProps) => {
+const CharacterGroupComponent = ({
+  groupName,
+  landInfo,
+  group,
+}: CharacterGroupProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -38,10 +43,21 @@ const CharacterGroupComponent = ({ groupName, group }: CharacterGroupProps) => {
     },
   };
 
+  const landDivider = getImage(landInfo.rozdlova);
+  const erb = getImage(landInfo.erbZem);
+
   return (
     <div className='pt-6 pb-4'>
-      <h2>{groupName}</h2>
-      <div ref={listRef} className='grid grid-cols-4'>
+      <Land
+        landName={groupName}
+        landDescription={landInfo.popisZem}
+        landDivider={landDivider}
+        erb={erb}
+      />
+      <div
+        ref={listRef}
+        className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4'
+      >
         {group.map((postava: CharacterProps, index: number) => {
           const image = getImage(postava.rmeekPostavy);
           const description = postava.popisPostavy
