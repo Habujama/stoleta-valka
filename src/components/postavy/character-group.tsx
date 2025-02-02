@@ -56,7 +56,7 @@ const CharacterGroupComponent = ({
       />
       <div
         ref={listRef}
-        className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4'
+        className='grid grid-cols-1 row-gap-2 lg:row-gap-0 lg:gap-1 sm:grid-cols-2 md:grid-cols-4'
       >
         {group.map((postava: CharacterProps, index: number) => {
           const image = getImage(postava.rmeekPostavy);

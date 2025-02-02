@@ -8,7 +8,7 @@ import {
 import { graphql, useStaticQuery } from 'gatsby';
 
 import CharacterGroupComponent from './character-group';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
+import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
 
 export type Text =
   | string
@@ -137,10 +137,32 @@ const Postavy = () => {
     });
   }, [groupsSortedAlphabetically, landData]);
 
-  console.log(enrichedGroups);
-
   return (
     <div>
+      <div className='md:grid md:grid-cols-4'>
+        <div className='md:col-span-1 pt-6 pb-4'>
+          <h2>Připojte se k bojům Stoleté války – Vyberte si svou postavu!</h2>
+          <p>
+            Zde jest seznam postav, jež připraveny jsou pro nejbližší běh
+            Stoleté války. Každá postava má svou kartu, na níž ikonami vyznačeny
+            jsou její hlavní rysy, náročnost a druh její hry. Kliknutím na kartu
+            uzříš krátký medailon postavy. Jestliže karta postavy jest v
+            černobílých odstínech, již nalezla hráče svého.
+          </p>
+        </div>
+        <div className='md:col-span-3 flex flex-col md:flex-row items-center justify-center'>
+          <StaticImage
+            src='../../assets/legenda-01.png'
+            alt='Legenda ke kartám postav'
+            placeholder='blurred'
+          />
+          <StaticImage
+            src='../../assets/legenda-02.png'
+            alt='Legenda ke kartám postav'
+            placeholder='blurred'
+          />
+        </div>
+      </div>
       {enrichedGroups.map(([groupName, landInfo, group], index) => (
         <CharacterGroupComponent
           groupName={groupName}

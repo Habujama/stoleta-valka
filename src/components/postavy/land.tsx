@@ -39,7 +39,7 @@ const Land = ({ landName, landDescription, landDivider, erb }: LandProps) => {
         <GatsbyImage
           image={erb}
           alt={landName}
-          className='flex justify-self-center w-20 -mt-8'
+          className='flex justify-self-center w-20 md:-mt-12'
         />
       )}
       <div className='flex pt-6 pb-8'>{description}</div>
