@@ -20,6 +20,14 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40 mt-10'
     >
+      <p className='whitespace-nowrap text-2xl font-serifSmall'>Úvod</p>
+    </Button>
+    <Button
+      to='/'
+      onClick={() => toggleOpen(false)}
+      buttonType={ButtonType.GHOST}
+      className='w-40'
+    >
       <p className='whitespace-nowrap text-2xl font-serifSmall'>Svět</p>
     </Button>
 

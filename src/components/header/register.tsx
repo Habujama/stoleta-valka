@@ -15,7 +15,8 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     className='flex flex-col items-center px-10'
   >
     <Button
-      to='/'
+      href='https://forms.gle/13pdNp5YJQ1uUnKr6'
+      target='_blank'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40 mt-10'

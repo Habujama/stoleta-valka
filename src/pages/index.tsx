@@ -144,7 +144,8 @@ const IndexPage = () => {
             rytíř či&nbsp;nebojácná diplomatka?
           </p>
           <Button
-            to='/'
+            href='https://forms.gle/13pdNp5YJQ1uUnKr6'
+            target='_blank'
             buttonType={ButtonType.PRIMARY}
             className='h-20 w-80 md:h-40 md:w-96 mx-auto mt-6 mb-4'
           >
