@@ -15,15 +15,16 @@ const IndexPage = () => {
     <Layout>
       <PageWrapper>
         <main>
-          <h3 className='font-serifSmall text-2xl md:text-5xl text-center pb-4 pt-8 md:pt-0'>
-            Přepište historii ve hře plné osudových rozhodnutí!
+          <h3 className='font-serifSmall text-4xl text-center pb-4 pt-8 md:pt-0'>
+            Ty, kdož právě čteš tyto řádky, pojď s námi objevit a prožít
+            události, které vedly ke vzniku stoleté války.
           </h3>
           <p>
-            Píše se rok 1337. Angličtí králové drží na francouzském území
-            rozsáhlé statky, čímž zpochybňují autoritu samotného francouzského
-            krále. Napětí vrcholí ve sporu o&nbsp;obchod s&nbsp;anglickou vlnou
-            ve Flandrech. Jaké budou další kroky? Kdo získá moc a&nbsp;kdo ji
-            ztratí?
+            Přenesme se do roku 1337. V té době měli angličtí králové na
+            francouzském území mnoho držav a byli tak leníky, mocnějšími, než
+            byl samotný král.Napětí vrcholí ve sporu o&nbsp;obchod
+            s&nbsp;anglickou vlnou ve Flandrech. Jaké budou další kroky? Kdo
+            získá moc a&nbsp;kdo ji ztratí?
           </p>
           <Section
             imageRight
@@ -143,7 +144,8 @@ const IndexPage = () => {
             rytíř či&nbsp;nebojácná diplomatka?
           </p>
           <Button
-            to='/'
+            href='https://forms.gle/13pdNp5YJQ1uUnKr6'
+            target='_blank'
             buttonType={ButtonType.PRIMARY}
             className='h-20 w-80 md:h-40 md:w-96 mx-auto mt-6 mb-4'
           >
