@@ -44,10 +44,10 @@ const Header = ({ siteTitle }: Props) => {
       {isMobile && <MobileNav />}
       <motion.div
         layout
-        className='h-1/2 xl:h-[calc(100vh-98px)] content-end xl:px-32'
+        className='h-1/2 xl:h-[calc(70vh-98px)] content-end xl:px-32'
         style={{
           backgroundImage: !isMobile ? `url(${Title})` : '',
-          backgroundSize: '80% 120%',
+          backgroundSize: '70% 135%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '50% 100%',
           backgroundAttachment: 'fixed',
