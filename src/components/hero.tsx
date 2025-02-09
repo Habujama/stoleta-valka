@@ -14,14 +14,10 @@ const Hero = () => {
           <StaticImage
             src='../assets/rytir.png'
             alt='Staň se chrabrým rytířem'
-            width={250}
+            width={150}
             placeholder='blurred'
+            className='mt-6 mx-4'
           />
-          <h1 className='sm:text-5xl text-xl text-center'>
-            Stoletá válka
-            <br />
-            roku 1337
-          </h1>
         </div>
       ) : (
         <div className='flex justify-between items-baseline'>

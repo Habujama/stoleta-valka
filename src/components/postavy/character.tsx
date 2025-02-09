@@ -1,6 +1,7 @@
 import { ReactNode, useRef } from 'react';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import useClickAway from '../../utilities/use-click-away';
+import Title, { TitleLevel } from '../shared/title';
 
 interface CharacterProps {
   name: string;
@@ -26,7 +27,7 @@ const Character = ({
     <div ref={characterRef} typeof='button' onClick={onClick}>
       {isOpen ? (
         <div className='bg-beige p-4 rounded-lg shadow-lg w-full h-96 lg:w-72 lg:h-96 text-center overflow-scroll'>
-          <h3>{name}</h3>
+          <Title level={TitleLevel.H3}>{name}</Title>
           {description}
         </div>
       ) : (

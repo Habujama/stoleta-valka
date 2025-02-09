@@ -7,14 +7,11 @@ import theme from 'tailwindcss/defaultTheme';
 import MobileNav from '../mobile-nav/index';
 import Hero from '../hero';
 import Title from '../../assets/titulek.svg';
-
-interface Props {
-  siteTitle: string;
-}
+import TitleCircle from '../../assets/title-circle.svg';
 
 const { screens } = theme;
 
-const Header = ({ siteTitle }: Props) => {
+const Header = () => {
   const data = useStaticQuery(graphql`
     query {
         background: file(relativePath: { eq: "hero.png" }) {
@@ -27,8 +24,8 @@ const Header = ({ siteTitle }: Props) => {
   `);
 
   const imageSrc = getSrc(data.background.childImageSharp.gatsbyImageData);
-
-  const isMobile = useMedia(`(max-width: ${screens.lg})`);
+  const isMobile = useMedia(`(max-width: ${screens.md})`);
+  const isTablet = useMedia(`(max-width: ${screens.lg})`);
 
   return (
     <div
@@ -44,12 +41,16 @@ const Header = ({ siteTitle }: Props) => {
       {isMobile && <MobileNav />}
       <motion.div
         layout
-        className='h-1/2 xl:h-[calc(70vh-98px)] content-end xl:px-32'
+        className='h-1/2 xl:h-[calc(80vh-98px)] content-end xl:px-32'
         style={{
-          backgroundImage: !isMobile ? `url(${Title})` : '',
+          backgroundImage: isMobile ? `url(${TitleCircle})` : `url(${Title})`,
           backgroundSize: '70% 135%',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: '50% 100%',
+          backgroundPosition: isMobile
+            ? '50% 135%'
+            : isTablet
+            ? '50% 150%'
+            : '50% 100%',
           backgroundAttachment: 'fixed',
         }}
       >

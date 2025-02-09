@@ -47,7 +47,7 @@ const Button: FC<ButtonProps> = ({
       : undefined;
 
   const css = classNames(
-    'block text-center font-serifSmall outline-none whitespace-no-wrap hover:scale-110 hover:ease-in-out active:scale-90',
+    'block text-center outline-none whitespace-no-wrap hover:scale-110 hover:ease-in-out active:scale-90',
     {
       'bg-center bg-no-repeat':
         ButtonType.PRIMARY === buttonType ||

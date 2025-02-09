@@ -1,39 +1,24 @@
 import * as React from "react"
 import { Link, HeadFC, PageProps } from "gatsby"
 import Layout from '../components/layout';
-
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-};
+import Title, { TitleLevel } from '../components/shared/title';
+import PageWrapper from '../components/page-wrapper';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <main style={pageStyles}>
-        <h1 style={headingStyles}>Page not found</h1>
-        <p style={paragraphStyles}>
-          Omlouváme se, tohle jsme nepodchytili 😔
-          <Link to='/'>Zkuste jít na hlavní stránku</Link>.
-        </p>
-      </main>
+      <PageWrapper>
+        <div className='flex flex-col items-center mt-12 mb-8 px-12'>
+          <Title level={TitleLevel.H1}>Tuhle stránku nemáme připravenou</Title>
+          <p className='mt-4'>
+            Omlouváme se, tohle jsme nepodchytili 😔
+            <Link to='/' className='ml-2 underline hover:no-underline'>
+              Zkuste jít na hlavní stránku
+            </Link>
+            .
+          </p>
+        </div>
+      </PageWrapper>
     </Layout>
   );
 };

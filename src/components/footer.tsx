@@ -16,9 +16,7 @@ const Footer = () => {
             className='not-italic flex flex-col text-xl gap-y-4'
             id='kontakt'
           >
-            <h4 className='font-bold  text-3xl font-serifSmall'>
-              Stoletá válka roku 1337
-            </h4>
+            <h4 className='font-bold  text-3xl'>Stoletá válka roku 1337</h4>
             <a href='tel:736414277' className={link}>
               <FontAwesomeIcon size='1x' icon={faPhone} className='mr-4' />{' '}
               +420&nbsp;736&nbsp;414&nbsp;277

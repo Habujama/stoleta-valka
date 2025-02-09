@@ -6,8 +6,9 @@ require('dotenv').config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Stoleta Valka`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: "Stoletá Válka",
+    description: "Hra, která spojuje atmosféru dramatických larpů s taktickými prvky deskové hry.",
+    siteUrl: "https://stoletavalka.netlify.app/"
   },
   graphqlTypegen: true,
   plugins: [{
@@ -40,40 +41,6 @@ const config: GatsbyConfig = {
         "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
       ],
     },
-    },
-    {
-      resolve: 'gatsby-plugin-webfonts',
-      options: {
-        fonts: {
-          google: [
-            {
-              family: 'Roboto',
-              subsets: ['latin-ext'],
-              variants: ['100', '300', '400', '500', '700', '900'],
-              strategy: 'cdn',
-            },
-          ],
-          selfHosted: [
-            {
-              family: 'DeiGratia',
-              urls: {
-                ttf: `./src/assets/fonts/DeiGrat.ttf`,
-                woff: `./src/assets/fonts/DeiGrat.woff`,
-              },
-              fontStyle: "light",
-              fontWeight: 400,
-            },
-            {
-              family: 'Trattatello',
-              urls: {
-                ttf: `./src/assets/fonts/Trattatello.ttf`,
-              },
-              fontStyle: "light",
-              fontWeight: 400,
-            },
-          ],
-        },
-      },
     },
    {
     resolve: 'gatsby-source-filesystem',

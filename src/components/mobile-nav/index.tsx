@@ -133,7 +133,7 @@ const MobileNav: React.FC = () => {
                   onClick={() => setGameOpen(!isGameOpen)}
                   className='h-20 w-80'
                 >
-                  <p className='pt-8 font-serifSmall'>O hře</p>
+                  <p className='pt-5'>O hře</p>
                 </Button>
                 {isGameOpen && <AboutGame toggleOpen={clickOnGameItem} />}
               </motion.div>
@@ -142,7 +142,7 @@ const MobileNav: React.FC = () => {
                   onClick={() => setPracticalOpen(!isPracticalOpen)}
                   className='h-20 w-80'
                 >
-                  <p className='pt-8 font-serifSmall'>Praktické</p>
+                  <p className='pt-5'>Praktické</p>
                 </Button>
                 {isPracticalOpen && (
                   <Practical toggleOpen={clickOnPracticalItem} />
@@ -153,7 +153,7 @@ const MobileNav: React.FC = () => {
                   onClick={() => setRegisterOpen(!isRegisterOpen)}
                   className='h-20 w-80'
                 >
-                  <p className='pt-8 font-serifSmall'>Registrace</p>
+                  <p className='pt-5'>Registrace</p>
                 </Button>
                 {isRegisterOpen && (
                   <Register toggleOpen={clickOnRegisterItem} />
