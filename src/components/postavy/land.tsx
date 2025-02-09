@@ -39,11 +39,9 @@ const Land = ({ landName, landDescription, landDivider, erb }: LandProps) => {
         )}
       </div>
       {erb && (
-        <GatsbyImage
-          image={erb}
-          alt={landName}
-          className='flex justify-self-center w-10 md:w-24 xl:w-32 md:-mt-10 xl:-mt-14'
-        />
+        <div className='flex justify-self-center w-10 md:w-24 xl:w-32 md:-mt-10 xl:-mt-14'>
+          <GatsbyImage image={erb} alt={landName} />
+        </div>
       )}
       <div className='flex pt-6 pb-8'>{description}</div>
     </div>
