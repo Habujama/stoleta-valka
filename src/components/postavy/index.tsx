@@ -9,6 +9,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import CharacterGroupComponent from './character-group';
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
+import Title, { TitleLevel } from '../shared/title';
 
 export type Text =
   | string
@@ -78,7 +79,7 @@ const Postavy = () => {
     allContentfulSkupinyPostav {
       nodes {
         erbZem {
-          gatsbyImageData(placeholder: BLURRED, width: 80)
+          gatsbyImageData(placeholder: BLURRED, width: 200)
           title
         }
         nzevZem
@@ -139,9 +140,11 @@ const Postavy = () => {
 
   return (
     <div>
-      <div className='md:grid md:grid-cols-4'>
-        <div className='md:col-span-1 pt-6 pb-4'>
-          <h2>Připojte se k bojům Stoleté války – Vyberte si svou postavu!</h2>
+      <div className='md:grid md:grid-cols-5'>
+        <div className='md:col-span-2 pt-6 pb-4'>
+          <Title level={TitleLevel.H2} className='mb-2'>
+            Připoj se k bojům Stoleté války, vyber si svou postavu!
+          </Title>
           <p>
             Zde jest seznam postav, jež připraveny jsou pro nejbližší běh
             Stoleté války. Každá postava má svou kartu, na níž ikonami vyznačeny

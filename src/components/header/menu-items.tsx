@@ -7,6 +7,7 @@ import AboutGame from './about-game';
 import useClickAway from '../../utilities/use-click-away';
 import Practical from './practical';
 import Register from './register';
+import Title, { TitleLevel } from '../shared/title';
 
 const MenuItems = () => {
   const [isGameOpen, setGameOpen] = useState<boolean>(false);
@@ -29,7 +30,9 @@ const MenuItems = () => {
           buttonType={ButtonType.SECONDARY}
           className='text-2xl w-80 z-20'
         >
-          <h2 className=''>O hře</h2>
+          <Title level={TitleLevel.H3} className='-mt-2'>
+            O hře
+          </Title>
         </Button>
         <AnimatePresence>
           {isGameOpen && (
@@ -45,7 +48,9 @@ const MenuItems = () => {
           buttonType={ButtonType.SECONDARY}
           className='text-2xl w-80 z-20'
         >
-          <h2>Praktické</h2>
+          <Title level={TitleLevel.H3} className='-mt-2'>
+            Praktické
+          </Title>
         </Button>
         <AnimatePresence>
           {isPracticalOpen && (
@@ -61,7 +66,9 @@ const MenuItems = () => {
           buttonType={ButtonType.SECONDARY}
           className='text-2xl w-80 z-20'
         >
-          <h2>Registrace</h2>
+          <Title level={TitleLevel.H3} className='-mt-2'>
+            Registrace
+          </Title>
         </Button>
         <AnimatePresence>
           {isRegisterOpen && (

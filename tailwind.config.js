@@ -14,9 +14,8 @@ module.exports = {
         blueDark: "#283A4A",
       },
       fontFamily: {
-        sans: ['Roboto', 'Arial', 'sans-serif'],
-        serif: ['DeiGratia', 'Georgia', 'serif'],
-        serifSmall: ['Trattatello', 'Georgia', 'serif' ]
+        sans: ['gitan-latin', 'Arial', 'sans-serif'],
+        serif: ['gitan-latin', 'Georgia', 'serif'],
       },
     }
   },

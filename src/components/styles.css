@@ -3,29 +3,25 @@
 @tailwind components;
 /*! purgecss end ignore */
 @tailwind utilities;
+@import url("https://use.typekit.net/qxh8qkc.css");
 
 body {
   color: #000;
   background-color: #EADDC7;
 }
 
-h1 {
-  font-family: DeiGratia;
-  font-weight: 400;
-}
-
-h2 {
-  font-family: Trattatello;
-  font-size: 28px;
-}
-h3 {
-  font-family: Trattatello;
-  font-size: 22px
-}
 p {
-  font-family: Roboto;
   font-size: 20px;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
 .spinner {
   animation: spin 20s linear infinite;
 }

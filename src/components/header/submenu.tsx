@@ -5,7 +5,7 @@ import redBanner from '../../assets/banner-red.svg';
 
 const containerVariants = {
   open: {
-    y: 20,
+    y: 10,
     transition: { duration: 1.5 },
   },
   closed: {
@@ -28,8 +28,8 @@ const SubMenu = ({ isOpen, children }: SubMenuProps) => (
     className='z-10 absolute items-center justify-center bg-contain bg-center bg-no-repeat text-white h-auto shadow-md mt-20 mx-auto pt-4 pb-12'
     style={{
       backgroundImage: `url(${redBanner})`,
-      backgroundSize: '140% 100%',
-      maxWidth: '180px',
+      backgroundSize: '180% 100%',
+      maxWidth: '170px',
     }}
   >
     {children}

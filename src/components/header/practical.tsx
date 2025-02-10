@@ -14,13 +14,22 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
     className='flex flex-col items-center px-10'
   >
+    <div className='h-10 w-40' />
     <Button
       to='/'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
-      className='w-40 mt-10'
+      className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl font-serifSmall'>Místo a čas</p>
+      <p className='whitespace-nowrap text-xl'>Místo a čas</p>
+    </Button>
+    <Button
+      to='/'
+      onClick={() => toggleOpen(false)}
+      buttonType={ButtonType.GHOST}
+      className='w-40'
+    >
+      <p className='whitespace-nowrap text-xl'>Jídlo</p>
     </Button>
 
     <Button
@@ -29,7 +38,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl font-serifSmall'>Jídlo</p>
+      <p className='whitespace-nowrap text-xl'>Kostýmy</p>
     </Button>
 
     <Button
@@ -38,16 +47,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-2xl font-serifSmall'>Kostýmy</p>
-    </Button>
-
-    <Button
-      to='/'
-      onClick={() => toggleOpen(false)}
-      buttonType={ButtonType.GHOST}
-      className='w-40'
-    >
-      <p className='whitespace-nowrap text-2xl font-serifSmall'>Kontakty</p>
+      <p className='whitespace-nowrap text-xl'>Kontakty</p>
     </Button>
   </motion.div>
 );
