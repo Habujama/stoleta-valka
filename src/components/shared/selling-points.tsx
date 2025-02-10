@@ -1,4 +1,4 @@
-import Title, { TitleLevel } from './shared/title';
+import Title, { TitleLevel } from './title';
 
 interface SellingPointProps {
   title: string;

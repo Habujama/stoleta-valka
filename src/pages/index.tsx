@@ -1,17 +1,18 @@
 import type { HeadFC } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import PageWrapper from '../components/page-wrapper';
-import Layout from '../components/layout';
-import Section from '../components/section';
+import PageWrapper from '../components/shared/page-wrapper';
+import Layout from '../components/shared/layout';
+import Section from '../components/shared/section';
 import Button, { ButtonType } from '../components/shared/button';
-import SellingPoint from '../components/selling-points';
+import SellingPoint from '../components/shared/selling-points';
 import Title, { TitleLevel } from '../components/shared/title';
+import Gallery from '../components/gallery';
 
 const IndexPage = () => (
   <Layout>
-    <PageWrapper>
-      <main>
+    <main>
+      <PageWrapper>
         <Title level={TitleLevel.H2} className='text-center pb-4 pt-8 lg:pt-0'>
           Ty, kdož právě čteš tyto řádky, pojď s námi objevit a prožít události,
           které vedly ke vzniku stoleté války.
@@ -109,7 +110,6 @@ const IndexPage = () => (
             />
           </ul>
         </div>
-
         <Section
           image={
             <StaticImage
@@ -149,8 +149,9 @@ const IndexPage = () => (
         >
           <h5 className='md:text-2xl pt-10 md:pt-20'>Přihlásit se</h5>
         </Button>
-      </main>
-    </PageWrapper>
+      </PageWrapper>
+      <Gallery />
+    </main>
   </Layout>
 );
 
