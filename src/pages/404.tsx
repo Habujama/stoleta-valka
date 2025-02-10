@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Link, HeadFC, PageProps } from "gatsby"
-import Layout from '../components/layout';
+import Layout from '../components/shared/layout';
 import Title, { TitleLevel } from '../components/shared/title';
-import PageWrapper from '../components/page-wrapper';
+import PageWrapper from '../components/shared/page-wrapper';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (

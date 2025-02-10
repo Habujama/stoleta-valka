@@ -1,5 +1,5 @@
-import Layout from '../components/layout';
-import PageWrapper from '../components/page-wrapper';
+import Layout from '../components/shared/layout';
+import PageWrapper from '../components/shared/page-wrapper';
 import Postavy from '../components/postavy';
 
 const PostavyPage = () => {
