@@ -1,13 +1,10 @@
 import { useRef, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
 
-import Button, { ButtonType } from '../shared/button';
-import SubMenu from './submenu';
 import AboutGame from './about-game';
 import useClickAway from '../../utilities/use-click-away';
 import Practical from './practical';
 import Register from './register';
-import Title, { TitleLevel } from '../shared/title';
+import MenuItem from './single-menu-item';
 
 const MenuItems = () => {
   const [isGameOpen, setGameOpen] = useState<boolean>(false);
@@ -23,60 +20,35 @@ const MenuItems = () => {
   useClickAway(registerRef, () => setRegisterOpen(false));
 
   return (
-    <div className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 items-center justify-between outline-none mt-2'>
-      <div className='flex flex-col items-center' ref={gameRef}>
-        <Button
-          onClick={() => setGameOpen(!isGameOpen)}
-          buttonType={ButtonType.SECONDARY}
-          className='text-2xl w-80 z-20'
+    <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 pb-16 w-full'>
+      <div className='flex space-y-4 sm:space-y-0 justify-self-center -mt-9 max-w-4xl'>
+        <MenuItem
+          navRef={gameRef}
+          isOpen={isGameOpen}
+          setIsOpen={setGameOpen}
+          variant='BIG'
+          title='O hře'
         >
-          <Title level={TitleLevel.H3} className='-mt-2'>
-            O hře
-          </Title>
-        </Button>
-        <AnimatePresence>
-          {isGameOpen && (
-            <SubMenu isOpen={isGameOpen}>
-              <AboutGame toggleOpen={setGameOpen} />
-            </SubMenu>
-          )}
-        </AnimatePresence>
-      </div>
-      <div className='flex flex-col items-center' ref={practicalRef}>
-        <Button
-          onClick={() => setPracticalOpen(!isPracticalOpen)}
-          buttonType={ButtonType.SECONDARY}
-          className='text-2xl w-80 z-20'
+          <AboutGame toggleOpen={setGameOpen} />
+        </MenuItem>
+        <MenuItem
+          navRef={practicalRef}
+          isOpen={isPracticalOpen}
+          setIsOpen={setPracticalOpen}
+          variant='BIG'
+          title='Praktické'
         >
-          <Title level={TitleLevel.H3} className='-mt-2'>
-            Praktické
-          </Title>
-        </Button>
-        <AnimatePresence>
-          {isPracticalOpen && (
-            <SubMenu isOpen={isPracticalOpen}>
-              <Practical toggleOpen={setPracticalOpen} />
-            </SubMenu>
-          )}
-        </AnimatePresence>
-      </div>
-      <div className='flex flex-col items-center' ref={registerRef}>
-        <Button
-          onClick={() => setRegisterOpen(!isRegisterOpen)}
-          buttonType={ButtonType.SECONDARY}
-          className='text-2xl w-80 z-20'
+          <Practical toggleOpen={setPracticalOpen} />
+        </MenuItem>
+        <MenuItem
+          navRef={registerRef}
+          isOpen={isRegisterOpen}
+          setIsOpen={setRegisterOpen}
+          title='Registrace'
+          variant='BIG'
         >
-          <Title level={TitleLevel.H3} className='-mt-2'>
-            Registrace
-          </Title>
-        </Button>
-        <AnimatePresence>
-          {isRegisterOpen && (
-            <SubMenu isOpen={isRegisterOpen}>
-              <Register toggleOpen={setRegisterOpen} />
-            </SubMenu>
-          )}
-        </AnimatePresence>
+          <Register toggleOpen={setRegisterOpen} />
+        </MenuItem>
       </div>
     </div>
   );

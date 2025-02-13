@@ -3,14 +3,16 @@ import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import classNames from 'classnames';
 
-import ButtonImage from '../../assets/button.svg';
-import FlagImage from '../../assets/banner-top-blue.svg';
+import ButtonImage from '../../assets/ribbon.png';
+import CrownedButton from '../../assets/crowned-button.png';
+import MainCTA from '../../assets/main-CTA-button.png';
 
 type Target = '_blank';
 export enum ButtonType {
   GHOST = 'ghost',
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
+  MAIN = 'main',
 }
 export interface ButtonProps {
   children: ReactNode | string;
@@ -37,12 +39,17 @@ const Button: FC<ButtonProps> = ({
   const backgroundImageStyle: React.CSSProperties | undefined =
     buttonType === ButtonType.PRIMARY
       ? { backgroundImage: `url(${ButtonImage})` }
+      : buttonType === ButtonType.MAIN
+      ? {
+          backgroundImage: `url(${MainCTA})`,
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+        }
       : buttonType === ButtonType.SECONDARY
       ? {
-          backgroundImage: `url(${FlagImage})`,
-          backgroundSize: '110% 100%',
-          padding: '50px 80px 80px 80px',
-          color: '#cba135',
+          backgroundImage: `url(${CrownedButton})`,
+          backgroundSize: '90% 100%',
+          padding: '70px 20px 20px 20px',
         }
       : undefined;
 
@@ -55,6 +62,9 @@ const Button: FC<ButtonProps> = ({
     },
     {
       'bg-transparent p-4': ButtonType.GHOST === buttonType,
+    },
+    {
+      'w-[600px]': ButtonType.MAIN === buttonType,
     },
     className,
   );

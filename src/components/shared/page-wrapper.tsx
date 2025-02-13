@@ -17,11 +17,10 @@ const PageWrapper = ({ children, withMenu = true }: PageWrapper) => {
 
   return (
     <MotionConfig reducedMotion='user'>
-      {withMenu && <div className='border-t-solid border-t-2 border-black' />}
-      <div className='px-4 lg:px-32 pb-10'>
+      <div>
         {!isMobile && withMenu && (
           <header
-            className='flex text-lg px-6 justify-center'
+            className='flex text-lg justify-center'
             style={{
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
@@ -29,12 +28,10 @@ const PageWrapper = ({ children, withMenu = true }: PageWrapper) => {
               backgroundAttachment: 'fixed',
             }}
           >
-            <div className='flex-1 bg- flex items-center justify-center max-w-laptop mx-auto mb-12'>
-              <MenuItems />
-            </div>
+            <MenuItems />
           </header>
         )}
-        {children}
+        <div className='max-w-4xl mx-auto px-8'>{children}</div>
       </div>
     </MotionConfig>
   );

@@ -10,10 +10,6 @@ body {
   background-color: #EADDC7;
 }
 
-p {
-  font-size: 20px;
-}
-
 h1,
 h2,
 h3,
@@ -26,22 +22,3 @@ h5 {
   animation: spin 20s linear infinite;
 }
 
-@layer utilities {
-  .half-circle-text {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    transform: rotate(-70deg);
-  }
-
-  .half-circle-text span {
-    position: absolute;
-    transform-origin: 200px 200px;
-    writing-mode: vertical-lr;
-  }
-}
