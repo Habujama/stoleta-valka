@@ -12,7 +12,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query {
-        background: file(relativePath: { eq: "bg.png" }) {
+        background: file(relativePath: { eq: "pozadi.jpg" }) {
         childImageSharp {
             gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
         }
@@ -24,7 +24,6 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div>
-      <Header />
       <main
         style={{
           backgroundImage: `url(${imageSrc})`,
@@ -35,6 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
           width: '100%',
         }}
       >
+        <Header />
         {children}
         <Footer />
       </main>

@@ -19,8 +19,8 @@ const Title = ({ children, level, className }: TitleProps) => {
 
   const levelStyles: Record<TitleLevel, string> = {
     [TitleLevel.H1]: 'text-5xl font-bold',
-    [TitleLevel.H2]: 'text-4xl font-semibold',
-    [TitleLevel.H3]: 'text-2xl font-medium',
+    [TitleLevel.H2]: 'text-xl font-semibold',
+    [TitleLevel.H3]: 'text-2xl font-medium underline underline-offset-8',
     [TitleLevel.H4]: 'text-xl font-normal',
     [TitleLevel.H5]: 'text-lg font-light',
   };

@@ -1,11 +1,11 @@
 import { ReactElement } from 'react';
 import { motion } from 'framer-motion';
 
-import redBanner from '../../assets/banner-red.svg';
+import prapor from '../../assets/prapor.png';
 
 const containerVariants = {
   open: {
-    y: 10,
+    y: -25,
     transition: { duration: 1.5 },
   },
   closed: {
@@ -25,11 +25,9 @@ const SubMenu = ({ isOpen, children }: SubMenuProps) => (
     animate={isOpen ? 'open' : 'closed'}
     exit={'closed'}
     initial='closed'
-    className='z-10 absolute items-center justify-center bg-contain bg-center bg-no-repeat text-white h-auto shadow-md mt-20 mx-auto pt-4 pb-12'
+    className='lg:absolute z-10 lg:mt-28 items-center justify-center font-semibold bg-contain bg-center bg-no-repeat h-auto shadow-md pb-8'
     style={{
-      backgroundImage: `url(${redBanner})`,
-      backgroundSize: '180% 100%',
-      maxWidth: '170px',
+      backgroundImage: `url(${prapor})`,
     }}
   >
     {children}

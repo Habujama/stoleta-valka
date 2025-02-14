@@ -1,18 +1,18 @@
-import Title, { TitleLevel } from './title';
-
 interface SellingPointProps {
-  title: string;
   text: string;
+  title: string;
   staticImage: any;
 }
 
-const SellingPoint = ({ title, text, staticImage }: SellingPointProps) => (
+const SellingPoint = ({ text, title, staticImage }: SellingPointProps) => (
   <li className='gap-x-2 md:gap-x-0'>
-    <>{staticImage}</>
-    <div className='flex flex-col justify-start'>
-      <Title level={TitleLevel.H3}>{title}</Title>
-      <p>{text}</p>
-    </div>
+    {staticImage}
+    <h3 className='text-center -translate-y-16 -mt-3 md:-mt-0 md:-translate-y-24 lg:-translate-y-16 w-fit mx-auto'>
+      {title}
+    </h3>
+    <p className='flex flex-col justify-start text-center font-bold text-base max-w-md'>
+      {text}
+    </p>
   </li>
 );
 
