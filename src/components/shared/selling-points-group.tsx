@@ -1,15 +1,21 @@
 import { StaticImage } from 'gatsby-plugin-image';
+import { useMedia } from 'react-use';
+import theme from 'tailwindcss/defaultTheme';
 
 import SellingPoint from './selling-points';
 import ButtonImage from '../../assets/ribbon.png';
 
+const { screens } = theme;
+
 const SellingPointsGroup = () => {
+  const isMobile = useMedia(`(max-width: ${screens.sm})`);
   return (
     <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 px-12 pb-16 mb-10'>
       <div
-        className='text-xl md:text-2xl font-semibold text-center bg-contain bg-no-repeat w-80 py-6 h-auto -translate-y-10 mb-6 mx-auto'
+        className='text-xl lg:text-2xl 2xl:text-4xl font-bold font-serif text-center bg-contain bg-no-repeat w-[279px] sm:w-[397px] pt-8 pb-6 h-auto -translate-y-10 mb-6 mx-auto'
         style={{
           backgroundImage: `url(${ButtonImage})`,
+          backgroundSize: `${isMobile ? '279px 80px' : '397px 80px'}`,
         }}
       >
         Co vás čeká?

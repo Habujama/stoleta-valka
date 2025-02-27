@@ -12,16 +12,17 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
     initial={{ opacity: 0, y: -100 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
-    className='flex flex-col items-center px-10'
+    className='flex flex-col items-center pt-5 lg:pt-10 2xl:pt-7 px-10 lg:pb-10'
   >
-    <div className='h-5 w-40' />
     <Button
       to='/'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-xl'>Místo a čas</p>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-3xl  font-bold'>
+        Místo a čas
+      </p>
     </Button>
     <Button
       to='/'
@@ -29,16 +30,9 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-xl'>Jídlo</p>
-    </Button>
-
-    <Button
-      to='/'
-      onClick={() => toggleOpen(false)}
-      buttonType={ButtonType.GHOST}
-      className='w-40'
-    >
-      <p className='whitespace-nowrap text-xl'>Kostýmy</p>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-3xl  font-bold'>
+        Jídlo
+      </p>
     </Button>
 
     <Button
@@ -47,7 +41,20 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-xl'>Kontakty</p>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-3xl  font-bold'>
+        Kostýmy
+      </p>
+    </Button>
+
+    <Button
+      to='/'
+      onClick={() => toggleOpen(false)}
+      buttonType={ButtonType.GHOST}
+      className='w-40'
+    >
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-3xl  font-bold'>
+        Kontakty
+      </p>
     </Button>
   </motion.div>
 );

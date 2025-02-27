@@ -39,15 +39,15 @@ const Hero = () => {
           <StaticImage
             src='../assets/kostra.png'
             alt='Zahraj si středověkou deskovku'
-            width={600}
+            width={276}
             placeholder='blurred'
           />
-          <div className='pb-20 pl-4 -mr-40 max-w-2xl text-center'>
+          <div className='pb-20 -mr-40 max-w-2xl  2xl:max-w-5xl text-center'>
             <Title level={TitleLevel.H2} className='mb-4'>
               Ty, kdož právě čteš tyto řádky, pojď s&nbsp;námi objevit
               a&nbsp;prožít události, které vedly ke vzniku stoleté války.
             </Title>
-            <p>
+            <p className='text-xl 2xl:text-3xl'>
               Přenesme se do roku 1337. V té době měli angličtí králové na
               francouzském území mnoho držav a byli tak leníky, mocnějšími, než
               byl samotný král.Napětí vrcholí ve sporu o&nbsp;obchod
@@ -58,7 +58,7 @@ const Hero = () => {
           <StaticImage
             src='../assets/husy.png'
             alt='Veď svoje vojsko k vítězství'
-            width={900}
+            width={368}
             placeholder='blurred'
           />
         </div>

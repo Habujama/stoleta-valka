@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 
 import SubMenu from './submenu';
 import Button, { ButtonType } from '../shared/button';
+import Title, { TitleLevel } from '../shared/title';
 
 const itemVariants = {
   open: {
@@ -49,12 +50,15 @@ const SingleMenuItem = ({
       onClick={() => setIsOpen(!isOpen)}
       buttonType={variant === 'BIG' ? ButtonType.SECONDARY : ButtonType.PRIMARY}
       className={`${
-        variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 text-2xl'
+        variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 2xl:w-[455px] text-2xl'
       } py-4 bg-contain z-20 relative`}
     >
-      <h4 className={`font-bold ${variant === 'SMALL' ? 'pt-2' : '-mt-2'}`}>
+      <Title
+        level={TitleLevel.H4}
+        className={`${variant === 'SMALL' ? 'pt-2' : '-mt-2'}`}
+      >
         {title}
-      </h4>
+      </Title>
     </Button>
     {isOpen && <SubMenu isOpen={isOpen}>{children}</SubMenu>}
   </motion.div>

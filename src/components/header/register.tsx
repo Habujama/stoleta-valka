@@ -14,7 +14,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
     className='flex flex-col items-center px-10'
   >
-    <div className='h-5 w-40' />
+    <div className='h-10 w-40' />
     <Button
       href='https://forms.gle/13pdNp5YJQ1uUnKr6'
       target='_blank'
@@ -22,7 +22,9 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowra text-xl'>Hráči</p>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-3xl font-bold'>
+        Hráči
+      </p>
     </Button>
 
     <Button
@@ -31,7 +33,9 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-xl'>Pomocníci</p>
+      <p className='whitespace-nowrap text-lg  lg:text-xl 2xl:text-3xl font-bold'>
+        Pomocníci
+      </p>
     </Button>
     <div className='w-40 h-28' />
   </motion.div>

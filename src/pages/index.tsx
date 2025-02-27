@@ -11,11 +11,11 @@ const IndexPage = () => (
   <Layout>
     <main>
       <PageWrapper>
-        <div className='flex flex-col text-center max-w-4xl mx-auto gap-y-4 mt-16 mb-24'>
+        <div className='flex flex-col text-center max-w-4xl mx-auto gap-y-4 mt-16 xl:mt-32 mb-24 xl:mb-28'>
           <Title level={TitleLevel.H3} className='underline-offset-8'>
             Vaše role v příběhu
           </Title>
-          <p className='text-center'>
+          <p className='text-center text-xl 2xl:text-3xl'>
             Postavíte se do centra dění a&nbsp;ovlivníte osud Evropy. Tato
             jedinečná hra&nbsp;
             <strong>
