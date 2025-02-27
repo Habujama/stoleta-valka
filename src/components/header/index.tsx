@@ -26,7 +26,7 @@ const Header = () => {
         />
       </Link>
       {isMobile && <MobileNav />}
-      <div className='xl:px-32'>
+      <div className='lg:px-32 2xl:px-20'>
         <Hero />
       </div>
     </>

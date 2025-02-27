@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 import AboutGame from './about-game';
 import useClickAway from '../../utilities/use-click-away';
@@ -20,8 +21,19 @@ const MenuItems = () => {
   useClickAway(registerRef, () => setRegisterOpen(false));
 
   return (
-    <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 pb-16 w-full'>
-      <div className='flex space-y-4 sm:space-y-0 justify-self-center -mt-9 max-w-4xl'>
+    <motion.div
+      animate={{
+        height:
+          isGameOpen || isPracticalOpen || isRegisterOpen ? '280px' : '10px',
+      }}
+      transition={{
+        duration: 0.3,
+        type: 'easeInOut',
+        stiffness: 10,
+      }}
+      className='bg-neutral-800 bg-blend-screen bg-opacity-15 w-full'
+    >
+      <div className='flex space-y-4 sm:space-y-0 justify-center -mt-20 mx-auto'>
         <MenuItem
           navRef={gameRef}
           isOpen={isGameOpen}
@@ -50,7 +62,7 @@ const MenuItems = () => {
           <Register toggleOpen={setRegisterOpen} />
         </MenuItem>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

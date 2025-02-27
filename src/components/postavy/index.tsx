@@ -10,6 +10,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import CharacterGroupComponent from './character-group';
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
 import Title, { TitleLevel } from '../shared/title';
+import TextBlockWithTitle from '../shared/text-block-with-title';
 
 export type Text =
   | string
@@ -142,16 +143,19 @@ const Postavy = () => {
     <div>
       <div className='md:grid md:grid-cols-5'>
         <div className='md:col-span-2 pt-6 pb-4'>
-          <Title level={TitleLevel.H2} className='mb-2'>
-            Připoj se k bojům Stoleté války, vyber si svou postavu!
-          </Title>
-          <p>
-            Zde jest seznam postav, jež připraveny jsou pro nejbližší běh
-            Stoleté války. Každá postava má svou kartu, na níž ikonami vyznačeny
-            jsou její hlavní rysy, náročnost a druh její hry. Kliknutím na kartu
-            uzříš krátký medailon postavy. Jestliže karta postavy jest v
-            černobílých odstínech, již nalezla hráče svého.
-          </p>
+          <TextBlockWithTitle
+            title='Připoj se k bojům Stoleté války, vyber si svou postavu!'
+            paragraph={
+              <>
+                Zde jest seznam postav, jež připraveny jsou pro nejbližší běh
+                Stoleté války. Každá postava má svou kartu, na níž ikonami
+                vyznačeny jsou její hlavní rysy, náročnost a druh její hry.
+                Kliknutím na kartu uzříš krátký medailon postavy. Jestliže karta
+                postavy jest v černobílých odstínech, již nalezla hráče svého.
+              </>
+            }
+            centered={false}
+          />
         </div>
         <div className='md:col-span-3 flex flex-col md:flex-row items-center justify-center'>
           <StaticImage

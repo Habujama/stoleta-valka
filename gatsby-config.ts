@@ -42,6 +42,15 @@ const config: GatsbyConfig = {
       ],
     },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Alegreya \:500, 800`,
+        ],
+        display: 'swap'
+      }
+    },
    {
     resolve: 'gatsby-source-filesystem',
     options: {

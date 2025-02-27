@@ -84,10 +84,10 @@ const Footer = () => {
       </footer>
       <div className='xl:flex xl:flex-col self-center'>
         <StaticImage
-          src='../assets/lista.png'
-          alt='konflikty'
-          className='mb-4'
+          src='../assets/paticka.png'
+          alt='paticka'
           placeholder='blurred'
+          className='mb-4'
         />
       </div>
     </>
