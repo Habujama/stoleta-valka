@@ -15,10 +15,11 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: 600;
+  font-weight: 800;
+    font-family: 'Alegreya';
 }
 
-.spinner {
-  animation: spin 20s linear infinite;
+p {
+  font-family: sans-serif;
 }
 

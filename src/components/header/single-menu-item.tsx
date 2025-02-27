@@ -52,9 +52,9 @@ const SingleMenuItem = ({
         variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 text-2xl'
       } py-4 bg-contain z-20 relative`}
     >
-      <p className={`font-semibold ${variant === 'SMALL' ? 'pt-2' : '-mt-2'}`}>
+      <h4 className={`font-bold ${variant === 'SMALL' ? 'pt-2' : '-mt-2'}`}>
         {title}
-      </p>
+      </h4>
     </Button>
     {isOpen && <SubMenu isOpen={isOpen}>{children}</SubMenu>}
   </motion.div>

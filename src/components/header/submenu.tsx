@@ -25,7 +25,7 @@ const SubMenu = ({ isOpen, children }: SubMenuProps) => (
     animate={isOpen ? 'open' : 'closed'}
     exit={'closed'}
     initial='closed'
-    className='lg:absolute z-10 lg:mt-28 items-center justify-center font-semibold bg-contain bg-center bg-no-repeat h-auto shadow-md pb-8'
+    className='lg:absolute z-10 lg:mt-28 items-center justify-center bg-contain bg-center bg-no-repeat h-auto shadow-md pb-8'
     style={{
       backgroundImage: `url(${prapor})`,
     }}
