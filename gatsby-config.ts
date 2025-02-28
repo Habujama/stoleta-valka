@@ -43,13 +43,17 @@ const config: GatsbyConfig = {
     },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-omni-font-loader`,
       options: {
-        fonts: [
-          `Alegreya \:500, 800`,
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `Alegreya`,
+            file: `https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap`
+          },
         ],
-        display: 'swap'
-      }
+      },
     },
    {
     resolve: 'gatsby-source-filesystem',
