@@ -27,7 +27,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main
         style={{
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center center',
           backgroundAttachment: 'fixed',
