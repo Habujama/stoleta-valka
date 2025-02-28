@@ -10,7 +10,7 @@ interface TextBlockWithTitleProps {
 const TextBlockWithTitle = ({
   title,
   paragraph,
-  centered = false,
+  centered = true,
 }: TextBlockWithTitleProps) => (
   <div
     className={`flex flex-col ${
@@ -23,7 +23,7 @@ const TextBlockWithTitle = ({
     >
       {title}
     </Title>
-    <p className={`${centered ? 'text-center' : ''} text-xl 2xl:text-3xl`}>
+    <p className={`${centered ? 'text-center' : ''} text-xl 2xl:text-2xl`}>
       {paragraph}
     </p>
   </div>

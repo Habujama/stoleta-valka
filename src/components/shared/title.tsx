@@ -18,12 +18,12 @@ const Title = ({ children, level, className }: TitleProps) => {
   const Tag = level as keyof JSX.IntrinsicElements;
 
   const levelStyles: Record<TitleLevel, string> = {
-    [TitleLevel.H1]: 'font-serif text-xl lg:text-2xl 2xl:text-4xl font-bold',
-    [TitleLevel.H2]: 'font-serif text-xl lg:text-2xl 2xl:text-4xl font-bold',
+    [TitleLevel.H1]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-bold',
+    [TitleLevel.H2]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-bold',
     [TitleLevel.H3]:
-      'font-serif text-xl lg:text-3xl 2xl:text-4xl font-bold underline underline-offset-8',
-    [TitleLevel.H4]: 'font-serif text-xl lg:text-2xl 2xl:text-4xl font-normal',
-    [TitleLevel.H5]: 'font-serif text-xl lg:text-2xl 2xl:text-4xl font-light',
+      'font-serif text-xl lg:text-3xl 2xl:text-3xl font-bold underline underline-offset-8',
+    [TitleLevel.H4]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-normal',
+    [TitleLevel.H5]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-light',
   };
 
   return (
