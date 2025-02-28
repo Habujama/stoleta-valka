@@ -22,7 +22,7 @@ const Header = () => {
           src='../../assets/hlavicka-nadpis.png'
           alt='Stoletá válka roku 1332'
           placeholder='blurred'
-          className='mb-4 2xl:pt-44'
+          className='bg-contain'
         />
       </Link>
       {isMobile && <MobileNav />}

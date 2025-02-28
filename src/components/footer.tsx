@@ -28,10 +28,10 @@ const Footer = () => {
             className='flex flex-col not-italic text-xl gap-y-4'
             id='kontakt'
           >
-            <h4 className='font-bold text-xl text-center'>
+            <h4 className='font-bold text-xl md:text-center'>
               Stoletá válka roku 1337
             </h4>
-            <div className='flex flex-col md:flex-row justify-center mt-2 text-sm font-bold'>
+            <div className='flex flex-col md:flex-row justify-center mt-2 text-sm font-bold font-serif'>
               {contentfulFooterMenu.kontaktnTelefon1 && (
                 <>
                   <a

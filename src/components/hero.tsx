@@ -47,7 +47,7 @@ const Hero = () => {
               Ty, kdož právě čteš tyto řádky, pojď s&nbsp;námi objevit
               a&nbsp;prožít události, které vedly ke vzniku stoleté války.
             </Title>
-            <p className='text-xl 2xl:text-3xl'>
+            <p className='text-xl 2xl:text-2xl'>
               Přenesme se do roku 1337. V té době měli angličtí králové na
               francouzském území mnoho držav a byli tak leníky, mocnějšími, než
               byl samotný král.Napětí vrcholí ve sporu o&nbsp;obchod
