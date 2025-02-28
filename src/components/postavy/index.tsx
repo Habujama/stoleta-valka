@@ -142,7 +142,7 @@ const Postavy = () => {
   return (
     <div>
       <div className='md:grid md:grid-cols-5'>
-        <div className='md:col-span-2 pt-6 pb-4'>
+        <div className='md:col-span-2 pt-6 pb-4' id='title'>
           <TextBlockWithTitle
             title='Připoj se k bojům Stoleté války, vyber si svou postavu!'
             paragraph={
