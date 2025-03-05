@@ -49,7 +49,7 @@ const Button: FC<ButtonProps> = ({
       ? {
           backgroundImage: `url(${CrownedButton})`,
           backgroundSize: '90% 100%',
-          padding: '70px 20px 20px 20px',
+          padding: '70px 25px 20px 20px',
         }
       : undefined;
 

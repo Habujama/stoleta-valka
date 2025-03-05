@@ -26,7 +26,7 @@ const Gallery = () => {
 
   return (
     <>
-      <div className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll p-4 bg-neutral-800 bg-blend-screen bg-opacity-15'>
+      <div className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll no-scrollbar p-4 bg-neutral-800 bg-blend-screen bg-opacity-15'>
         {contentfulFotogalerie.fotky.map(
           (photo: {
             small: { gatsbyImageData: IGatsbyImageData };

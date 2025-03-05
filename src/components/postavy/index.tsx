@@ -141,34 +141,31 @@ const Postavy = () => {
 
   return (
     <div>
-      <div className='md:grid md:grid-cols-5'>
-        <div className='md:col-span-2 pt-6 pb-4' id='title'>
-          <TextBlockWithTitle
-            title='Připoj se k bojům Stoleté války, vyber si svou postavu!'
-            paragraph={
-              <>
-                Zde jest seznam postav, jež připraveny jsou pro nejbližší běh
-                Stoleté války. Každá postava má svou kartu, na níž ikonami
-                vyznačeny jsou její hlavní rysy, náročnost a druh její hry.
-                Kliknutím na kartu uzříš krátký medailon postavy. Jestliže karta
-                postavy jest v černobílých odstínech, již nalezla hráče svého.
-              </>
-            }
-            centered={false}
-          />
-        </div>
-        <div className='md:col-span-3 flex flex-col md:flex-row items-center justify-center'>
-          <StaticImage
-            src='../../assets/legenda-01.png'
-            alt='Legenda ke kartám postav'
-            placeholder='blurred'
-          />
-          <StaticImage
-            src='../../assets/legenda-02.png'
-            alt='Legenda ke kartám postav'
-            placeholder='blurred'
-          />
-        </div>
+      <div className='md:col-span-2 pt-6 pb-4' id='title'>
+        <TextBlockWithTitle
+          title='Vyber si postavu, která ti sedne'
+          paragraph={
+            <>
+              V&nbsp;následujícím seznamu jsou postavy zemí, které na&nbsp;naší
+              hře budou zastoupené. Každá postava má svou kartu, na níž ikonami
+              vyznačeny jsou její hlavní rysy, náročnost a&nbsp;charakter její
+              hry. Kliknutím na kartu uzříš krátký medailon s&nbsp;popiskem
+              postavy.
+            </>
+          }
+        />
+      </div>
+      <div className='md:col-span-3 flex flex-col md:flex-row items-center justify-center'>
+        <StaticImage
+          src='../../assets/legenda-01.png'
+          alt='Legenda ke kartám postav'
+          placeholder='blurred'
+        />
+        <StaticImage
+          src='../../assets/legenda-02.png'
+          alt='Legenda ke kartám postav'
+          placeholder='blurred'
+        />
       </div>
       {enrichedGroups.map(([groupName, landInfo, group], index) => (
         <CharacterGroupComponent

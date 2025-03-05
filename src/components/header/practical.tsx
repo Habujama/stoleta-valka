@@ -14,6 +14,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
     className='flex flex-col items-center pt-5 lg:pt-10 2xl:pt-7 px-10 lg:pb-10'
   >
+    <div className='h-5 2xl:h-10 w-40' />
     <Button
       to='/'
       onClick={() => toggleOpen(false)}
@@ -47,7 +48,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
     </Button>
 
     <Button
-      to='/'
+      to='#footer'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'

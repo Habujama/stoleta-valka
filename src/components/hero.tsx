@@ -2,8 +2,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { useMedia } from 'react-use';
 import theme from 'tailwindcss/defaultTheme';
 
-import Title, { TitleLevel } from './shared/title';
-
 const { screens } = theme;
 
 const Hero = () => {
@@ -12,55 +10,48 @@ const Hero = () => {
   return (
     <div>
       {isMobile ? (
-        <div className='flex flex-col items-center sm:gap-x-11 px-8'>
+        <div className='flex items-center justify-center px-20 mx-auto'>
           <StaticImage
             src='../assets/kostra.png'
             alt='Staň se chrabrým rytířem'
             width={150}
-            placeholder='blurred'
-            className='mt-6 mx-4'
-          />
-          <div className='pb-8 pl-4 text-center'>
-            <Title level={TitleLevel.H2} className='mb-4'>
-              Ty, kdož právě čteš tyto řádky, pojď s&nbsp;námi objevit
-              a&nbsp;prožít události, které vedly ke vzniku stoleté války.
-            </Title>
-            <p>
-              Přenesme se do roku 1337. V té době měli angličtí králové na
-              francouzském území mnoho držav a byli tak leníky, mocnějšími, než
-              byl samotný král.Napětí vrcholí ve sporu o&nbsp;obchod
-              s&nbsp;anglickou vlnou ve Flandrech. Jaké budou další kroky? Kdo
-              získá moc a&nbsp;kdo ji ztratí?
-            </p>
-          </div>
-        </div>
-      ) : (
-        <div className='flex justify-between xl:items-center max-w-8xl mx-auto'>
-          <StaticImage
-            src='../assets/kostra.png'
-            alt='Zahraj si středověkou deskovku'
-            width={276}
+            className='-mr-16'
             placeholder='blurred'
           />
-          <div className='pb-20 -mr-40 max-w-2xl  2xl:max-w-5xl text-center'>
-            <Title level={TitleLevel.H2} className='mb-4'>
-              Ty, kdož právě čteš tyto řádky, pojď s&nbsp;námi objevit
-              a&nbsp;prožít události, které vedly ke vzniku stoleté války.
-            </Title>
-            <p className='text-xl 2xl:text-2xl'>
-              Přenesme se do roku 1337. V té době měli angličtí králové na
-              francouzském území mnoho držav a byli tak leníky, mocnějšími, než
-              byl samotný král.Napětí vrcholí ve sporu o&nbsp;obchod
-              s&nbsp;anglickou vlnou ve Flandrech. Jaké budou další kroky? Kdo
-              získá moc a&nbsp;kdo ji ztratí?
-            </p>
-          </div>
           <StaticImage
             src='../assets/husy.png'
             alt='Veď svoje vojsko k vítězství'
             width={368}
+            className='-ml-16'
             placeholder='blurred'
           />
+        </div>
+      ) : (
+        <div className='flex justify-center gap-x-4 items-end mx-auto'>
+          <div className='px-20'>
+            <StaticImage
+              src='../assets/kostra.png'
+              alt='Zahraj si středověkou deskovku'
+              width={276}
+              placeholder='blurred'
+            />
+          </div>
+          <div className='pl-24 lg:pl-28 xl:pl-32'>
+            <StaticImage
+              src='../assets/prihlas-se_lev.png'
+              alt='Zahraj si středověkou deskovku'
+              width={276}
+              placeholder='blurred'
+            />
+          </div>
+          <div className='px-20'>
+            <StaticImage
+              src='../assets/husy.png'
+              alt='Veď svoje vojsko k vítězství'
+              width={368}
+              placeholder='blurred'
+            />
+          </div>
         </div>
       )}
     </div>

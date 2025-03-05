@@ -55,7 +55,7 @@ const SingleMenuItem = ({
     >
       <Title
         level={TitleLevel.H4}
-        className={`${variant === 'SMALL' ? 'pt-2' : '-mt-2'}`}
+        className={`${variant === 'SMALL' ? 'pt-2' : 'mt-2'}`}
       >
         {title}
       </Title>

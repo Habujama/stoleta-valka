@@ -6,28 +6,39 @@ import Gallery from '../components/gallery';
 import SellingPointsGroup from '../components/shared/selling-points-group';
 import TextBlockWithTitle from '../components/shared/text-block-with-title';
 import MainCTAButton from '../components/shared/main-CTA-button';
+import { SEO } from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
     <main>
       <PageWrapper>
-        <TextBlockWithTitle
-          title='Vaše role v příběhu'
-          paragraph={
-            <>
-              Postavíte se do centra dění a&nbsp;ovlivníte osud Evropy. Tato
-              jedinečná hra&nbsp;
-              <strong>
-                spojuje atmosféru dramatických larpů s&nbsp;taktickými prvky
-                deskové hry
-              </strong>
-              . Budete plánovat, vyjednávat a&nbsp;rozhodovat na bitevním poli
-              i&nbsp;mimo něj. Čekají na vás role anglických vyslanců, irských
-              vzbouřenců, prohnaných obchodníků, odvážných korzárů, rytířů
-              i&nbsp;slavných umělců. Každé rozhodnutí může změnit běh dějin.
-            </>
-          }
-        />
+        <div className='md:mt-24 md:mb-16 lg:mb-32'>
+          <TextBlockWithTitle
+            title='Vaše role v příběhu'
+            paragraph={
+              <>
+                Přeneseme se do roku 1337, kdy napětí mezi anglickými a
+                francouzskými králi vrcholí ve sporu o&nbsp;obchod
+                s&nbsp;anglickou vlnou ve Flandrech. Jaké budou další kroky? Kdo
+                získá moc a kdo ji ztratí?
+                <strong>
+                  &nbsp;Postavte se do centra dění a&nbsp;ovlivněte osud Evropy!
+                </strong>
+                <br />
+                <br />
+                Tato jedinečná hra&nbsp;
+                <strong>
+                  spojuje atmosféru dramatických larpů s&nbsp;taktickými prvky
+                  deskové hry
+                </strong>
+                . Budete plánovat, vyjednávat a&nbsp;rozhodovat na bitevním poli
+                i&nbsp;mimo něj. Čekají na vás role anglických vyslanců, irských
+                vzbouřenců, prohnaných obchodníků, odvážných korzárů, rytířů
+                i&nbsp;slavných umělců. Každé rozhodnutí může změnit běh dějin.
+              </>
+            }
+          />
+        </div>
       </PageWrapper>
       <SellingPointsGroup />
       <PageWrapper withMenu={false}>
@@ -44,13 +55,12 @@ const IndexPage = () => (
               <strong> nevídaných rozměrů</strong>.
               <br />
               <br />
-              <strong className='text-2xl 2xl:text-3xl'>
-                Budete v tomto diplomatickém larpu, historické simulaci a&nbsp;
-                tahové strategii zastávat jednu z&nbsp;klíčových rolí? Budete
-                mít odvahu pohnout figurkami na šachovnici dějin? Nebo budete
-                tiše tahat za nitky ze stínů? Zvládnete čelit svému osudu
-                jakožto vyslanec anglického krále, flanderský obchodník, odvážný
-                korzár, ušlechtilý rytíř či&nbsp;nebojácná diplomatka?
+              <strong className='text-xl xl:text-3xl'>
+                Máte odvahu pohnout figurkami na šachovnici dějin? Chopíte
+                se&nbsp;meče nebo budete tiše tahat za nitky ze stínů? Zvládnete
+                čelit svému osudu jakožto vyslanec anglického krále, flanderský
+                obchodník, odvážný korzár, ušlechtilý rytíř či&nbsp;mazaná
+                diplomatka?
               </strong>
             </>
           }
@@ -64,4 +74,4 @@ const IndexPage = () => (
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Stoletá válka roku 1337</title>;
+export const Head: HeadFC = () => <SEO />;

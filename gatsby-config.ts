@@ -8,7 +8,9 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: "Stoletá Válka",
     description: "Hra, která spojuje atmosféru dramatických larpů s taktickými prvky deskové hry.",
-    siteUrl: "https://stoletavalka.netlify.app/"
+    siteUrl: "https://stoletavalka.netlify.app/",
+    image: "/prihlas-se_lev.png",
+    icon :"/prihlas-se_lev.png"
   },
   graphqlTypegen: true,
   plugins: [{
@@ -19,9 +21,15 @@ const config: GatsbyConfig = {
     },
   }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", "gatsby-plugin-typescript", {
     resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/assets/koruna.png"
-    }
+      options: {
+        name: `Stoletá válka roku 1337`,
+        short_name: `Stoletá válka`,
+        start_url: `/`,
+        background_color: `#EADDC7`,
+        theme_color: `#EADDC7`,
+        display: `minimal-ui`,
+        icon: "src/assets/prihlas-se_lev.png"
+      }
     },
     {
       resolve: 'gatsby-plugin-postcss',
