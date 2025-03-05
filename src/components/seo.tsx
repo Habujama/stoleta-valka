@@ -6,7 +6,7 @@ interface SEOProps {
   description?: string;
   pathname?: string;
   image?: string;
-  children: ReactElement<any, string | JSXElementConstructor<any>>;
+  children?: ReactElement<any, string | JSXElementConstructor<any>>;
 }
 
 export const SEO = ({

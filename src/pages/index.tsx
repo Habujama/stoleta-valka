@@ -6,6 +6,7 @@ import Gallery from '../components/gallery';
 import SellingPointsGroup from '../components/shared/selling-points-group';
 import TextBlockWithTitle from '../components/shared/text-block-with-title';
 import MainCTAButton from '../components/shared/main-CTA-button';
+import { SEO } from '../components/seo';
 
 const IndexPage = () => (
   <Layout>
@@ -74,4 +75,4 @@ const IndexPage = () => (
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Stoletá válka roku 1337</title>;
+export const Head: HeadFC = () => <SEO />;
