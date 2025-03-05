@@ -7,9 +7,11 @@ import { SEO } from '../components/seo';
 const PostavyPage = () => {
   return (
     <Layout>
-      <PageWrapper>
-        <Postavy />
-      </PageWrapper>
+      <main>
+        <PageWrapper>
+          <Postavy />
+        </PageWrapper>
+      </main>
     </Layout>
   );
 };

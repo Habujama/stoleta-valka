@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className='w-full px-8 py-12 mt-8 text-sm h-card'>
+      <footer id='footer' className='w-full px-8 py-12 mt-8 text-sm h-card'>
         <div className='row-start-2 sm:row-start-1 row-span-1 sm:col-start-1 col-span-1 flex flex-col'>
           <address
             className='flex flex-col not-italic text-xl gap-y-4'

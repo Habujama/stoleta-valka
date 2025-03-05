@@ -56,12 +56,11 @@ const IndexPage = () => (
               <br />
               <br />
               <strong className='text-xl xl:text-3xl'>
-                Budete v tomto diplomatickém larpu, historické simulaci a&nbsp;
-                tahové strategii zastávat jednu z&nbsp;klíčových rolí? Budete
-                mít odvahu pohnout figurkami na šachovnici dějin? Nebo budete
-                tiše tahat za nitky ze stínů? Zvládnete čelit svému osudu
-                jakožto vyslanec anglického krále, flanderský obchodník, odvážný
-                korzár, ušlechtilý rytíř či&nbsp;nebojácná diplomatka?
+                Máte odvahu pohnout figurkami na šachovnici dějin? Chopíte
+                se&nbsp;meče nebo budete tiše tahat za nitky ze stínů? Zvládnete
+                čelit svému osudu jakožto vyslanec anglického krále, flanderský
+                obchodník, odvážný korzár, ušlechtilý rytíř či&nbsp;mazaná
+                diplomatka?
               </strong>
             </>
           }

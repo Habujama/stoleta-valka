@@ -12,9 +12,11 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
     initial={{ opacity: 0, y: -100 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
-    className='flex flex-col items-center pt-5 lg:pt-10 2xl:pt-7 px-10 lg:pb-10'
+    /* className='flex flex-col items-center pt-5 lg:pt-10 2xl:pt-7 px-10 lg:pb-10' */
+    className='flex flex-col items-center px-10'
   >
-    <div className='h-5 2xl:h-10 w-40' />
+    {/* <div className='h-5 2xl:h-10 w-40' /> */}
+    <div className='h-20 w-40' />
     <Button
       to='/'
       onClick={() => toggleOpen(false)}
@@ -25,7 +27,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
         Úvod
       </p>
     </Button>
-    <Button
+    {/*  <Button
       to='/'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
@@ -34,7 +36,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
         Svět
       </p>
-    </Button>
+    </Button> */}
 
     <Button
       to='/postavy#title'
@@ -47,7 +49,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       </p>
     </Button>
 
-    <Button
+    {/* <Button
       to='/'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
@@ -56,7 +58,8 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
         Pravidla
       </p>
-    </Button>
+    </Button> */}
+    <div className='w-40 h-28' />
   </motion.div>
 );
 

@@ -48,7 +48,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
     </Button>
 
     <Button
-      to='/'
+      to='#footer'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
