@@ -5,12 +5,10 @@ interface SellingPointProps {
 }
 
 const SellingPoint = ({ text, title, staticImage }: SellingPointProps) => (
-  <li className='gap-x-2 md:gap-x-0'>
+  <li className='flex flex-col gap-x-2 md:gap-x-0'>
     {staticImage}
-    <h3 className='text-center -translate-y-16 -mt-3 md:-mt-0 md:-translate-y-24 lg:-translate-y-16 w-fit mx-auto'>
-      {title}
-    </h3>
-    <p className='flex flex-col justify-start font-bold text-center text-xl 2xl:text-2xl max-w-md'>
+    <h3 className='sr-only'>{title}</h3>
+    <p className='flex flex-col justify-start font-bold text-center pt-6 md:pt-0 text-xl 2xl:text-2xl max-w-md'>
       {text}
     </p>
   </li>

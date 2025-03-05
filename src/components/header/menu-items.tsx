@@ -24,16 +24,16 @@ const MenuItems = () => {
     <motion.div
       animate={{
         height:
-          isGameOpen || isPracticalOpen || isRegisterOpen ? '280px' : '10px',
+          isGameOpen || isPracticalOpen || isRegisterOpen ? '280px' : '5px',
       }}
       transition={{
         duration: 0.3,
         type: 'easeInOut',
         stiffness: 10,
       }}
-      className='bg-neutral-800 bg-blend-screen bg-opacity-15 w-full'
+      className='bg-neutral-800 bg-blend-screen bg-opacity-15 w-full mt-10'
     >
-      <div className='flex space-y-4 sm:space-y-0 justify-center -mt-20 mx-auto'>
+      <div className='flex space-y-4 sm:space-y-0 justify-center -mt-24 mx-auto'>
         <MenuItem
           navRef={gameRef}
           isOpen={isGameOpen}

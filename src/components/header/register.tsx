@@ -14,7 +14,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
     className='flex flex-col items-center px-10'
   >
-    <div className='h-10 w-40' />
+    <div className='h-20 w-40' />
     <Button
       href='https://forms.gle/13pdNp5YJQ1uUnKr6'
       target='_blank'
