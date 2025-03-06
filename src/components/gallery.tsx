@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useMedia } from 'react-use';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
@@ -26,41 +26,69 @@ const Gallery = () => {
 
   const [selectedImage, setSelectedImage] = useState<ImageProps | null>(null);
   const isMobile = useMedia(`(max-width: ${screens.lg})`);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  const scrollGallery = (direction: 'left' | 'right') => {
+    if (galleryRef.current) {
+      const scrollAmount = 300;
+      galleryRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <>
-      <div className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll no-scrollbar p-4 bg-neutral-800 bg-blend-screen bg-opacity-15'>
-        {contentfulFotogalerie.fotky.map(
-          (
-            photo: {
-              small: { gatsbyImageData: IGatsbyImageData };
-              large: IGatsbyImageData;
-              title: string;
+      <div className='relative w-full'>
+        <div
+          ref={galleryRef}
+          className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll no-scrollbar p-4 bg-neutral-800 bg-blend-screen bg-opacity-15'
+        >
+          {contentfulFotogalerie.fotky.map(
+            (
+              photo: {
+                small: { gatsbyImageData: IGatsbyImageData };
+                large: IGatsbyImageData;
+                title: string;
+              },
+              index: number,
+            ) => {
+              const image = getImage(photo.small);
+              return (
+                <div
+                  key={photo.title}
+                  onClick={() =>
+                    !isMobile &&
+                    setSelectedImage(
+                      photo.large ? { image: photo.large, order: index } : null,
+                    )
+                  }
+                >
+                  {image && (
+                    <GatsbyImage
+                      image={image}
+                      alt={photo.title}
+                      className='h-64 w-auto object-contain rounded-md shadow-xl mx-1 lg:hover:cursor-pointer lg:active:scale-150 transition-transform lg:active:z-10'
+                    />
+                  )}
+                </div>
+              );
             },
-            index: number,
-          ) => {
-            const image = getImage(photo.small);
-            return (
-              <div
-                key={photo.title}
-                onClick={() =>
-                  !isMobile &&
-                  setSelectedImage(
-                    photo.large ? { image: photo.large, order: index } : null,
-                  )
-                }
-              >
-                {image && (
-                  <GatsbyImage
-                    image={image}
-                    alt={photo.title}
-                    className='h-64 w-auto object-contain rounded-md shadow-xl mx-1 lg:hover:cursor-pointer lg:active:scale-150 transition-transform lg:active:z-10'
-                  />
-                )}
-              </div>
-            );
-          },
-        )}
+          )}
+        </div>
+        <button
+          className='bg-black bg-opacity-50 text-white text-2xl md:text-4xl p-2 rounded-full'
+          onClick={() => scrollGallery('left')}
+        >
+          {'LEFT'}
+        </button>
+        <button
+          className='bg-black bg-opacity-50 text-white text-2xl md:text-4xl p-2 rounded-full'
+          onClick={() => scrollGallery('right')}
+        >
+          {'RIGHT'}
+        </button>
       </div>
 
       {selectedImage && (
