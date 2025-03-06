@@ -49,6 +49,17 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       </p>
     </Button>
 
+    <Button
+      to='/#galerie'
+      onClick={() => toggleOpen(false)}
+      buttonType={ButtonType.GHOST}
+      className='w-40'
+    >
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+        Galerie
+      </p>
+    </Button>
+
     {/* <Button
       to='/'
       onClick={() => toggleOpen(false)}

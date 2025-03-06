@@ -67,7 +67,7 @@ const Gallery = () => {
 
   return (
     <>
-      <div className='relative w-full'>
+      <div id='galerie' className='relative w-full'>
         {!isMobile && (
           <button
             className='absolute left-10 top-28 z-20'
