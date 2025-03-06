@@ -4,6 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import theme from 'tailwindcss/defaultTheme';
 
+import ArrowLight from '../assets/sipka-svetla.svg';
+import Cross from '../assets/krizek-svetly.svg';
+
 const { screens } = theme;
 
 interface ImageProps {
@@ -25,12 +28,12 @@ const Gallery = () => {
       `);
 
   const [selectedImage, setSelectedImage] = useState<ImageProps | null>(null);
-  const isMobile = useMedia(`(max-width: ${screens.lg})`);
+  const isMobile = useMedia(`(max-width: ${screens.md})`);
   const galleryRef = useRef<HTMLDivElement>(null);
 
   const scrollGallery = (direction: 'left' | 'right') => {
     if (galleryRef.current) {
-      const scrollAmount = 300;
+      const scrollAmount = 500;
       galleryRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -38,9 +41,45 @@ const Gallery = () => {
     }
   };
 
+  const changeSelectedImage = (e: any, substract: boolean) => {
+    e.stopPropagation();
+    if (selectedImage) {
+      if (substract) {
+        if (selectedImage.order > 0) {
+          const prevImage =
+            contentfulFotogalerie.fotky[selectedImage.order - 1].large;
+          setSelectedImage({
+            image: prevImage,
+            order: selectedImage.order - 1,
+          });
+        }
+      }
+      if (selectedImage.order < contentfulFotogalerie.fotky.length - 1) {
+        const nextImage =
+          contentfulFotogalerie.fotky[selectedImage.order + 1].large;
+        setSelectedImage({
+          image: nextImage,
+          order: selectedImage.order + 1,
+        });
+      }
+    }
+  };
+
   return (
     <>
       <div className='relative w-full'>
+        {!isMobile && (
+          <button
+            className='absolute left-10 top-28 z-20'
+            onClick={() => scrollGallery('left')}
+          >
+            <img
+              src={ArrowLight}
+              alt='Posuň galerii doleva'
+              className='transform rotate-180 hover:scale-110'
+            />
+          </button>
+        )}
         <div
           ref={galleryRef}
           className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll no-scrollbar p-4 bg-neutral-800 bg-blend-screen bg-opacity-15'
@@ -77,18 +116,18 @@ const Gallery = () => {
             },
           )}
         </div>
-        <button
-          className='bg-black bg-opacity-50 text-white text-2xl md:text-4xl p-2 rounded-full'
-          onClick={() => scrollGallery('left')}
-        >
-          {'LEFT'}
-        </button>
-        <button
-          className='bg-black bg-opacity-50 text-white text-2xl md:text-4xl p-2 rounded-full'
-          onClick={() => scrollGallery('right')}
-        >
-          {'RIGHT'}
-        </button>
+        {!isMobile && (
+          <button
+            className='absolute right-10 bottom-28'
+            onClick={() => scrollGallery('right')}
+          >
+            <img
+              src={ArrowLight}
+              alt='Posuň galerii doprava'
+              className='hover:scale-110'
+            />
+          </button>
+        )}
       </div>
 
       {selectedImage && (
@@ -98,26 +137,20 @@ const Gallery = () => {
         >
           <div className='relative p-44'>
             <button
-              className='absolute left-10 top-1/2 transform -translate-y-1/2 text-white text-3xl md:text-5xl xl:text-7xl font-bold'
-              onClick={(e) => {
-                e.stopPropagation();
-                if (selectedImage.order > 0) {
-                  const prevImage =
-                    contentfulFotogalerie.fotky[selectedImage.order - 1].large;
-                  setSelectedImage({
-                    image: prevImage,
-                    order: selectedImage.order - 1,
-                  });
-                }
-              }}
+              className='absolute left-10 top-1/2 transform -translate-y-1/2'
+              onClick={(e) => changeSelectedImage(e, true)}
             >
-              {'<'}
+              <img
+                src={ArrowLight}
+                alt='Posuň galerii doleva'
+                className='transform rotate-180 hover:scale-110'
+              />
             </button>
             <button
-              className='absolute top-20 right-20 text-white text-3xl md:text-5xl xl:text-7xl font-bold'
+              className='absolute top-40 right-20 '
               onClick={() => setSelectedImage(null)}
             >
-              &times;
+              <img src={Cross} alt='Zavři detail galerie' />
             </button>
             <GatsbyImage
               image={selectedImage.image}
@@ -125,23 +158,14 @@ const Gallery = () => {
               className='max-w-full max-h-full object-contain'
             />
             <button
-              className='absolute right-10 top-1/2 transform -translate-y-1/2 text-white text-3xl md:text-5xl xl:text-7xl font-bold'
-              onClick={(e) => {
-                e.stopPropagation();
-                if (
-                  selectedImage.order <
-                  contentfulFotogalerie.fotky.length - 1
-                ) {
-                  const nextImage =
-                    contentfulFotogalerie.fotky[selectedImage.order + 1].large;
-                  setSelectedImage({
-                    image: nextImage,
-                    order: selectedImage.order + 1,
-                  });
-                }
-              }}
+              className='absolute right-10 top-1/2 transform -translate-y-1/2'
+              onClick={(e) => changeSelectedImage(e, false)}
             >
-              {'>'}
+              <img
+                src={ArrowLight}
+                alt='Posuň galerii doprava'
+                className='hover:scale-110'
+              />
             </button>
           </div>
         </div>
