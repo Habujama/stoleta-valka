@@ -4,7 +4,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
 import type { Text } from './index';
-import Title, { TitleLevel } from '../shared/title';
 
 interface LandProps {
   landName: string;
@@ -31,15 +30,15 @@ const Land = ({ landName, landDescription, erb }: LandProps) => {
 
   return (
     <div>
-      <div className='flex justify-center'>
-        <Title level={TitleLevel.H2}>{landName}</Title>
-      </div>
+      <div className='flex justify-center'></div>
       {erb && (
-        <div className='flex justify-self-center mx-auto w-10 md:w-24 xl:w-32 md:-mt-10'>
+        <div className='flex justify-self-center mx-auto w-10 md:w-24 xl:w-32'>
           <GatsbyImage image={erb} alt={landName} />
         </div>
       )}
-      <div className='flex pt-6 pb-8 text-xl 2xl:text-2xl'>{description}</div>
+      <div className='flex flex-col pt-6 pb-8 text-xl 2xl:text-2xl'>
+        {description}
+      </div>
     </div>
   );
 };

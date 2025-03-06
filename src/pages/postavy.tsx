@@ -1,5 +1,4 @@
 import Layout from '../components/shared/layout';
-import PageWrapper from '../components/shared/page-wrapper';
 import Postavy from '../components/postavy';
 import { HeadFC } from 'gatsby';
 import { SEO } from '../components/seo';
@@ -8,9 +7,7 @@ const PostavyPage = () => {
   return (
     <Layout>
       <main>
-        <PageWrapper>
-          <Postavy />
-        </PageWrapper>
+        <Postavy />
       </main>
     </Layout>
   );

@@ -70,7 +70,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
         Pravidla
       </p>
     </Button> */}
-    <div className='w-40 h-28' />
+    <div className='w-40 h-10' />
   </motion.div>
 );
 

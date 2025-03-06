@@ -4,13 +4,21 @@ import {
   ReactNode,
   ReactPortal,
   useMemo,
+  useState,
+  useRef,
 } from 'react';
+import { useMedia } from 'react-use';
 import { graphql, useStaticQuery } from 'gatsby';
-
-import CharacterGroupComponent from './character-group';
 import { IGatsbyImageData, StaticImage } from 'gatsby-plugin-image';
-import Title, { TitleLevel } from '../shared/title';
+import theme from 'tailwindcss/defaultTheme';
+
 import TextBlockWithTitle from '../shared/text-block-with-title';
+import PageWrapper from '../shared/page-wrapper';
+import CharacterGroupComponent from './character-group';
+import characterSheet from '../../assets/button-small.png';
+import ArrowLight from '../../assets/sipka-tmava.svg';
+
+const { screens } = theme;
 
 export type Text =
   | string
@@ -94,6 +102,22 @@ const Postavy = () => {
   const characterGroups = data.allContentfulPostavy.nodes;
   const landData = data.allContentfulSkupinyPostav.nodes;
 
+  const groupRef = useRef<HTMLDivElement>(null);
+  const isMobile = useMedia(`(max-width: ${screens.md})`);
+  const [selectedGroup, setSelectedGroup] = useState<string>('Anglie');
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  const updateScrollState = () => {
+    if (groupRef.current) {
+      setIsAtStart(groupRef.current.scrollLeft === 0);
+      setIsAtEnd(
+        groupRef.current.scrollLeft + groupRef.current.clientWidth >=
+          groupRef.current.scrollWidth,
+      );
+    }
+  };
+
   const groupCharactersByGroup = (
     characters: CharacterProps[],
   ): Record<LandType, CharacterProps[]> => {
@@ -135,42 +159,113 @@ const Postavy = () => {
     });
   }, [groupsSortedAlphabetically, landData]);
 
+  const filteredGroup = enrichedGroups.filter(
+    ([groupName]) => groupName === selectedGroup,
+  );
+
+  const scrollGroups = (direction: 'left' | 'right') => {
+    if (groupRef.current) {
+      const scrollAmount = 500;
+      groupRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+    setTimeout(updateScrollState, 300);
+  };
+
   return (
     <div>
-      <div className='md:col-span-2 pt-6 pb-4' id='title'>
-        <TextBlockWithTitle
-          title='Vyber si postavu, která ti sedne'
-          paragraph={
-            <>
-              V&nbsp;následujícím seznamu jsou postavy zemí, které na&nbsp;naší
-              hře budou zastoupené. Každá postava má svou kartu, na níž ikonami
-              vyznačeny jsou její hlavní rysy, náročnost a&nbsp;charakter její
-              hry. Kliknutím na kartu uzříš krátký medailon s&nbsp;popiskem
-              postavy.
-            </>
-          }
-        />
+      <PageWrapper>
+        <div className='md:col-span-2 pt-6 pb-4' id='title'>
+          <TextBlockWithTitle
+            title='Vyber si postavu, která ti sedne'
+            paragraph={
+              <>
+                V&nbsp;následujícím seznamu jsou postavy zemí, které
+                na&nbsp;naší hře budou zastoupené. Každá postava má svou kartu,
+                na níž ikonami vyznačeny jsou její hlavní rysy, náročnost
+                a&nbsp;charakter její hry. Kliknutím na kartu uzříš krátký
+                medailon s&nbsp;popiskem postavy.
+              </>
+            }
+          />
+        </div>
+        <div className='md:col-span-3 flex flex-col md:flex-row items-center justify-center'>
+          <StaticImage
+            src='../../assets/legenda-01.png'
+            alt='Legenda ke kartám postav'
+            placeholder='blurred'
+          />
+          <StaticImage
+            src='../../assets/legenda-02.png'
+            alt='Legenda ke kartám postav'
+            placeholder='blurred'
+          />
+        </div>
+      </PageWrapper>
+      <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-20'>
+        <div className='relative w-full'>
+          {!isMobile && !isAtStart && (
+            <button
+              className='absolute left-10 top-10 z-20'
+              onClick={() => scrollGroups('left')}
+            >
+              <img
+                src={ArrowLight}
+                alt='Posuň skupiny postav doleva'
+                className='transform rotate-180 hover:scale-110'
+              />
+            </button>
+          )}
+          <div
+            ref={groupRef}
+            className='grid grid-flow-col auto-cols-max gap-2 w-full whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
+          >
+            {enrichedGroups.map(([groupName]) => (
+              <button
+                onClick={() => setSelectedGroup(groupName)}
+                key={groupName}
+                className={`${
+                  selectedGroup === groupName
+                    ? 'font-bold underline underline-offset-8 scale-125 z-10'
+                    : ''
+                } hover:scale-125 font-serif`}
+                style={{
+                  backgroundImage: `url(${characterSheet})`,
+                  backgroundSize: 'contain',
+                  backgroundRepeat: 'no-repeat',
+                  width: 229,
+                  height: 69,
+                }}
+              >
+                {groupName}
+              </button>
+            ))}
+          </div>
+          {!isMobile && !isAtEnd && (
+            <button
+              className='absolute right-10 top-10 z-20'
+              onClick={() => scrollGroups('right')}
+            >
+              <img
+                src={ArrowLight}
+                alt='Posuň skupiny postav doprava'
+                className='hover:scale-110'
+              />
+            </button>
+          )}
+        </div>
+        <PageWrapper withMenu={false}>
+          {filteredGroup.map(([groupName, landInfo, group]) => (
+            <CharacterGroupComponent
+              groupName={groupName}
+              landInfo={landInfo}
+              group={group}
+            />
+          ))}
+        </PageWrapper>
       </div>
-      <div className='md:col-span-3 flex flex-col md:flex-row items-center justify-center'>
-        <StaticImage
-          src='../../assets/legenda-01.png'
-          alt='Legenda ke kartám postav'
-          placeholder='blurred'
-        />
-        <StaticImage
-          src='../../assets/legenda-02.png'
-          alt='Legenda ke kartám postav'
-          placeholder='blurred'
-        />
-      </div>
-      {enrichedGroups.map(([groupName, landInfo, group], index) => (
-        <CharacterGroupComponent
-          groupName={groupName}
-          landInfo={landInfo}
-          group={group}
-          key={index}
-        />
-      ))}
     </div>
   );
 };

@@ -30,6 +30,18 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<ImageProps | null>(null);
   const isMobile = useMedia(`(max-width: ${screens.md})`);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  const updateScrollState = () => {
+    if (galleryRef.current) {
+      setIsAtStart(galleryRef.current.scrollLeft === 0);
+      setIsAtEnd(
+        galleryRef.current.scrollLeft + galleryRef.current.clientWidth >=
+          galleryRef.current.scrollWidth,
+      );
+    }
+  };
 
   const scrollGallery = (direction: 'left' | 'right') => {
     if (galleryRef.current) {
@@ -39,6 +51,7 @@ const Gallery = () => {
         behavior: 'smooth',
       });
     }
+    setTimeout(updateScrollState, 300);
   };
 
   const changeSelectedImage = (e: any, substract: boolean) => {
@@ -68,7 +81,7 @@ const Gallery = () => {
   return (
     <>
       <div id='galerie' className='relative w-full'>
-        {!isMobile && (
+        {!isMobile && !isAtStart && (
           <button
             className='absolute left-10 top-28 z-20'
             onClick={() => scrollGallery('left')}
@@ -116,7 +129,7 @@ const Gallery = () => {
             },
           )}
         </div>
-        {!isMobile && (
+        {!isMobile && !isAtEnd && (
           <button
             className='absolute right-10 bottom-28'
             onClick={() => scrollGallery('right')}

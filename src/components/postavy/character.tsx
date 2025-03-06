@@ -6,6 +6,7 @@ import theme from 'tailwindcss/defaultTheme';
 import useClickAway from '../../utilities/use-click-away';
 import Title, { TitleLevel } from '../shared/title';
 import characterSheet from '../../assets/character-sheet.png';
+import Cross from '../../assets/krizek.svg';
 
 const { screens } = theme;
 
@@ -34,7 +35,7 @@ const Character = ({
     <div ref={characterRef} typeof='button' onClick={onClick}>
       {isOpen ? (
         <div
-          className='text-center overflow-y-scroll no-scrollbar p-12 sm:p-4'
+          className='relative text-center overflow-y-scroll styled-scrollbar p-12 sm:p-4'
           style={{
             backgroundImage: `url(${characterSheet})`,
             backgroundSize: 'cover',
@@ -43,8 +44,11 @@ const Character = ({
             height: isMobile ? 530 : 282,
           }}
         >
+          <button className='absolute top-3 right-3 w-3 h-3' onClick={onClick}>
+            <img src={Cross} alt='Zavři detail postavy' />
+          </button>
           <Title level={TitleLevel.H4}>{name}</Title>
-          <p className='text-sm mt-2'>{description}</p>
+          <span className='text-sm mt-2'>{description}</span>
         </div>
       ) : (
         <GatsbyImage
