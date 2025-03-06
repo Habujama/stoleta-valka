@@ -50,7 +50,6 @@ export type LandDataProps = {
   erbZem: IGatsbyImageData | null;
   nzevZem: string;
   popisZem: any;
-  rozdlova: IGatsbyImageData | null;
 };
 
 export type CharacterProps = {
@@ -86,9 +85,6 @@ const Postavy = () => {
         nzevZem
         popisZem {
           raw
-        }
-        rozdlova {
-          gatsbyImageData(placeholder: BLURRED)
         }
       }
     }

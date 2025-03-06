@@ -43,7 +43,6 @@ const CharacterGroupComponent = ({
     },
   };
 
-  const landDivider = getImage(landInfo.rozdlova);
   const erb = getImage(landInfo.erbZem);
 
   return (
@@ -51,7 +50,6 @@ const CharacterGroupComponent = ({
       <Land
         landName={groupName}
         landDescription={landInfo.popisZem}
-        landDivider={landDivider}
         erb={erb}
       />
       <div

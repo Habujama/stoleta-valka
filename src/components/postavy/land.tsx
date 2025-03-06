@@ -13,7 +13,7 @@ interface LandProps {
   erb?: IGatsbyImageData;
 }
 
-const Land = ({ landName, landDescription, landDivider, erb }: LandProps) => {
+const Land = ({ landName, landDescription, erb }: LandProps) => {
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text: Text) => <strong>{text}</strong>,
@@ -32,11 +32,7 @@ const Land = ({ landName, landDescription, landDivider, erb }: LandProps) => {
   return (
     <div>
       <div className='flex justify-center'>
-        {landDivider ? (
-          <GatsbyImage image={landDivider} alt={landName} />
-        ) : (
-          <Title level={TitleLevel.H2}>{landName}</Title>
-        )}
+        <Title level={TitleLevel.H2}>{landName}</Title>
       </div>
       {erb && (
         <div className='flex justify-self-center mx-auto w-10 md:w-24 xl:w-32 md:-mt-10'>
