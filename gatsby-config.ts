@@ -6,8 +6,8 @@ require('dotenv').config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Stoletá Válka",
-    description: "Hra, která spojuje atmosféru dramatických larpů s taktickými prvky deskové hry.",
+    title: "Stoletá Válka roku 1337",
+    description: "Hra, která spojuje atmosféru dramatických larpů s taktickými prvky deskové hry. Budete plánovat, vyjednávat a rozhodovat na bitevním poli i mimo něj. Čekají na vás role anglických vyslanců, irských vzbouřenců, prohnaných obchodníků, odvážných korzárů a dalších.",
     siteUrl: "https://stoletavalka.netlify.app/",
     image: "/prihlas-se_lev.png",
     icon :"/prihlas-se_lev.png"

@@ -43,7 +43,7 @@ const imageVariants = {
   },
 };
 
-const MobileNav: React.FC = () => {
+const MobileNav = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [showContent, setShowContent] = useState(false);
 
@@ -63,6 +63,11 @@ const MobileNav: React.FC = () => {
     if (isOpen) {
       setShowContent(true);
     }
+  };
+
+  const handleHamburgerToggle = () => {
+    window[`scrollTo`]({ top: 0, behavior: `smooth` });
+    toggleOpen();
   };
 
   useEffect(() => {
@@ -112,7 +117,7 @@ const MobileNav: React.FC = () => {
       className={navCSS}
     >
       <MobileOverlay onAnimationStart={handleOverlayComplete} />
-      <Hamburger toggle={toggleOpen} isTablet={isTablet} />
+      <Hamburger toggle={handleHamburgerToggle} isTablet={isTablet} />
       <AnimatePresence>
         {isOpen && showContent && (
           <motion.div
