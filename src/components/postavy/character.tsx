@@ -29,19 +29,19 @@ const Character = ({
 }: CharacterProps) => {
   const characterRef = useRef<HTMLDivElement>(null);
   useClickAway(characterRef, () => isOpen && onClick);
-  const isMobile = useMedia(`(max-width: ${screens.md})`);
+  const isMobile = useMedia(`(max-width: ${screens.sm})`);
 
   return (
     <div ref={characterRef} typeof='button' onClick={onClick}>
       {isOpen ? (
         <div
-          className='relative text-center overflow-y-scroll styled-scrollbar p-12 sm:p-4'
+          className='relative text-center overflow-y-scroll styled-scrollbar p-4 z-10'
           style={{
             backgroundImage: `url(${characterSheet})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            width: isMobile ? 398 : 213,
-            height: isMobile ? 530 : 282,
+            width: isMobile ? 240 : 213,
+            height: isMobile ? 320 : 282,
           }}
         >
           <button className='absolute top-3 right-3 w-3 h-3' onClick={onClick}>
