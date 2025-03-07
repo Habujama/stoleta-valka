@@ -105,18 +105,6 @@ const Postavy = () => {
   const groupRef = useRef<HTMLDivElement>(null);
   const isMobile = useMedia(`(max-width: ${screens.md})`);
   const [selectedGroup, setSelectedGroup] = useState<string>('Anglie');
-  const [isAtStart, setIsAtStart] = useState(true);
-  const [isAtEnd, setIsAtEnd] = useState(false);
-
-  const updateScrollState = () => {
-    if (groupRef.current) {
-      setIsAtStart(groupRef.current.scrollLeft === 0);
-      setIsAtEnd(
-        groupRef.current.scrollLeft + groupRef.current.clientWidth >=
-          groupRef.current.scrollWidth,
-      );
-    }
-  };
 
   const groupCharactersByGroup = (
     characters: CharacterProps[],
@@ -154,24 +142,25 @@ const Postavy = () => {
       {} as Record<string, (typeof landData)[0]>,
     );
 
-    return groupsSortedAlphabetically.map(([groupName, characters]) => {
-      return [groupName, { ...landDataMap[groupName] }, characters, ,];
+    const groups = groupsSortedAlphabetically.map(([groupName, characters]) => {
+      return [groupName, { ...landDataMap[groupName] }, characters];
     });
+
+    return [...groups, ...groups, ...groups];
   }, [groupsSortedAlphabetically, landData]);
 
-  const filteredGroup = enrichedGroups.filter(
+  const filteredGroup = enrichedGroups.find(
     ([groupName]) => groupName === selectedGroup,
   );
 
   const scrollGroups = (direction: 'left' | 'right') => {
     if (groupRef.current) {
-      const scrollAmount = 500;
+      const scrollAmount = 200;
       groupRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
       });
     }
-    setTimeout(updateScrollState, 300);
   };
 
   return (
@@ -206,9 +195,9 @@ const Postavy = () => {
       </PageWrapper>
       <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-20'>
         <div className='relative w-full'>
-          {!isMobile && !isAtStart && (
+          {!isMobile && (
             <button
-              className='absolute left-10 top-10 z-20'
+              className='absolute left-10 top-8 z-20'
               onClick={() => scrollGroups('left')}
             >
               <img
@@ -220,32 +209,32 @@ const Postavy = () => {
           )}
           <div
             ref={groupRef}
-            className='grid grid-flow-col auto-cols-max w-full justify-center whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
+            className='grid grid-flow-col auto-cols-max justify-center whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
           >
-            {enrichedGroups.map(([groupName]) => (
+            {enrichedGroups.map(([groupName], index) => (
               <button
                 onClick={() => setSelectedGroup(groupName)}
-                key={groupName}
+                key={index}
                 className={`${
                   selectedGroup === groupName
                     ? 'font-bold underline scale-125 z-10'
                     : 'mx-1'
-                } hover:scale-125 font-serif pb-6`}
+                } flex items-center justify-center hover:scale-125 font-serif`}
                 style={{
                   backgroundImage: `url(${characterSheet})`,
                   backgroundSize: 'contain',
                   backgroundRepeat: 'no-repeat',
-                  width: 120,
-                  height: 60,
+                  width: isMobile ? 130 : 160,
+                  height: isMobile ? 40 : 48,
                 }}
               >
                 {groupName}
               </button>
             ))}
           </div>
-          {!isMobile && !isAtEnd && (
+          {!isMobile && (
             <button
-              className='absolute right-10 top-10 z-20'
+              className='absolute right-10 top-8 z-20'
               onClick={() => scrollGroups('right')}
             >
               <img
@@ -257,13 +246,13 @@ const Postavy = () => {
           )}
         </div>
         <PageWrapper withMenu={false}>
-          {filteredGroup.map(([groupName, landInfo, group]) => (
+          {filteredGroup && (
             <CharacterGroupComponent
-              groupName={groupName}
-              landInfo={landInfo}
-              group={group}
+              groupName={filteredGroup[0]}
+              landInfo={filteredGroup[1]}
+              group={filteredGroup[2]}
             />
-          ))}
+          )}
         </PageWrapper>
       </div>
     </div>
