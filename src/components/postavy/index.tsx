@@ -220,7 +220,7 @@ const Postavy = () => {
           )}
           <div
             ref={groupRef}
-            className='grid grid-flow-col auto-cols-max gap-2 w-full whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
+            className='grid grid-flow-col auto-cols-max w-full justify-center whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
           >
             {enrichedGroups.map(([groupName]) => (
               <button
@@ -228,15 +228,15 @@ const Postavy = () => {
                 key={groupName}
                 className={`${
                   selectedGroup === groupName
-                    ? 'font-bold underline underline-offset-8 scale-125 z-10'
-                    : ''
-                } hover:scale-125 font-serif`}
+                    ? 'font-bold underline scale-125 z-10'
+                    : 'mx-1'
+                } hover:scale-125 font-serif pb-6`}
                 style={{
                   backgroundImage: `url(${characterSheet})`,
                   backgroundSize: 'contain',
                   backgroundRepeat: 'no-repeat',
-                  width: 229,
-                  height: 69,
+                  width: 120,
+                  height: 60,
                 }}
               >
                 {groupName}
