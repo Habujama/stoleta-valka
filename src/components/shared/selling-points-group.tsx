@@ -3,8 +3,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import SellingPoint from './selling-points';
 
 const SellingPointsGroup = () => (
-  <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 pt-20 px-12 pb-16 mb-10'>
-    <ul className='grid grid-rows-4 gap-y-6 md:gap-y-0 px-16 max-w-4xl xl:max-w-7xl mx-auto md:grid-rows-1 md:grid-cols-4 md:gap-x-6 justify-items-center items-baseline'>
+  <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 pt-12 md:pt-20 px-12 pb-16 mb-10'>
+    <ul className='flex flex-col gap-y-10 md:grid md:gap-y-0 px-16 max-w-4xl xl:max-w-7xl mx-auto md:grid-rows-1 md:grid-cols-4 md:gap-x-6 justify-items-center items-baseline'>
       <SellingPoint
         text='Vyjednávejte, intrikujte, utvářejte a&nbsp;ničte spojenectví.'
         title='diplomacie'
