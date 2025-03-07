@@ -28,17 +28,17 @@ const Hero = () => {
         </div>
       ) : (
         <div className='flex justify-center gap-x-4 items-end mx-auto'>
-          <div className='px-20'>
+          <div className='pl-20'>
             <StaticImage
-              src='../assets/kostra.png'
+              src='../assets/rytir-a-sneci.png'
               alt='Zahraj si středověkou deskovku'
               width={276}
               placeholder='blurred'
             />
           </div>
-          <div className='pl-24 lg:pl-28 xl:pl-32'>
+          <div className='pl-24'>
             <StaticImage
-              src='../assets/prihlas-se_lev.png'
+              src='../assets/kostra.png'
               alt='Zahraj si středověkou deskovku'
               width={276}
               placeholder='blurred'

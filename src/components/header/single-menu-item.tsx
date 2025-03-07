@@ -54,7 +54,7 @@ const SingleMenuItem = ({
       } py-4 bg-contain z-20 relative`}
     >
       <Title
-        level={TitleLevel.H4}
+        level={TitleLevel.H2}
         className={`${variant === 'SMALL' ? 'pt-2' : 'mt-2'}`}
       >
         {title}

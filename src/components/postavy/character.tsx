@@ -1,7 +1,14 @@
 import { ReactNode, useRef } from 'react';
+import { useMedia } from 'react-use';
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import theme from 'tailwindcss/defaultTheme';
+
 import useClickAway from '../../utilities/use-click-away';
 import Title, { TitleLevel } from '../shared/title';
+import characterSheet from '../../assets/character-sheet.png';
+import Cross from '../../assets/krizek.svg';
+
+const { screens } = theme;
 
 interface CharacterProps {
   name: string;
@@ -22,13 +29,26 @@ const Character = ({
 }: CharacterProps) => {
   const characterRef = useRef<HTMLDivElement>(null);
   useClickAway(characterRef, () => isOpen && onClick);
+  const isMobile = useMedia(`(max-width: ${screens.sm})`);
 
   return (
     <div ref={characterRef} typeof='button' onClick={onClick}>
       {isOpen ? (
-        <div className='bg-beige p-4 rounded-lg shadow-lg w-full h-96 lg:w-72 lg:h-96 text-center overflow-scroll'>
-          <Title level={TitleLevel.H3}>{name}</Title>
-          {description}
+        <div
+          className='relative text-center overflow-y-scroll styled-scrollbar p-4 z-10'
+          style={{
+            backgroundImage: `url(${characterSheet})`,
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            width: isMobile ? 240 : 213,
+            height: isMobile ? 320 : 282,
+          }}
+        >
+          <button className='absolute top-3 right-3 w-3 h-3' onClick={onClick}>
+            <img src={Cross} alt='Zavři detail postavy' />
+          </button>
+          <Title level={TitleLevel.H4}>{name}</Title>
+          <span className='text-sm mt-2'>{description}</span>
         </div>
       ) : (
         <GatsbyImage

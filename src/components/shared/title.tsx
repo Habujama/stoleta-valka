@@ -22,7 +22,8 @@ const Title = ({ children, level, className }: TitleProps) => {
     [TitleLevel.H2]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-bold',
     [TitleLevel.H3]:
       'font-serif text-xl lg:text-3xl 2xl:text-3xl font-bold underline underline-offset-8',
-    [TitleLevel.H4]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-normal',
+    [TitleLevel.H4]:
+      'font-serif text-base lg:text-lg font-bold underline underline-offset-8',
     [TitleLevel.H5]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-light',
   };
 

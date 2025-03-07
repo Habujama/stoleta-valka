@@ -22,7 +22,6 @@ h5 {
 p {
   font-weight: 500;
     font-family: 'Alegreya';
-    font-size: 22px;
 }
 
 @layer utilities {
@@ -37,4 +36,25 @@ p {
     scrollbar-width: none;
     /* Firefox */
   }
+/* width */
+.styled-scrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+.styled-scrollbar::-webkit-scrollbar-track {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle */
+.styled-scrollbar::-webkit-scrollbar-thumb {
+  background: #EADDC7;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.styled-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 }

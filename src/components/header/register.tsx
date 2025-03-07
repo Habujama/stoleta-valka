@@ -29,6 +29,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
 
     <Button
       to='https://docs.google.com/forms/d/e/1FAIpQLSc5t-xMVN6Rbo98Ss7NIxX07HYlKPEr8EynEn8dv2nCj7_9FA/viewform'
+      target='_blank'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'

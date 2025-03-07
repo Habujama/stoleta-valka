@@ -43,7 +43,6 @@ const CharacterGroupComponent = ({
     },
   };
 
-  const landDivider = getImage(landInfo.rozdlova);
   const erb = getImage(landInfo.erbZem);
 
   return (
@@ -51,12 +50,11 @@ const CharacterGroupComponent = ({
       <Land
         landName={groupName}
         landDescription={landInfo.popisZem}
-        landDivider={landDivider}
         erb={erb}
       />
       <div
         ref={listRef}
-        className='grid grid-cols-1 row-gap-2 lg:row-gap-0 lg:gap-1 sm:grid-cols-2 md:grid-cols-4'
+        className='flex flex-col gap-y-4 items-center sm:grid lg:row-gap-0 lg:gap-1 sm:grid-cols-2 md:grid-cols-4'
       >
         {group.map((postava: CharacterProps, index: number) => {
           const image = getImage(postava.rmeekPostavy);
