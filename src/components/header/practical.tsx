@@ -16,7 +16,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
   >
     <div className='h-5 2xl:h-10 w-40' />
     <Button
-      to='/'
+      to='/prakticke#misto-a-cas'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
@@ -25,25 +25,26 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
         Místo a čas
       </p>
     </Button>
+
     <Button
-      to='/'
+      to='/prakticke#co-je-v-cene'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
       <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
-        Jídlo
+        Co je v ceně
       </p>
     </Button>
 
     <Button
-      to='/'
+      to='/prakticke#harmonogram'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
       <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
-        Kostýmy
+        Harmonogram
       </p>
     </Button>
 

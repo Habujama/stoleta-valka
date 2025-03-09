@@ -14,7 +14,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
     className='flex flex-col items-center px-10'
   >
-    <div className='h-20 w-40' />
+    <div className='h-10 w-40' />
     <Button
       href='https://forms.gle/13pdNp5YJQ1uUnKr6'
       target='_blank'
@@ -28,7 +28,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     </Button>
 
     <Button
-      to='https://docs.google.com/forms/d/e/1FAIpQLSc5t-xMVN6Rbo98Ss7NIxX07HYlKPEr8EynEn8dv2nCj7_9FA/viewform'
+      href='https://docs.google.com/forms/d/e/1FAIpQLSc5t-xMVN6Rbo98Ss7NIxX07HYlKPEr8EynEn8dv2nCj7_9FA/viewform'
       target='_blank'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
@@ -36,6 +36,16 @@ const Register = ({ toggleOpen }: RegisterProps) => (
     >
       <p className='whitespace-nowrap text-lg  lg:text-xl 2xl:text-2xl font-bold'>
         Pomocníci
+      </p>
+    </Button>
+    <Button
+      to='/platby'
+      onClick={() => toggleOpen(false)}
+      buttonType={ButtonType.GHOST}
+      className='w-40'
+    >
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+        Platby
       </p>
     </Button>
     <div className='w-40 h-28' />

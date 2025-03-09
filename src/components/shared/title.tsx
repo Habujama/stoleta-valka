@@ -12,9 +12,10 @@ interface TitleProps {
   children: string | ReactElement;
   level: TitleLevel;
   className?: string;
+  id?: string;
 }
 
-const Title = ({ children, level, className }: TitleProps) => {
+const Title = ({ children, level, className, id }: TitleProps) => {
   const Tag = level as keyof JSX.IntrinsicElements;
 
   const levelStyles: Record<TitleLevel, string> = {
@@ -28,7 +29,10 @@ const Title = ({ children, level, className }: TitleProps) => {
   };
 
   return (
-    <Tag className={`${levelStyles[level]}, ${className || ''}`}>
+    <Tag
+      className={`${levelStyles[level]}, ${className || ''}`}
+      id={id ? id : undefined}
+    >
       {children}
     </Tag>
   );
