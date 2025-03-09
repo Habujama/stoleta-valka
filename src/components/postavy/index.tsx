@@ -106,6 +106,22 @@ const Postavy = () => {
   const isMobile = useMedia(`(max-width: ${screens.md})`);
   const [selectedGroup, setSelectedGroup] = useState<string>('Anglie');
 
+  const landNames = Object.values(LandType);
+  const multipliedLandNames: LandType[] = useMemo(
+    () => [
+      ...landNames,
+      ...landNames,
+      ...landNames,
+      ...landNames,
+      ...landNames,
+      ...landNames,
+      ...landNames,
+      ...landNames,
+      ...landNames,
+    ],
+    [landNames],
+  );
+
   const groupCharactersByGroup = (
     characters: CharacterProps[],
   ): Record<LandType, CharacterProps[]> => {
@@ -122,15 +138,9 @@ const Postavy = () => {
     }, {} as Record<LandType, CharacterProps[]>);
   };
 
-  const charactersByGroup: Record<string, CharacterProps[]> = useMemo(
+  const charactersByGroup = useMemo(
     () => groupCharactersByGroup(characterGroups),
     [characterGroups],
-  );
-
-  const groupsSortedAlphabetically = useMemo(
-    () =>
-      Object.entries(charactersByGroup).sort(([a], [b]) => a.localeCompare(b)),
-    [charactersByGroup],
   );
 
   const enrichedGroups = useMemo(() => {
@@ -142,12 +152,14 @@ const Postavy = () => {
       {} as Record<string, (typeof landData)[0]>,
     );
 
-    const groups = groupsSortedAlphabetically.map(([groupName, characters]) => {
-      return [groupName, { ...landDataMap[groupName] }, characters];
-    });
+    const groups = Object.entries(charactersByGroup).map(
+      ([groupName, characters]) => {
+        return [groupName, { ...landDataMap[groupName] }, characters];
+      },
+    );
 
-    return [...groups, ...groups, ...groups];
-  }, [groupsSortedAlphabetically, landData]);
+    return [...groups];
+  }, [landData]);
 
   const filteredGroup = enrichedGroups.find(
     ([groupName]) => groupName === selectedGroup,
@@ -211,12 +223,12 @@ const Postavy = () => {
             ref={groupRef}
             className='grid grid-flow-col auto-cols-max justify-center whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
           >
-            {enrichedGroups.map(([groupName], index) => (
+            {multipliedLandNames.map((name, index) => (
               <button
-                onClick={() => setSelectedGroup(groupName)}
+                onClick={() => setSelectedGroup(name)}
                 key={index}
                 className={`${
-                  selectedGroup === groupName
+                  selectedGroup === name
                     ? 'font-bold underline scale-125 z-10'
                     : 'mx-1'
                 } flex items-center justify-center hover:scale-125 font-serif`}
@@ -228,7 +240,7 @@ const Postavy = () => {
                   height: isMobile ? 40 : 48,
                 }}
               >
-                {groupName}
+                {name}
               </button>
             ))}
           </div>
