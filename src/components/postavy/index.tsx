@@ -6,6 +6,7 @@ import {
   useMemo,
   useState,
   useRef,
+  useEffect,
 } from 'react';
 import { useMedia } from 'react-use';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -102,24 +103,27 @@ const Postavy = () => {
   const characterGroups = data.allContentfulPostavy.nodes;
   const landData = data.allContentfulSkupinyPostav.nodes;
 
+  const landNames = Object.values(LandType).sort(([a], [b]) =>
+    a.localeCompare(b),
+  );
+  const extendedLandNames = [
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+    ...landNames,
+  ];
+
   const groupRef = useRef<HTMLDivElement>(null);
   const isMobile = useMedia(`(max-width: ${screens.md})`);
   const [selectedGroup, setSelectedGroup] = useState<string>('Anglie');
-
-  const landNames = Object.values(LandType);
-  const multipliedLandNames: LandType[] = useMemo(
-    () => [
-      ...landNames,
-      ...landNames,
-      ...landNames,
-      ...landNames,
-      ...landNames,
-      ...landNames,
-      ...landNames,
-      ...landNames,
-      ...landNames,
-    ],
-    [landNames],
+  const [activeIndex, setActiveIndex] = useState<number>(
+    extendedLandNames.length / 2,
   );
 
   const groupCharactersByGroup = (
@@ -165,15 +169,60 @@ const Postavy = () => {
     ([groupName]) => groupName === selectedGroup,
   );
 
-  const scrollGroups = (direction: 'left' | 'right') => {
-    if (groupRef.current) {
-      const scrollAmount = 200;
-      groupRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
+  const scrollToCenter = (index: number, instant = false) => {
+    setTimeout(() => {
+      const chosenLand = document.getElementById(index.toString());
+      if (chosenLand && groupRef.current) {
+        const container = groupRef.current;
+        const elementRect = chosenLand.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+
+        const scrollLeft =
+          container.scrollLeft +
+          (elementRect.left - containerRect.left) -
+          (container.clientWidth / 2 - elementRect.width / 2);
+
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: instant ? 'auto' : 'smooth',
+        });
+      }
+    }, 100);
   };
+
+  const changeIndexByOffset = (offset: number) => {
+    let newIndex = activeIndex + offset;
+
+    if (newIndex < 0) {
+      newIndex = extendedLandNames.length - 1; // Přeskoč na konec
+    } else if (newIndex >= extendedLandNames.length) {
+      newIndex = 0; // Přeskoč na začátek
+    }
+    setActiveIndex(newIndex);
+    setSelectedGroup(extendedLandNames[newIndex]);
+  };
+
+  const selectIndex = (index: number) => {
+    if (index < 0 || index >= extendedLandNames.length) return;
+    setActiveIndex(index);
+    setSelectedGroup(extendedLandNames[index]);
+  };
+
+  useEffect(() => {
+    if (activeIndex === 0) {
+      setTimeout(() => {
+        setActiveIndex(landNames.length);
+        scrollToCenter(landNames.length, true);
+      }, 300);
+    } else if (activeIndex === extendedLandNames.length - 1) {
+      setTimeout(() => {
+        setActiveIndex(1);
+        scrollToCenter(1, true);
+      }, 300);
+    } else {
+      scrollToCenter(activeIndex);
+    }
+  }, [activeIndex]);
 
   return (
     <div>
@@ -206,11 +255,11 @@ const Postavy = () => {
         </div>
       </PageWrapper>
       <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-20'>
-        <div className='relative w-full'>
+        <div className='relative'>
           {!isMobile && (
             <button
               className='absolute left-10 top-8 z-20'
-              onClick={() => scrollGroups('left')}
+              onClick={() => changeIndexByOffset(-1)}
             >
               <img
                 src={ArrowLight}
@@ -221,14 +270,15 @@ const Postavy = () => {
           )}
           <div
             ref={groupRef}
-            className='grid grid-flow-col auto-cols-max justify-center whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
+            className='grid grid-flow-col auto-cols-max justify-center  whitespace-nowrap overflow-x-scroll no-scrollbar py-8'
           >
-            {multipliedLandNames.map((name, index) => (
+            {extendedLandNames.map((name, index) => (
               <button
-                onClick={() => setSelectedGroup(name)}
+                onClick={() => selectIndex(index)}
                 key={index}
+                id={index.toString()}
                 className={`${
-                  selectedGroup === name
+                  index === activeIndex
                     ? 'font-bold underline scale-125 z-10'
                     : 'mx-1'
                 } flex items-center justify-center hover:scale-125 font-serif`}
@@ -247,7 +297,7 @@ const Postavy = () => {
           {!isMobile && (
             <button
               className='absolute right-10 top-8 z-20'
-              onClick={() => scrollGroups('right')}
+              onClick={() => changeIndexByOffset(+1)}
             >
               <img
                 src={ArrowLight}
