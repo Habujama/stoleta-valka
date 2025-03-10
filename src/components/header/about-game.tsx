@@ -16,7 +16,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
     className='flex flex-col items-center px-10'
   >
     {/* <div className='h-5 2xl:h-10 w-40' /> */}
-    <div className='h-20 w-40' />
+    <div className='h-10 md:h-14 w-40' />
     <Button
       to='/'
       onClick={() => toggleOpen(false)}

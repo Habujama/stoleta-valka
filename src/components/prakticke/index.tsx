@@ -87,12 +87,11 @@ const PracticalPage = () => {
     : null;
 
   return (
-    <div>
+    <div id='misto-a-cas'>
       <PageWrapper>
         <Title
           level={TitleLevel.H3}
           className='underline-offset-8 text-center mt-20 xl:mt-32 mb-2'
-          id='misto-a-cas'
         >
           Místo a termín Stoleté války
         </Title>
