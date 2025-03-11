@@ -25,6 +25,9 @@ p {
 }
 
 @layer utilities {
+  .luminosity {
+      mix-blend-mode: luminosity;
+    }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
     /* Chrome, Safari, and Opera */
