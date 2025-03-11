@@ -54,10 +54,9 @@ const Character = ({
         <GatsbyImage
           image={image}
           alt={name}
-          style={{
-            filter: taken ? 'grayscale(100%)' : 'none',
-          }}
-          className='hover:cursor-pointer hover:scale-105 active:scale-95'
+          className={`${
+            taken ? 'luminosity opacity-50' : ''
+          } hover:cursor-pointer hover:scale-105 active:scale-95`}
         />
       )}
     </div>
