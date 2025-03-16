@@ -34,6 +34,7 @@ export type Text =
 export enum LandType {
   ANGLIE = 'Anglie',
   ARAGON = 'Aragon',
+  BENATKY = 'Benátky',
   BRETAN = 'Bretaň',
   FLANDRY = 'Flandry',
   FRANCIE = 'Francie',
