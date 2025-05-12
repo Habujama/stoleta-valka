@@ -12,7 +12,7 @@ const IndexPage = () => (
   <Layout>
     <main>
       <PageWrapper>
-        <div className='md:mt-24 md:mb-16 lg:mb-32'>
+        <div className='md:mt-24 md:mb-16 lg:mb-32' id='uvod'>
           <TextBlockWithTitle
             title='Vaše role v příběhu'
             paragraph={

@@ -18,6 +18,7 @@ import PageWrapper from '../shared/page-wrapper';
 import CharacterGroupComponent from './character-group';
 import characterSheet from '../../assets/button-small.png';
 import ArrowLight from '../../assets/sipka-tmava.svg';
+import Title, { TitleLevel } from '../shared/title';
 
 const { screens } = theme;
 
@@ -229,8 +230,13 @@ const Postavy = () => {
     <div>
       <PageWrapper>
         <div className='md:col-span-2 pt-6 pb-4' id='title'>
+          <Title
+            level={TitleLevel.H3}
+            className='underline-offset-8 text-center mt-20 xl:mt-32 mb-2'
+          >
+            Vyber si postavu, která ti sedne
+          </Title>
           <TextBlockWithTitle
-            title='Vyber si postavu, která ti sedne'
             paragraph={
               <>
                 V&nbsp;následujícím seznamu jsou postavy zemí, které

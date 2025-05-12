@@ -15,28 +15,37 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
-    query {
-        background: file(relativePath: { eq: "pozadi.jpg" }) {
-        childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-        }
+  query {
+    background: file(relativePath: { eq: "pozadi.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+      }
     }
-}
+    mobileBackground: file(relativePath: { eq: "pozadi-mobile.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+      }
+    }
+  }
   `);
 
   const imageSrc = getSrc(data.background.childImageSharp.gatsbyImageData);
+  const mobileImageSrc = getSrc(
+    data.mobileBackground.childImageSharp.gatsbyImageData,
+  );
 
   const isBig = useMedia(`(min-width: ${screens['2xl']})`);
+  const isMobile = useMedia(`(max-width: ${screens['lg']})`);
 
   return (
     <div>
       <main
         style={{
-          backgroundImage: `url(${imageSrc})`,
-          backgroundSize: `${isBig ? 'cover' : 'contain'}`,
+          backgroundImage: `url(${isMobile ? mobileImageSrc : imageSrc})`,
+          backgroundSize: `${isBig ? 'cover' : isMobile ? '' : 'contain'}`,
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center center',
-          backgroundAttachment: 'fixed',
+          backgroundAttachment: isMobile ? 'scroll' : 'fixed',
           width: '100%',
         }}
       >
