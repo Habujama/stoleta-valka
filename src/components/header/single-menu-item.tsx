@@ -50,11 +50,12 @@ const SingleMenuItem = ({
       onClick={() => setIsOpen(!isOpen)}
       buttonType={variant === 'BIG' ? ButtonType.SECONDARY : ButtonType.PRIMARY}
       className={`${
-        variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 2xl:w-[455px] text-2xl'
+        variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 2xl:w-[455px]'
       } py-4 bg-contain z-20 relative`}
     >
       <Title
         level={TitleLevel.H2}
+        withoutBottomMargin
         className={`${variant === 'SMALL' ? 'pt-2' : 'mt-2'}`}
       >
         {title}

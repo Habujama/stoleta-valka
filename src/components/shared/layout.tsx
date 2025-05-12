@@ -27,13 +27,14 @@ const Layout = ({ children }: LayoutProps) => {
   const imageSrc = getSrc(data.background.childImageSharp.gatsbyImageData);
 
   const isBig = useMedia(`(min-width: ${screens['2xl']})`);
+  const isMobile = useMedia(`(max-width: ${screens['lg']})`);
 
   return (
     <div>
       <main
         style={{
           backgroundImage: `url(${imageSrc})`,
-          backgroundSize: `${isBig ? 'cover' : 'contain'}`,
+          backgroundSize: `${isBig ? 'cover' : isMobile ? 'cover' : 'contain'}`,
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center center',
           backgroundAttachment: 'fixed',

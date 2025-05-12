@@ -18,7 +18,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
     {/* <div className='h-5 2xl:h-10 w-40' /> */}
     <div className='h-10 md:h-14 w-40' />
     <Button
-      to='/'
+      to='/#uvod'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
