@@ -60,8 +60,8 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       </p>
     </Button>
 
-    {/* <Button
-      to='/'
+    <Button
+      to='/pravidla'
       onClick={() => toggleOpen(false)}
       buttonType={ButtonType.GHOST}
       className='w-40'
@@ -69,7 +69,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
         Pravidla
       </p>
-    </Button> */}
+    </Button>
     <div className='w-40 h-10' />
   </motion.div>
 );
