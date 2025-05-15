@@ -53,12 +53,12 @@ const PravidlaPage = () => {
           }
         />
       </PageWrapper>
-      <div className='flex flex-col sm:flex-row bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-10 sm:pb-20 px-4 sm:px-20'>
+      <div className='flex flex-col sm:flex-row justify-center bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-10 sm:pb-20 px-4 sm:px-20'>
         <div className='w-auto 2xl:max-w-7xl sm:flex 2xl:justify-center'>
           <div
             className='grid grid-flow-col auto-cols-max whitespace-nowrap overflow-x-scroll no-scrollbar py-8
           sm:flex sm:flex-col sm:space-y-2 space-x-0 sm:mb-0 sm:py-4 sm:pl-6 sm:pr-10
-          2xl:justify-center 2xl:space-y-0 2xl:space-x-2 mb-4'
+          2xl:space-y-0 2xl:space-x-2 mb-4'
           >
             {sections.map((section, index) => (
               <button
