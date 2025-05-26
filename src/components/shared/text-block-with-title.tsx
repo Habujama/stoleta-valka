@@ -25,7 +25,7 @@ const TextBlockWithTitle = ({
         {title}
       </Title>
     )}
-    <p className='text-center text-xl xl:text-2xl'>{paragraph}</p>
+    <p className='text-center text-xl xl:text-2xl mt-3'>{paragraph}</p>
   </div>
 );
 
