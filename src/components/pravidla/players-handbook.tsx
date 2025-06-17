@@ -9,7 +9,7 @@ const PlayersHandbook = () => (
       <hr className='border-yellow-800' />
       <Title level={TitleLevel.H5}>Strategická mapa</Title>
       <hr className='border-yellow-800' />
-      <div className='grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1 gap-8'>
+      <div className='flex flex-col  sm:grid sm:grid-cols-2 sm:grid-rows-1 gap-8'>
         <SmallTextBlockWithTitle
           title='Armáda'
           paragraph={
@@ -99,7 +99,7 @@ const PlayersHandbook = () => (
       <p className='font-thin text-lg'>
         Uznávané dohody (potřeba vložit do BOXU NA SMOUVY):
       </p>
-      <div className='grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1 gap-8'>
+      <div className='flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-1 gap-8'>
         <SmallTextBlockWithTitle
           title='Dohoda o neútočení'
           paragraph={
@@ -117,8 +117,8 @@ const PlayersHandbook = () => (
             <>
               <ol className='list-disc'>
                 <li>
-                  Pokud je jedna strana napa- dena agresorem, druhá se zavazuje
-                  ji bránit: vyhlásit válku a v rámci možností se jí účastnit
+                  Pokud je jedna strana napadena agresorem, druhá se zavazuje ji
+                  bránit: vyhlásit válku a v rámci možností se jí účastnit
                   (např. i finančně)
                 </li>
                 <li>Zákaz vstupu vojsk na území bez souhlasu</li>

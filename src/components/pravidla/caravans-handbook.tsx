@@ -12,7 +12,7 @@ const CaravansHandbook = () => {
           s&nbsp;ní naložit dle své libosti.'
     >
       <SmallTextBlockWithTitle
-        title='Karta karavany'
+        title='KARTA KARAVANY'
         paragraph={
           <p>
             Na své kartě karavany vidíš svůj aktuální vliv, svou roli postavy a
@@ -20,8 +20,9 @@ const CaravansHandbook = () => {
           </p>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Vliv'
+        title='VLIV'
         paragraph={
           <>
             Za každé město/hrad ze své karty, které navštívíš, získáš 1&nbsp;bod
@@ -33,14 +34,16 @@ const CaravansHandbook = () => {
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Podkopávání vlivu'
+        title='PODKOPÁVÁNÍ VLIVU'
         paragraph={
           <>Skrze agenty je možné podkopávat vliv ostatních členů karavany.</>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Vůdce karavany'
+        title='VŮDCE KARAVANY'
         paragraph={
           <>
             Jeho slovo má větší váhu při rozhodování, kam karavana vyrazí.
@@ -48,8 +51,9 @@ const CaravansHandbook = () => {
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Hlasování o vůdci karavany'
+        title='HLASOVÁNÍ O VŮDCI KARAVANY'
         paragraph={
           <>
             Při jednání se Správcem karavany může kterýkoliv člen karavany
@@ -59,8 +63,9 @@ const CaravansHandbook = () => {
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Pohyb karavany'
+        title='POHYB KARAVANY'
         paragraph={
           <>
             Všechny členy karavany v&nbsp;každém kole navštíví Správce karavany.
@@ -69,8 +74,9 @@ const CaravansHandbook = () => {
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Povinnosti'
+        title='POVINNOSTI'
         paragraph={
           <>
             Pokud nějaká postava opustí karavanu předčasně, ostatní se musí
@@ -83,7 +89,7 @@ const CaravansHandbook = () => {
       <Title level={TitleLevel.H5}>BOHATNUTÍ A RŮST KARAVANY</Title>
       <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Pokladnice'
+        title='POKLADNICE'
         paragraph={
           <>
             Veškeré mince, které karavana během hry získává, se ukládají do
@@ -91,13 +97,11 @@ const CaravansHandbook = () => {
           </>
         }
       />
-      <div className=''>
-        <StaticImage
-          src='../../assets/karavana.png'
-          alt='Jak karavana získává peníze'
-          sizes='medium'
-        />
-      </div>
+      <StaticImage
+        src='../../assets/karavana.png'
+        alt='Jak karavana získává peníze'
+        sizes='medium'
+      />
     </RulesWrapper>
   );
 };

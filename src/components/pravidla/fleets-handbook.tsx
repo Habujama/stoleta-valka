@@ -5,7 +5,7 @@ import StyledTable from '../shared/styled-table';
 const FleetsHandbook = () => (
   <RulesWrapper title='Příručka flotily'>
     <SmallTextBlockWithTitle
-      title='Flotila'
+      title='FLOTILA'
       paragraph={
         <>
           <ol className='list-disc'>
@@ -36,9 +36,9 @@ const FleetsHandbook = () => (
         ]}
       />
     </div>
-    <div className='flex flex-col px-4 space-y-4'>
+    <div className='flex flex-col space-y-4'>
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title=''
         paragraph={
           <>
             Námořníky je třeba živit a&nbsp;tak je potřeba za každou ze svých
@@ -53,8 +53,9 @@ const FleetsHandbook = () => (
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Pohyb flotil'
+        title='POHYB FLOTIL'
         paragraph={
           <>
             Jednotlivé vzdálenosti jsou dopředu určené a&nbsp;budou představeny
@@ -63,8 +64,9 @@ const FleetsHandbook = () => (
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Vliv'
+        title='VLIV'
         paragraph={
           <>
             Může se stát, že se jím nemusíte celou hru zabývat. Jindy ale může
@@ -76,8 +78,9 @@ const FleetsHandbook = () => (
           </>
         }
       />
+      <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='Obléhání'
+        title='OBLÉHÁNÍ'
         paragraph={
           <>
             Pokud je základní síla obrany města 5 a&nbsp;více, útočník musí dané

@@ -7,7 +7,7 @@ const ArmysHandbook = () => {
     <RulesWrapper title='Příručka armády'>
       <div className='flex flex-col space-y-5'>
         <SmallTextBlockWithTitle
-          title='Armáda'
+          title='ARMÁDA'
           paragraph={
             <>
               <ol className='list-disc'>
@@ -41,9 +41,8 @@ const ArmysHandbook = () => {
           ]}
         />
       </div>
-      <div className='flex flex-col px-4 space-y-4'>
+      <div className='flex flex-col space-y-4'>
         <SmallTextBlockWithTitle
-          title=''
           paragraph={
             <>
               Vojáky je třeba živit a&nbsp;tak je potřeba za každou ze svých
@@ -53,8 +52,9 @@ const ArmysHandbook = () => {
             </>
           }
         />
+        <hr className='border-yellow-800' />
         <SmallTextBlockWithTitle
-          title='Pohyb jednotek'
+          title='POHYB JEDNOTEK'
           paragraph={
             <>
               Každá jednotka ujde po mapě určitou vzdálenost a&nbsp;to
@@ -70,8 +70,9 @@ const ArmysHandbook = () => {
             </>
           }
         />
+        <hr className='border-yellow-800' />
         <SmallTextBlockWithTitle
-          title='Vliv'
+          title='VLIV'
           paragraph={
             <>
               Může se stát, že se jím nemusíte celou hru zabývat. Jindy ale může
@@ -85,8 +86,9 @@ const ArmysHandbook = () => {
             </>
           }
         />
+        <hr className='border-yellow-800' />
         <SmallTextBlockWithTitle
-          title='Hrady'
+          title='HRADY'
           paragraph={
             <>
               Střeží provincie a&nbsp;bývá složité je dobýt. Nelze v nich stavět
@@ -99,8 +101,9 @@ const ArmysHandbook = () => {
             </>
           }
         />
+        <hr className='border-yellow-800' />
         <SmallTextBlockWithTitle
-          title='Obléhání'
+          title='OBLÉHÁNÍ'
           paragraph={
             <>
               Pokud je město opevněno (základní obrana 5 a&nbsp;víc), útočník

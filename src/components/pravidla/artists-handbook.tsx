@@ -5,13 +5,11 @@ const ArtistsHandbook = () => {
   return (
     <RulesWrapper title='Příručka umělce'>
       <SmallTextBlockWithTitle
-        title='Armáda'
         paragraph={
-          <>
-            <ol className='list-disc'>
-              <li></li>
-            </ol>
-          </>
+          <p>
+            Příručku umělce teprve připravujeme. Mějte strpení, prosím. Brzy ji
+            dodáme.
+          </p>
         }
       />
     </RulesWrapper>
