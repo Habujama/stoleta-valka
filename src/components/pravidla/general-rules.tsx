@@ -1,18 +1,15 @@
 import SmallTextBlockWithTitle from '../shared/small-text-block';
-import Title, { TitleLevel } from '../shared/title';
+import RulesWrapper from '../shared/rules-wrapper';
 
 const GeneralRules = () => {
   return (
-    <div className='flex flex-col ml-4 mr-12 w-full sm:w-11/12 px-4'>
-      <Title level={TitleLevel.H1} className='text-center'>
-        Obecná pravidla
-      </Title>
-      <p className='text-center text-xl mb-6'>
-        Milí hráči, kromě pravidel, týkajících se hry a&nbsp;herní mechaniky,
+    <RulesWrapper
+      title='Obecná pravidla'
+      subtitle='Milí hráči, kromě pravidel, týkajících se hry a&nbsp;herní mechaniky,
         existuje i&nbsp;pár pravidel, která nám zajistí příjemné společné
         fungování. Věříme, že používáte svůj mozek k tomu, k&nbsp;čemu je určen,
-        pro případ výpadku zde však uvádíme základní přehled.
-      </p>
+        pro případ výpadku zde však uvádíme základní přehled.'
+    >
       <div className='flex flex-col space-y-5'>
         <SmallTextBlockWithTitle
           title='Jak probíhá hra'
@@ -243,7 +240,7 @@ const GeneralRules = () => {
         <br />
         Váš orgtým
       </p>
-    </div>
+    </RulesWrapper>
   );
 };
 

@@ -1,91 +1,45 @@
 import SmallTextBlockWithTitle from '../shared/small-text-block';
-import Title, { TitleLevel } from '../shared/title';
+import RulesWrapper from '../shared/rules-wrapper';
+import StyledTable from '../shared/styled-table';
 
 const ArmysHandbook = () => {
   return (
-    <div className='md:ml-4 md:mr-12 sm:w-11/12'>
-      <div className='flex flex-col px-4'>
-        <Title level={TitleLevel.H1} className='text-center'>
-          Příručka armády
-        </Title>
-        <div className='flex flex-col space-y-5'>
-          <SmallTextBlockWithTitle
-            title='Armáda'
-            paragraph={
-              <>
-                <ol className='list-disc'>
-                  <li>
-                    Armáda je na mapě znázorněna figurkou vojáka
-                    s&nbsp;praporem. Každý prapor má své označení číslem.
-                  </li>
-                  <li>
-                    Podle úrovně, kterou má hráč ve své kartě armády
-                    (&nbsp;★/★★/★★★&nbsp;), může mít jeho armáda 3/5/7 oddílů.
-                  </li>
-                  <li>
-                    V provincii, kde se daná armáda nachází, lze naverbovat
-                    v&nbsp;jednom kole tolik jednotek, kolik se v&nbsp;ní
-                    nachází měst.
-                  </li>
-                </ol>
-              </>
-            }
-          />
-        </div>
+    <RulesWrapper title='Příručka armády'>
+      <div className='flex flex-col space-y-5'>
+        <SmallTextBlockWithTitle
+          title='Armáda'
+          paragraph={
+            <>
+              <ol className='list-disc'>
+                <li>
+                  Armáda je na mapě znázorněna figurkou vojáka s&nbsp;praporem.
+                  Každý prapor má své označení číslem.
+                </li>
+                <li>
+                  Podle úrovně, kterou má hráč ve své kartě armády
+                  (&nbsp;★/★★/★★★&nbsp;), může mít jeho armáda 3/5/7 oddílů.
+                </li>
+                <li>
+                  V provincii, kde se daná armáda nachází, lze naverbovat
+                  v&nbsp;jednom kole tolik jednotek, kolik se v&nbsp;ní nachází
+                  měst.
+                </li>
+              </ol>
+            </>
+          }
+        />
       </div>
       <div className='justify-items-center my-4'>
-        <table className='text-center table-auto border border-stone-500 p-8'>
-          <thead className='bg-stone-600 bg-opacity-40'>
-            <tr>
-              <th className='border border-stone-500 p-2 '>Jednotky pozemní</th>
-              <th className='border border-stone-500 p-2 '>síla</th>
-              <th className='border border-stone-500 p-2 '>podmínka</th>
-              <th className='border border-stone-500 p-2 '>CENA</th>
-            </tr>
-          </thead>
-          <tbody className='border border-stone-500 p-2 '>
-            <tr className='border border-stone-500 p-2 hover:bg-stone-400 hover:bg-opacity-30 hover:cursor-pointer'>
-              <td className='font-semibold border border-stone-500'>pěchota</td>
-              <td className='border border-stone-500 p-2'>1</td>
-              <td className='border border-stone-500 p-2'>-</td>
-              <td className='border border-stone-500 p-2'>2</td>
-            </tr>
-            <tr className='border border-stone-500 p-2 hover:bg-stone-400 hover:bg-opacity-30 hover:cursor-pointer'>
-              <td className='font-semibold border border-stone-500'>střelci</td>
-              <td className='border border-stone-500 p-2'>2</td>
-              <td className='border border-stone-500 p-2'>kasárna</td>
-              <td className='border border-stone-500 p-2'>4</td>
-            </tr>
-            <tr className='border border-stone-500 p-2 hover:bg-stone-400 hover:bg-opacity-30 hover:cursor-pointer'>
-              <td className='font-semibold border border-stone-500'>
-                pěší rytíři
-              </td>
-              <td className='border border-stone-500 p-2'>3</td>
-              <td className='border border-stone-500 p-2'>
-                kasárna&nbsp;a&nbsp;kovárna
-              </td>
-              <td className='border border-stone-500 p-2'>železo</td>
-            </tr>
-            <tr className='border border-stone-500 p-2 hover:bg-stone-400 hover:bg-opacity-30 hover:cursor-pointer'>
-              <td className='font-semibold border border-stone-500'>jízda</td>
-              <td className='border border-stone-500 p-2'>4</td>
-              <td className='border border-stone-500 p-2'>
-                kasárna&nbsp;a&nbsp;cvičiště jízdy
-              </td>
-              <td className='border border-stone-500 p-2'>železo</td>
-            </tr>
-            <tr className='border border-stone-500 p-2 hover:bg-stone-400 hover:bg-opacity-30 hover:cursor-pointer'>
-              <td className='font-semibold border border-stone-500'>
-                obléhací zbraně
-              </td>
-              <td className='border border-stone-500 p-2'>0/4</td>
-              <td className='border border-stone-500 p-2'>
-                kasárna&nbsp;a&nbsp;kovárna
-              </td>
-              <td className='border border-stone-500 p-2'>4</td>
-            </tr>
-          </tbody>
-        </table>
+        <StyledTable
+          tableHead={['Jednotky pozemní', 'Síla', 'Podmínka', 'CENA']}
+          tableBodyRow={[
+            ['pěchota', '1', '-', '2'],
+            ['střelci', '2', 'kasárna', '4'],
+            ['pěší rytíři', '3', 'kasárna a kovárna', 'železo'],
+            ['jízda', '4', 'kasárna a cvičiště jízdy', 'železo'],
+            ['obléhací zbraně', '0/4', 'kasárna a kovárna', '4'],
+          ]}
+        />
       </div>
       <div className='flex flex-col px-4 space-y-4'>
         <SmallTextBlockWithTitle
@@ -168,7 +122,7 @@ const ArmysHandbook = () => {
           }
         />
       </div>
-    </div>
+    </RulesWrapper>
   );
 };
 
