@@ -41,11 +41,11 @@ const RulersHandbook = () => {
         title='STAVBY'
         paragraph={
           <p>
-            Domlouváš je u&nbsp;<strong>Vrchního obchodníka</strong>. Za jedno
-            kolo můžeš postavit v&nbsp;každém městě/hradu jednu místní a v každé
-            provincii jednu provinční stavbu. Pokud nemáš celou provincii pod
-            kontrolou (např. jedno z&nbsp;měst patří jinému vládci, v provincii
-            řádí rebelie nebo se zde nachází armáda nepřítele), pak není možné
+            Domlouváš je u&nbsp;<strong>Stavbaře</strong>. Za jedno kolo můžeš
+            postavit v&nbsp;každém městě/hradu jednu místní a v každé provincii
+            jednu provinční stavbu. Pokud nemáš celou provincii pod kontrolou
+            (např. jedno z&nbsp;měst patří jinému vládci, v provincii řádí
+            rebelie nebo se zde nachází armáda nepřítele), pak není možné
             v&nbsp;této provincii stavět <strong>žádné</strong> stavby.
           </p>
         }
@@ -100,9 +100,8 @@ const RulersHandbook = () => {
             </p>
             <br />
             <p>
-              (Technologie se řeší u&nbsp;<strong>Vrchního obchodníka</strong>,
-              který ti tvůj výběr tech- nologie zaznačí do tabulky a také
-              vyhodnotí efekt.)
+              (Technologie se řeší u&nbsp;<strong>Petra Luby</strong>, který ti
+              tvůj výběr technologie zaznačí do tabulky a také vyhodnotí efekt.)
             </p>
           </>
         }
