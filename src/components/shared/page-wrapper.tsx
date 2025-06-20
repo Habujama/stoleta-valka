@@ -31,7 +31,7 @@ const PageWrapper = ({ children, withMenu = true }: PageWrapper) => {
             <MenuItems />
           </header>
         )}
-        <div className='max-w-5xl mx-auto px-20'>{children}</div>
+        <div className='max-w-5xl mx-auto px-20 mt-24'>{children}</div>
       </div>
     </MotionConfig>
   );
