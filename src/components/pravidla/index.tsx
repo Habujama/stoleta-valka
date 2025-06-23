@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import theme from 'tailwindcss/defaultTheme';
 
@@ -15,28 +15,85 @@ import PiratesHandbook from './pirates-handbook';
 import RulersHandbook from './rulers-handbook';
 import MerchantsHandbook from './merchants-handbook';
 import PlayersHandbook from './players-handbook';
+import { navigate } from 'gatsby';
 
 const { screens } = theme;
 
-enum rulesSectionsNames {
-  GENERAL = 'Obecná pravidla',
-  PLAYERS_HANDBOOK = 'Příručka hráče',
-  ARMY_HANDBOOK = 'Příručka armády',
-  FLEET_HANDBOOK = 'Příručka flotily',
-  CARAVAN_HANDBOOK = 'Příručka karavany',
-  MERCHANTS_HANDBOOK = 'Příručka obchodníka',
-  ARTISTS_HANDBOOK = 'Příručka umělce',
-  RULERS_HANDBOOK = 'Příručka vládce',
-  PIRATES_HANDBOOK = 'Příručka piráta',
+enum RulesSectionsNames {
+  Obecna_pravidla = 'Obecná pravidla',
+  Mini_prirucka = 'Mini příručka',
+  Prirucka_armady = 'Příručka armády',
+  Prirucka_flotily = 'Příručka flotily',
+  Prirucka_karavany = 'Příručka karavany',
+  Prirucka_obchodnika = 'Příručka obchodníka',
+  Prirucka_umelce = 'Příručka umělce',
+  Prirucka_vladce = 'Příručka vládce',
+  Prirucka_pirata = 'Příručka piráta',
 }
 
-const sections = Object.values(rulesSectionsNames);
+const sectionKeys = Object.keys(
+  RulesSectionsNames,
+) as (keyof typeof RulesSectionsNames)[];
 
 const PravidlaPage = () => {
   const isMobile = useMedia(`(max-width: ${screens.md})`);
-  const [selectedGroup, setSelectedGroup] = useState<rulesSectionsNames>(
-    rulesSectionsNames.GENERAL,
-  );
+  const [selectedGroup, setSelectedGroup] =
+    useState<keyof typeof RulesSectionsNames>('Obecna_pravidla');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search);
+      const param = searchParams.get(
+        'selection',
+      ) as keyof typeof RulesSectionsNames;
+
+      if (param && sectionKeys.includes(param)) {
+        setSelectedGroup(param);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const updateSelectionFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const selected = params.get(
+        'selection',
+      ) as keyof typeof RulesSectionsNames;
+      if (selected && RulesSectionsNames[selected]) {
+        setSelectedGroup(selected);
+      } else {
+        setSelectedGroup('Obecna_pravidla');
+      }
+    };
+
+    updateSelectionFromUrl(); // run on mount
+
+    window.addEventListener('popstate', updateSelectionFromUrl); // listen to back/forward
+
+    return () => {
+      window.removeEventListener('popstate', updateSelectionFromUrl);
+    };
+  }, []);
+
+  const handleClick = (section: keyof typeof RulesSectionsNames) => {
+    navigate(`?selection=${section}#1`);
+    setSelectedGroup(section);
+  };
+
+  const sectionComponentMap: Record<
+    keyof typeof RulesSectionsNames,
+    JSX.Element
+  > = {
+    Obecna_pravidla: <GeneralRules />,
+    Mini_prirucka: <PlayersHandbook />,
+    Prirucka_armady: <ArmysHandbook />,
+    Prirucka_flotily: <FleetsHandbook />,
+    Prirucka_karavany: <CaravansHandbook />,
+    Prirucka_obchodnika: <MerchantsHandbook />,
+    Prirucka_umelce: <ArtistsHandbook />,
+    Prirucka_vladce: <RulersHandbook />,
+    Prirucka_pirata: <PiratesHandbook />,
+  };
 
   return (
     <div>
@@ -53,16 +110,19 @@ const PravidlaPage = () => {
           }
         />
       </PageWrapper>
-      <div className='flex flex-col sm:flex-row justify-center bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-10 sm:pb-20 px-4 sm:px-20'>
+      <div
+        className='flex flex-col sm:flex-row justify-center bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-10 sm:pb-20 px-4 sm:px-20'
+        id='1'
+      >
         <div className='w-auto 2xl:max-w-7xl sm:flex 2xl:justify-center'>
           <div
             className='grid grid-flow-col auto-cols-max whitespace-nowrap overflow-x-scroll no-scrollbar py-8
           sm:flex sm:flex-col sm:space-y-2 space-x-0 sm:mb-0 sm:py-4 sm:pl-6 sm:pr-10
           2xl:space-y-0 2xl:space-x-2 mb-4'
           >
-            {sections.map((section, index) => (
+            {sectionKeys.map((section, index) => (
               <button
-                onClick={() => setSelectedGroup(section)}
+                onClick={() => handleClick(section)}
                 key={index}
                 id={index.toString()}
                 className={`${
@@ -81,35 +141,11 @@ const PravidlaPage = () => {
                   height: isMobile ? 50 : 48,
                 }}
               >
-                <span className='px-4'>{section}</span>
+                <span className='px-4'>{RulesSectionsNames[section]}</span>
               </button>
             ))}
           </div>
-          {selectedGroup === rulesSectionsNames.GENERAL && <GeneralRules />}
-          {selectedGroup === rulesSectionsNames.PLAYERS_HANDBOOK && (
-            <PlayersHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.FLEET_HANDBOOK && (
-            <FleetsHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.CARAVAN_HANDBOOK && (
-            <CaravansHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.MERCHANTS_HANDBOOK && (
-            <MerchantsHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.ARMY_HANDBOOK && (
-            <ArmysHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.ARTISTS_HANDBOOK && (
-            <ArtistsHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.RULERS_HANDBOOK && (
-            <RulersHandbook />
-          )}
-          {selectedGroup === rulesSectionsNames.PIRATES_HANDBOOK && (
-            <PiratesHandbook />
-          )}
+          {sectionComponentMap[selectedGroup]}
         </div>
       </div>
     </div>

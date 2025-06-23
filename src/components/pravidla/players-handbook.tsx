@@ -4,7 +4,7 @@ import RulesWrapper from '../shared/rules-wrapper';
 import StyledTable from '../shared/styled-table';
 
 const PlayersHandbook = () => (
-  <RulesWrapper title='Příručka hráče'>
+  <RulesWrapper title='Mini příručka'>
     <div className='flex flex-col space-y-5'>
       <hr className='border-yellow-800' />
       <Title level={TitleLevel.H5}>Strategická mapa</Title>
