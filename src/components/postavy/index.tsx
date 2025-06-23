@@ -229,10 +229,10 @@ const Postavy = () => {
   return (
     <div>
       <PageWrapper>
-        <div className='md:col-span-2 pt-6 pb-4' id='title'>
+        <div className='md:col-span-2 pb-4' id='title'>
           <Title
             level={TitleLevel.H3}
-            className='underline-offset-8 text-center mt-20 xl:mt-32 mb-2'
+            className='underline-offset-8 text-center mb-2'
           >
             Vyber si postavu, která ti sedne
           </Title>

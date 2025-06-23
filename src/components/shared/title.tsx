@@ -26,19 +26,21 @@ const Title = ({
   const Tag = level as keyof JSX.IntrinsicElements;
 
   const levelStyles: Record<TitleLevel, string> = {
-    [TitleLevel.H1]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-bold',
-    [TitleLevel.H2]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-bold',
+    [TitleLevel.H1]:
+      'font-serif text-xl lg:text-3xl font-bold underline underline-offset-8 mb-4 md:mb-6',
+    [TitleLevel.H2]:
+      'font-serif text-xl lg:text-3xl font-bold  underline underline-offset-8 mb-4 md:mb-6',
     [TitleLevel.H3]:
       'font-serif text-xl lg:text-3xl 2xl:text-3xl font-bold underline underline-offset-8',
-    [TitleLevel.H4]:
-      'font-serif text-base lg:text-lg font-bold underline underline-offset-8',
-    [TitleLevel.H5]: 'font-serif text-xl lg:text-2xl 2xl:text-3xl font-light',
+    [TitleLevel.H4]: 'font-serif text-base lg:text-lg font-bold',
+    [TitleLevel.H5]:
+      'font-serif text-xl lg:text-2xl font-light text-yellow-800 ',
   };
 
   return (
     <Tag
       className={`${levelStyles[level]}, ${className || ''} ${
-        withoutBottomMargin ? 'mb-0' : 'mb-4 md:mb-6'
+        withoutBottomMargin ? 'mb-0' : 'mb-2'
       }`}
       id={id ? id : undefined}
     >

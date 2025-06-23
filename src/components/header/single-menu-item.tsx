@@ -53,13 +53,12 @@ const SingleMenuItem = ({
         variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 2xl:w-[455px]'
       } py-4 bg-contain z-20 relative`}
     >
-      <Title
-        level={TitleLevel.H2}
-        withoutBottomMargin
-        className={`${variant === 'SMALL' ? 'pt-2' : 'mt-2'}`}
+      <h2
+        className={`font-serif text-xl lg:text-2xl 2xl:text-3xl font-bold
+ ${variant === 'SMALL' ? 'pt-2' : 'mt-2'}`}
       >
         {title}
-      </Title>
+      </h2>
     </Button>
     {isOpen && <SubMenu isOpen={isOpen}>{children}</SubMenu>}
   </motion.div>
