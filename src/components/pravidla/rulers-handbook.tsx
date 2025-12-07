@@ -17,6 +17,27 @@ const RulersHandbook = () => {
           </p>
         }
       />
+      <SmallTextBlockWithTitle
+        title='VÁLEČNÉ DANĚ'
+        paragraph={
+          <p>
+            Vládci zemí budou mít možnost v&nbsp;případě konfliktu vyhlásit{' '}
+            <strong>mimořádné válečné daně</strong>. Ty budou rovnat cca
+            polovině aktuálního příjmu země (bez výdajů). Hlásí se jedno kolo
+            dopředu u&nbsp;mapy!
+          </p>
+        }
+      />
+      <hr className='border-yellow-800' />
+      <SmallTextBlockWithTitle
+        title='PŮJČKY'
+        paragraph={
+          <p>
+            Je možné brát si půjčky od místních obchodníků a&nbsp;duchovenstva.
+            Pokud potřebujete půjčku, poptej se u&nbsp;mapy.
+          </p>
+        }
+      />
       <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
         title='OBCHOD'
@@ -31,8 +52,6 @@ const RulersHandbook = () => {
             jako vládce ohrožena (dva lidé se prohlašují legitimními vládci
             daného území a&nbsp;oba na něj mají vliv), Vrchní obchodník peníze
             z&nbsp;daní z&nbsp;obchodu odevzdá, až se tento konflikt vyřeší.
-            Pokud budeš mít pocit, že obchod opravdu vynáší, zapřemýšlej nad
-            stavbou <strong>„Těžba“</strong>.
           </p>
         }
       />
@@ -41,12 +60,13 @@ const RulersHandbook = () => {
         title='STAVBY'
         paragraph={
           <p>
-            Domlouváš je u&nbsp;<strong>Stavbaře</strong>. Za jedno kolo můžeš
-            postavit v&nbsp;každém městě/hradu jednu místní a v každé provincii
-            jednu provinční stavbu. Pokud nemáš celou provincii pod kontrolou
-            (např. jedno z&nbsp;měst patří jinému vládci, v provincii řádí
-            rebelie nebo se zde nachází armáda nepřítele), pak není možné
-            v&nbsp;této provincii stavět <strong>žádné</strong> stavby.
+            Za jedno kolo můžeš postavit v&nbsp;každém městě/hradu jednu lokální
+            stavbu (hradby) a&nbsp;v&nbsp;každé provincii jednu provinční
+            stavbu. Pokud nemáš celou provincii pod kontrolou (např. jedno
+            z&nbsp;měst patří jinému vládci, nebo v&nbsp;provincii řádí rebelie
+            a&nbsp;nebo se zde nachází armáda nepřítele), pak není možné
+            v&nbsp;této provincii stavět žádné provinční stavby. Můžeš stavět
+            lokální stavby ve městech, která nejsou pod útokem.
           </p>
         }
       />
@@ -62,46 +82,26 @@ const RulersHandbook = () => {
       />
       <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
-        title='VLIV'
-        paragraph={
-          <p>
-            Může se stát, že se jím nebudeš muset celou hru zabývat. Jindy ale
-            může vliv plnit ve tvé hře důležitou roli. Představ si situaci, kdy
-            se objeví tvůj bratr s&nbsp;tím, že to on by měl vládnout tvému
-            území. Dokonce se začne ohánět podporou jiných šlechticů
-            a&nbsp;penězi, které má. Pokud je tvůj vliv v&nbsp;zemi nízký, může
-            se stát, že se obyvatelé / nižší šlechta vzbouří.
-          </p>
-        }
-      />
-      <hr className='border-yellow-800' />
-      <SmallTextBlockWithTitle
         title='TECHNOLOGIE'
         paragraph={
           <>
             <p>
-              Mezi dokumenty, které jsi obdržel/a, je{' '}
-              <strong>tabulka technologií</strong>. Na začátku hry obdržíš první
-              stupeň technologie, který si vybereš.
+              Na začátku hry obdržíš první technologii, kterou si vybereš do své{' '}
+              <strong>technologické karty</strong>.
             </p>
             <br />
             <p>
-              <strong>V kolech 3, 6, 9, a 12</strong> získáš možnost technologii
-              zvýšit na další stupeň nebo rozvinout novou technologii na první
-              stupeň.
+              <strong>V kolech 3, 6, 9, a&nbsp;12</strong> získáš možnost
+              technologii zvýšit na další stupeň nebo rozvinout novou
+              technologii na první stupeň.
             </p>
             <br />
             <p>
-              Další způsob, jak technologický pokrok urychlit, je stavba
+              Další způsob, jak technologický pokrok urychlit, je stavba{' '}
               <strong>univerzit</strong>. Při postavení univerzity se náhodně
-              určí, ve kterém odvětví tvá země udělala pokrok. Poté získáš novou
-              technologii na prvním stupni / získáš další stupeň v technologii,
-              kterou již vlastníš.
-            </p>
-            <br />
-            <p>
-              (Technologie se řeší u&nbsp;<strong>Petra Luby</strong>, který ti
-              tvůj výběr technologie zaznačí do tabulky a také vyhodnotí efekt.)
+              určí, ve kterém odvětví tvá země udělala pokrok. Pokud při stavbě
+              odevzdáš komoditu <strong>knihy</strong>, získáš místo toho
+              technologii, kterou si vybereš.
             </p>
           </>
         }
@@ -122,33 +122,39 @@ const RulersHandbook = () => {
             <br />
             <div className='mb-4'>
               <h4 className='text-lg font-bold'>DOHODA O NEÚTOČENÍ</h4>
-              <ol className='list-none'>
-                <li>1) Zakázán vojenský akt</li>
-                <li>2) Zákaz vstupu vojsk na území bez souhlasu</li>
+              <ol className='list-[upper-roman]'>
+                <li className='pl-4'>Zakázán vojenský akt</li>
+                <li className='pl-4'>
+                  Zákaz vstupu vojsk na území bez souhlasu
+                </li>
               </ol>
             </div>
 
             <div className='mb-4'>
               <h4 className='text-lg font-bold'>OBRANNÝ PAKT</h4>
-              <ol className='list-none'>
-                <li>
-                  1) Pokud je jedna strana napadena agresorem, druhá se zavazuje
-                  ji bránit: vyhlásit válku a v rámci možností se jí účastnit
-                  (např. finančně)
+              <ol className='list-[upper-roman]'>
+                <li className='pl-4'>
+                  Pokud je jedna strana napadena agresorem, druhá se zavazuje ji
+                  bránit: vyhlásit válku a&nbsp;v&nbsp;rámci možností se jí
+                  účastnit (např. finančně)
                 </li>
-                <li>2) Zákaz vstupu vojsk na území bez souhlasu</li>
+                <li className='pl-4'>
+                  Zákaz vstupu vojsk na území bez souhlasu
+                </li>
               </ol>
             </div>
 
             <div className='mb-4'>
               <h4 className='text-lg font-bold'>VOJENSKÁ ALIANCE</h4>
-              <ol className='list-none'>
-                <li>
-                  1) Vyhlašování války ostatním probíhá vždy po schválení všech
+              <ol className='list-[upper-roman]'>
+                <li className='pl-4'>
+                  Vyhlašování války ostatním probíhá vždy po schválení všech
                   členů aliance
                 </li>
-                <li>2) Volný průchod vojsk přes alianční území</li>
-                <li>3) Jinak jako obranný pakt</li>
+                <li className='pl-4'>
+                  Volný průchod vojsk přes alianční území
+                </li>
+                <li className='pl-4'>Jinak jako obranný pakt</li>
               </ol>
             </div>
           </>
