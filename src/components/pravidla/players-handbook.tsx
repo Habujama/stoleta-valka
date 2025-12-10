@@ -9,7 +9,7 @@ const PlayersHandbook = () => (
       <hr className='border-yellow-800' />
       <Title level={TitleLevel.H5}>Strategická mapa</Title>
       <hr className='border-yellow-800' />
-      <div className='flex flex-col  sm:grid sm:grid-cols-2 sm:grid-rows-1 gap-8'>
+      <div className='flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-1 gap-8'>
         <SmallTextBlockWithTitle
           title='Armáda'
           paragraph={
@@ -97,7 +97,7 @@ const PlayersHandbook = () => (
       <Title level={TitleLevel.H5}>Dohody mezi národy</Title>
       <hr className='border-yellow-800' />
       <p className='font-thin text-lg'>
-        Uznávané dohody (potřeba vložit do BOXU NA SMOUVY):
+        Uznávané dohody (potřeba vložit do BOXU NA SMLOUVY):
       </p>
       <div className='flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-1 gap-8'>
         <SmallTextBlockWithTitle
@@ -170,7 +170,6 @@ const PlayersHandbook = () => (
             'CENA',
           ]}
           tableBodyRow={[
-            ['Cech zlodějů', 'Chrání proti agentům o síle +2 až +3.', '5'],
             [
               'Cvičiště jízdy',
               'V kombinaci s kasárnou umožňuje verbovat jízdu.',
@@ -187,7 +186,7 @@ const PlayersHandbook = () => (
               '4',
             ],
             [
-              'Kovář',
+              'Kovárna',
               'V kombinaci s kasárnou lze vytvářet obléhací zbraně, v kombinaci s loděnicí obléhací lodě.',
               '4',
             ],
@@ -197,7 +196,6 @@ const PlayersHandbook = () => (
               'Při postavení získáš surovinu ryby, umožňuje rychleji nalodit vojsko.',
               '3',
             ],
-            ['Správní středisko', 'Zvyšuje příjem provincie z daní o 1.', '5'],
             [
               'Sýpky',
               'Prodloužení dobývání měst a hradů o 1 kolo (1 půlrok).',
@@ -209,8 +207,8 @@ const PlayersHandbook = () => (
               '10',
             ],
             [
-              'Cesty',
-              'Procházející jednotky nemají postih za přesun přes nehostinný terén (řeka, kopce, lesy)',
+              'Infrastruktura',
+              '+1 příjem, lepší průchod jednotek terénem (řeka, kopce, lesy).',
               '4',
             ],
             [
@@ -223,6 +221,7 @@ const PlayersHandbook = () => (
               'Při postavení získáš kartu suroviny (obilí, ovoce, olivy).',
               '3',
             ],
+            ['Těžba', 'Získáš komoditu železo nebo tvrdé dřevo.', '7'],
           ]}
         />
 
@@ -233,11 +232,8 @@ const PlayersHandbook = () => (
             'CENA',
           ]}
           tableBodyRow={[
-            [
-              'Těžba',
-              'Získáš typickou surovinu dané země + obnovuje suroviny na obchodnické mapě.',
-              '10',
-            ],
+            ['Cech zlodějů', 'Získej agenta o síle 3.', '12'],
+            ['Cech obchodníků', 'Získej kartu obchodníka', '15'],
           ]}
         />
       </div>
@@ -251,7 +247,7 @@ const PlayersHandbook = () => (
             ['pěchota', '2', '1', '-'],
             ['střelci', '4', '2', 'kasárna'],
             ['Pěší rytíři', 'železo', '3', 'kasárna a kovárna'],
-            ['Jízda', 'železo', '4', 'kasárna a cvičiště jízdy'],
+            ['Jízda', 'železo + koně', '4', 'kasárna a cvičiště jízdy'],
             ['Obléhací zbraně', '4', '0/4', 'kasárna a kovárna'],
           ]}
         />
@@ -259,8 +255,8 @@ const PlayersHandbook = () => (
           tableHead={['Námořní jednotky', 'Cena', 'Síla', 'Podmínka']}
           tableBodyRow={[
             ['Válečná koga', '5', '2', 'loděnice'],
-            ['Střelecká koga', 'železo a dřevo', '4', 'loděnice a kasárna'],
-            ['Obléhací loď', '8', '1/5', 'loděnice a kovárna'],
+            ['Střelecká koga', 'dřevo a látky', '4', 'loděnice a kasárna'],
+            ['Obléhací loď', '6', '1/5', 'loděnice a kovárna'],
           ]}
         />
       </div>
