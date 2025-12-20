@@ -30,7 +30,7 @@ const Maps = ({ setSelectedGroup }: MapsProps) => {
             mapy {
               title
               small: gatsbyImageData(width: 1000, placeholder: BLURRED)
-              large: gatsbyImageData(width: 5000, placeholder: NONE)
+              large: gatsbyImageData(width: 10000, placeholder: NONE)
             }
           }
         }
@@ -97,7 +97,7 @@ const Maps = ({ setSelectedGroup }: MapsProps) => {
                     alt={map.title}
                     className='rounded-md shadow-xl'
                   />
-                  <span className='block mt-2 text-sm text-center font-serif opacity-70'>
+                  <span className='block sm:hidden mt-2 text-sm text-center font-serif opacity-70'>
                     Kliknutím mapu přibliž
                   </span>
                 </Button>

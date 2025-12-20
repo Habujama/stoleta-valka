@@ -1,15 +1,23 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { useStaticQuery, graphql, navigate } from 'gatsby';
-import Zoom from 'react-medium-image-zoom';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import 'react-medium-image-zoom/dist/styles.css';
 
 import RulesWrapper from '../shared/rules-wrapper';
 import SmallTextBlockWithTitle from '../shared/small-text-block';
 import { RulesSectionsNames } from '.';
+import Button, { ButtonType } from '../shared/button';
+import Modal from '../shared/modal';
 
 interface CitiesListProps {
   setSelectedGroup: Dispatch<SetStateAction<keyof typeof RulesSectionsNames>>;
+}
+
+interface CityImage {
+  title: string;
+  small: IGatsbyImageData;
+  large: IGatsbyImageData;
 }
 
 const CitiesList = ({ setSelectedGroup }: CitiesListProps) => {
@@ -19,7 +27,8 @@ const CitiesList = ({ setSelectedGroup }: CitiesListProps) => {
         edges {
           node {
             seznamMest{
-              gatsbyImageData(width: 798, placeholder: BLURRED)
+              small: gatsbyImageData(width: 798, placeholder: BLURRED)
+              large: gatsbyImageData(width: 2000, placeholder: NONE)
               title
             }
           }
@@ -27,7 +36,10 @@ const CitiesList = ({ setSelectedGroup }: CitiesListProps) => {
       }
     }
   `);
-  const maps = data.allContentfulSeznamMest.edges[0]?.node.seznamMest ?? [];
+  const cities: CityImage[] =
+    data.allContentfulSeznamMest.edges[0]?.node.seznamMest ?? [];
+
+  const [openCity, setCityOpen] = useState<string | null>(null);
 
   return (
     <RulesWrapper title='Seznam měst'>
@@ -66,18 +78,50 @@ const CitiesList = ({ setSelectedGroup }: CitiesListProps) => {
         }
       />
       <div className='grid grid-cols-1 md:grid-cols-4 gap-8 p-4 w-[90%]'>
-        {maps.map((photo: { item: IGatsbyImageData; title: string }) => {
-          const image = getImage(photo);
+        {cities.map((city) => {
+          const isOpen = openCity === city.title;
+
           return (
-            <div key={photo.title}>
-              {image && (
-                <Zoom>
+            <div key={city.title}>
+              {!isOpen && (
+                <Button
+                  onClick={() => setCityOpen(city.title)}
+                  className='block w-full'
+                  buttonType={ButtonType.GHOST}
+                >
                   <GatsbyImage
-                    image={image}
-                    alt={photo.title}
-                    className='h-auto w-full object-contain rounded-md shadow-xl'
+                    image={city.small}
+                    alt={city.title}
+                    className='rounded-md shadow-xl'
                   />
-                </Zoom>
+                  <span className='block sm:hidden mt-2 text-sm text-center font-serif opacity-70'>
+                    Kliknutím přibliž
+                  </span>
+                </Button>
+              )}
+
+              {isOpen && (
+                <Modal onClose={() => setCityOpen(null)}>
+                  <TransformWrapper
+                    initialScale={1}
+                    minScale={1}
+                    maxScale={6}
+                    wheel={{ step: 0.12 }}
+                    panning={{ velocityDisabled: true }}
+                    doubleClick={{ disabled: true }}
+                    centerOnInit={false}
+                    limitToBounds={false}
+                  >
+                    <TransformComponent>
+                      <GatsbyImage
+                        image={city.large}
+                        alt={city.title}
+                        className='w-auto h-auto select-none'
+                        draggable={false}
+                      />
+                    </TransformComponent>
+                  </TransformWrapper>
+                </Modal>
               )}
             </div>
           );
