@@ -36,6 +36,10 @@ export const SEO = ({
     <>
       <html lang='cs' />
       <title>{seo.title}</title>
+      <meta
+        name='google-site-verification'
+        content='3IyNDTKxdA69x5yTCwCSQsLQlCh2fQVp0nvTzyZwkLo'
+      />
       <meta name='title' content={seo.title} />
       <meta name='description' content={seo.description} />
       <meta name='image' content={seo.image} />

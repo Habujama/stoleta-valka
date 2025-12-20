@@ -42,7 +42,7 @@ const Hamburger = ({ toggle, isTablet }: Props) => {
   );
 
   return (
-    <button onClick={toggle} className={wrapper}>
+    <button onClick={toggle} className={wrapper} title='mobilní menu'>
       <svg width='23' height='23' viewBox='0 0 23 23'>
         <Path
           variants={{
