@@ -16,6 +16,7 @@ const Hero = () => {
             alt='Staň se chrabrým rytířem'
             width={150}
             className='-mr-16'
+            loading='eager'
             placeholder='blurred'
           />
           <StaticImage
@@ -23,6 +24,7 @@ const Hero = () => {
             alt='Veď svoje vojsko k vítězství'
             width={368}
             className='-ml-16'
+            loading='eager'
             placeholder='blurred'
           />
         </div>
@@ -33,6 +35,7 @@ const Hero = () => {
               src='../assets/rytir-a-sneci.png'
               alt='Zahraj si středověkou deskovku'
               width={276}
+              loading='eager'
               placeholder='blurred'
             />
           </div>
@@ -49,6 +52,7 @@ const Hero = () => {
               src='../assets/husy.png'
               alt='Veď svoje vojsko k vítězství'
               width={368}
+              loading='eager'
               placeholder='blurred'
             />
           </div>

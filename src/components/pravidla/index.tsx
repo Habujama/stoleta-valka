@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
 import theme from 'tailwindcss/defaultTheme';
+import { navigate } from 'gatsby';
 
 import TextBlockWithTitle from '../shared/text-block-with-title';
 import PageWrapper from '../shared/page-wrapper';
@@ -15,13 +16,12 @@ import PiratesHandbook from './pirates-handbook';
 import RulersHandbook from './rulers-handbook';
 import MerchantsHandbook from './merchants-handbook';
 import PlayersHandbook from './players-handbook';
-import { navigate } from 'gatsby';
 import Maps from './maps';
 import CitiesList from './cities-list';
 
 const { screens } = theme;
 
-enum RulesSectionsNames {
+export enum RulesSectionsNames {
   Obecna_pravidla = 'Obecná pravidla',
   Mini_prirucka = 'Mini příručka',
   Prirucka_armady = 'Příručka armády',
@@ -97,8 +97,8 @@ const PravidlaPage = () => {
     Prirucka_umelce: <ArtistsHandbook />,
     Prirucka_vladce: <RulersHandbook />,
     Prirucka_pirata: <PiratesHandbook />,
-    Mapy: <Maps />,
-    Seznam_mest: <CitiesList />,
+    Mapy: <Maps setSelectedGroup={setSelectedGroup} />,
+    Seznam_mest: <CitiesList setSelectedGroup={setSelectedGroup} />,
   };
 
   return (

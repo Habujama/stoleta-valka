@@ -17,8 +17,7 @@ const GeneralRules = () => {
             kterých chodí většina hráčů postupně k\u00A0mapě.
             Pokud hráči zrovna nejsou u\u00A0mapy, interagují
 
-            s\u00A0ostatními hráči, CP, obchodníkem nebo agen-
-            tem. Každé kolo se uzavírá tzv. moderováním,
+            s\u00A0ostatními hráči, CP, obchodníkem nebo agentem. Každé kolo se uzavírá tzv. moderováním,
 
             kde se vyhlašují nejdůležitější události, které
             se v\u00A0daném kole staly. Jedno kolo trvá půl roku
@@ -192,7 +191,7 @@ const GeneralRules = () => {
                 </li>
                 <li>
                   Pro zvýšení vlastního pohodlí si lze přivézt vlastní dobový
-                  nábytek. Majitel je za něj zodpo- vědný.
+                  nábytek. Majitel je za něj zodpovědný.
                 </li>
                 <li>
                   Věci na spaní (spacák, karimatka, pyžamo,...) lze mít nedobové
