@@ -16,6 +16,8 @@ import RulersHandbook from './rulers-handbook';
 import MerchantsHandbook from './merchants-handbook';
 import PlayersHandbook from './players-handbook';
 import { navigate } from 'gatsby';
+import Maps from './maps';
+import CitiesList from './cities-list';
 
 const { screens } = theme;
 
@@ -29,6 +31,8 @@ enum RulesSectionsNames {
   Prirucka_umelce = 'Příručka umělce',
   Prirucka_vladce = 'Příručka vládce',
   Prirucka_pirata = 'Příručka piráta',
+  Mapy = 'Mapy',
+  Seznam_mest = 'Seznam měst',
 }
 
 const sectionKeys = Object.keys(
@@ -93,6 +97,8 @@ const PravidlaPage = () => {
     Prirucka_umelce: <ArtistsHandbook />,
     Prirucka_vladce: <RulersHandbook />,
     Prirucka_pirata: <PiratesHandbook />,
+    Mapy: <Maps />,
+    Seznam_mest: <CitiesList />,
   };
 
   return (
@@ -127,7 +133,7 @@ const PravidlaPage = () => {
                 id={index.toString()}
                 className={`${
                   section === selectedGroup
-                    ? 'font-bold underline scale-125 z-10'
+                    ? 'font-bold underline scale-125 z-1'
                     : 'mx-1'
                 } flex items-center justify-center font-serif
                   hover:scale-125 first-of-type:ml-6 sm:first-of-type:ml-0 last-of-type:mr-6 sm:last-of-type:mr-0`}

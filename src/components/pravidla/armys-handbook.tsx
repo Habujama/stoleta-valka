@@ -1,7 +1,6 @@
 import SmallTextBlockWithTitle from '../shared/small-text-block';
 import RulesWrapper from '../shared/rules-wrapper';
 import StyledTable from '../shared/styled-table';
-import Title, { TitleLevel } from '../shared/title';
 
 const ArmysHandbook = () => {
   return (
