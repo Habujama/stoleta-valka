@@ -22,7 +22,7 @@ const MerchantsHandbook = () => {
             <strong>lícem</strong> nahoru kartičky{' '}
             <strong>všední/obyčejné suroviny</strong>. Jsou to suroviny,
             o&nbsp;kterých jakožto lidé zběhlí v obchodu víte, že se v dané zemi
-            nachází a že je země vyváží. Oproti tomu kartičky surovin položené
+            nachází a že je země vyváží. Oproti tomu kartičky surovin položené{' '}
             <strong>rubem</strong> nahoru jsou <strong>vzácné suroviny</strong>.
             Ty se v dané zemi nachází, ale v malém množství a&nbsp;země je
             neprodukuje ve velkém. Jedná se většinou o vzácné komodity, které se

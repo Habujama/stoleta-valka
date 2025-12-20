@@ -142,7 +142,9 @@ const PlayersHandbook = () => (
 
       <div className='flex flex-col space-y-4 pt-8'>
         <hr className='border-yellow-800' />
-        <Title level={TitleLevel.H5}>Ceník staveb</Title>
+        <Title level={TitleLevel.H5} id='cenik-staveb'>
+          Ceník staveb
+        </Title>
         <hr className='border-yellow-800' />
         <StyledTable
           tableHead={[
@@ -153,7 +155,7 @@ const PlayersHandbook = () => (
           tableBodyRow={[
             [
               'Opevnění',
-              'Zvýší obranu mësta/hradu o 3 do maxima 10. Stavbu je možné opakovat.',
+              'Zvýší obranu města/hradu o 3 do maxima 10. Stavbu je možné opakovat.',
               '4',
             ],
             [
