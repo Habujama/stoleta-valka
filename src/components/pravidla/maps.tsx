@@ -29,8 +29,8 @@ const Maps = ({ setSelectedGroup }: MapsProps) => {
           node {
             mapy {
               title
-              small: gatsbyImageData(width: 1000, placeholder: BLURRED)
-              large: gatsbyImageData(width: 10000, placeholder: NONE)
+              small: gatsbyImageData(placeholder: BLURRED, quality: 10)
+              large: gatsbyImageData(placeholder: BLURRED, quality: 100)
             }
           }
         }

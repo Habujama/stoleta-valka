@@ -34,6 +34,7 @@ export const SEO = ({
 
   return (
     <>
+      <html lang='cs' />
       <title>{seo.title}</title>
       <meta name='title' content={seo.title} />
       <meta name='description' content={seo.description} />
