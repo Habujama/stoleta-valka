@@ -20,7 +20,7 @@ const Header = () => {
         <h1 className='sr-only'>Stoletá válka roku 1332</h1>
         <StaticImage
           src='../../assets/hlavicka-nadpis.png'
-          alt='Stoletá válka roku 1332'
+          alt='Hlavička webu Stoletá válka'
           placeholder='blurred'
           loading='eager'
           className='bg-contain'
