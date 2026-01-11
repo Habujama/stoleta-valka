@@ -18,6 +18,7 @@ import MerchantsHandbook from './merchants-handbook';
 import PlayersHandbook from './players-handbook';
 import Maps from './maps';
 import CitiesList from './cities-list';
+import Technologies from './technologies';
 
 const { screens } = theme;
 
@@ -32,6 +33,7 @@ export enum RulesSectionsNames {
   Prirucka_vladce = 'Příručka vládce',
   Prirucka_pirata = 'Příručka piráta',
   Mapy = 'Mapy',
+  Technologie = 'Technologie',
   Seznam_mest = 'Seznam měst',
 }
 
@@ -98,6 +100,7 @@ const PravidlaPage = () => {
     Prirucka_vladce: <RulersHandbook />,
     Prirucka_pirata: <PiratesHandbook />,
     Mapy: <Maps setSelectedGroup={setSelectedGroup} />,
+    Technologie: <Technologies />,
     Seznam_mest: <CitiesList setSelectedGroup={setSelectedGroup} />,
   };
 
