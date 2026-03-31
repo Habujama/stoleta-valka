@@ -1,17 +1,18 @@
-import type { GatsbyConfig } from "gatsby";
-import * as dotenv from 'dotenv';
-
-dotenv.config({
-  path: `.env.${process.env.NODE_ENV}`,
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
 });
 
-const config: GatsbyConfig = {
+module.exports = {
   siteMetadata: {
     title: "Stoletá Válka roku 1337",
     description: "Hra, která spojuje atmosféru dramatických larpů s taktickými prvky deskové hry. Budete plánovat, vyjednávat a rozhodovat na bitevním poli i mimo něj. Čekají na vás role anglických vyslanců, irských vzbouřenců, prohnaných obchodníků, odvážných korzárů a dalších.",
     siteUrl: "https://stoletavalka.netlify.app/",
     image: "/social-preview.png",
-    icon :"/prihlas-se_lev.png"
+    icon: "/prihlas-se_lev.png",
+    version: "1.0.1"
   },
   graphqlTypegen: true,
   plugins: [{
@@ -20,7 +21,14 @@ const config: GatsbyConfig = {
       spaceId: process.env.CONTENTFUL_SPACE_ID,
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     },
-  }, "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-sitemap", "gatsby-plugin-typescript", {
+  },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-postcss",
+    {
     resolve: 'gatsby-plugin-manifest',
       options: {
         name: `Stoletá válka roku 1337`,
@@ -31,10 +39,6 @@ const config: GatsbyConfig = {
         display: `minimal-ui`,
         icon: "src/assets/prihlas-se_lev.png"
       }
-    },
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {},
     },
     {
       resolve: 'gatsby-plugin-google-gtag',
@@ -68,5 +72,3 @@ const config: GatsbyConfig = {
     __key: "pages"
   }]
 };
-
-export default config;

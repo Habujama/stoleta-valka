@@ -156,7 +156,7 @@ const MobileNav = () => {
             {isGameOpen || isPracticalOpen || isRegisterOpen ? null : (
               <motion.div variants={imageVariants}>
                 <StaticImage
-                  src='../../../assets/kostra.png'
+                  src='../../../assets/kostroun.png'
                   alt='Zahraj si středověkou deskovku'
                   width={200}
                   placeholder='blurred'

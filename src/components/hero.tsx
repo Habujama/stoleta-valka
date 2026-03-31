@@ -12,7 +12,7 @@ const Hero = () => {
       {isMobile ? (
         <div className='flex items-center justify-center px-20 mx-auto'>
           <StaticImage
-            src='../assets/kostra.png'
+            src='../assets/kostroun.png'
             alt='Staň se chrabrým rytířem'
             width={150}
             className='-mr-16'
@@ -41,7 +41,7 @@ const Hero = () => {
           </div>
           <div className='pl-24'>
             <StaticImage
-              src='../assets/kostra.png'
+              src='../assets/kostroun.png'
               alt='Zahraj si středověkou deskovku'
               width={276}
               placeholder='blurred'
