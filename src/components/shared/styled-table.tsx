@@ -49,7 +49,7 @@ const StyledTable = ({
 
   return (
     <table className='styled-table text-center text-sm sm:text-base table-auto border-yellow-800 border-2 p-8'>
-      <thead className='bg-yellow-700 bg-opacity-40'>
+      <thead className='bg-yellow-700/40'>
         <tr>
           {tableHead.map((headCell, index) => {
             const colSpan = headColSpan[headCell] ?? 1;
@@ -70,7 +70,7 @@ const StyledTable = ({
         {rows.map((row, r) => (
           <tr
             key={r}
-            className='table-row-hover border border-yellow-800 p-2 ease-initial delay-75 duration-500 hover:bg-yellow-400 hover:bg-opacity-30 hover:cursor-pointer'
+            className='table-row-hover border border-yellow-800 p-2 ease-initial delay-75 duration-500 hover:bg-yellow-400/30 hover:cursor-pointer'
           >
             {row.map((cell, index) => {
               const span = rowSpanMatrix[r][index];

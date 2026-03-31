@@ -1,5 +1,5 @@
 import { JSXElementConstructor, ReactElement } from 'react';
-import { useSiteMetadata } from '../hooks/use-site-metadata.jsx';
+import { useSiteMetadata } from '../hooks/use-site-metadata';
 
 interface SEOProps {
   title?: string;

@@ -1,9 +1,5 @@
-/*! purgecss start ignore */
-@tailwind base;
-@tailwind components;
-/*! purgecss end ignore */
-@tailwind utilities;
-@import url("https://use.typekit.net/qxh8qkc.css");
+@import "tailwindcss";
+@config "../../tailwind.config.js";
 
 body {
   color: #000;

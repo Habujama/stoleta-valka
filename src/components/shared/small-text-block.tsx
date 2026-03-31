@@ -20,7 +20,7 @@ const SmallTextBlockWithTitle = ({
     className={`flex flex-col 
       ${
         withBg &&
-        'p-4 bg-yellow-50 bg-opacity-15 rounded-md border-opacity-25 border-solid border-2 border-yellow-50 shadow-sm shadow-yellow-50'
+        'p-4 bg-yellow-50/15 rounded-md border-opacity-25 border-solid border-2 border-yellow-50 shadow-sm shadow-yellow-50'
       } ${className}`}
     id={id}
   >

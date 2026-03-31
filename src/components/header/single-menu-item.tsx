@@ -25,7 +25,7 @@ const itemVariants = {
 };
 
 interface SingleMenuItemProps {
-  navRef: RefObject<HTMLDivElement>;
+  navRef: RefObject<HTMLDivElement | null>;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   title: string;
@@ -50,7 +50,7 @@ const SingleMenuItem = ({
       onClick={() => setIsOpen(!isOpen)}
       buttonType={variant === 'BIG' ? ButtonType.SECONDARY : ButtonType.PRIMARY}
       className={`${
-        variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 2xl:w-[455px]'
+        variant === 'SMALL' ? 'w-60 text-xl' : 'w-80 2xl:w-113.75'
       } py-4 bg-contain z-20 relative`}
     >
       <h2

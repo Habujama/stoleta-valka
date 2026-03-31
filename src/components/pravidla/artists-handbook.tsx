@@ -14,7 +14,7 @@ const ArtistsHandbook = () => {
           </p>
         }
       />
-      <div className='bg-yellow-50 bg-opacity-25 p-4 border-2 border-yellow-800 rounded-xl'>
+      <div className='bg-yellow-50/25 p-4 border-2 border-yellow-800 rounded-xl'>
         <p className='text-center text-xl text-yellow-800'>
           Tip pro ostatní hráče: nebojte se zaplatit umělcům, aby pro vás
           vyhotovili dílo!

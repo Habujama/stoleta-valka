@@ -98,9 +98,9 @@ const CaravansHandbook = () => {
         }
       />
       <StaticImage
-        src='../../assets/karavana.png'
+        src='../../assets/karavana-vydelava.png'
         alt='Jak karavana získává peníze'
-        sizes='medium'
+        placeholder='blurred'
       />
     </RulesWrapper>
   );

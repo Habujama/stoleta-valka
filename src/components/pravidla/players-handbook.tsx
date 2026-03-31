@@ -247,8 +247,8 @@ const PlayersHandbook = () => (
         <StyledTable
           tableHead={['Pozemní jednotky', 'Cena', 'Síla', 'Podmínka']}
           tableBodyRow={[
-            ['pěchota', '2', '1', '-'],
-            ['střelci', '4', '2', 'kasárna'],
+            ['Pěchota', '2', '1', '-'],
+            ['Střelci', '4', '2', 'kasárna'],
             ['Pěší rytíři', 'železo', '3', 'kasárna a kovárna'],
             ['Jízda', 'železo + koně', '4', 'kasárna a cvičiště jízdy'],
             ['Obléhací zbraně', '4', '0/4', 'kasárna a kovárna'],

@@ -28,10 +28,10 @@ const MenuItems = () => {
       }}
       transition={{
         duration: 0.3,
-        type: 'easeInOut',
+        type: 'tween',
         stiffness: 10,
       }}
-      className='bg-neutral-800 bg-blend-screen bg-opacity-15 w-full mt-10'
+      className='bg-neutral-800/15 bg-blend-screen w-full mt-10'
     >
       <div className='flex space-y-4 sm:space-y-0 justify-center -mt-24 mx-auto'>
         <MenuItem

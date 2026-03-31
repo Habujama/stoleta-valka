@@ -1,8 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
-const tailwindConfig = require('./tailwind.config.js')
-require('dotenv').config({
+import * as dotenv from 'dotenv';
+
+dotenv.config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -33,12 +34,7 @@ const config: GatsbyConfig = {
     },
     {
       resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [
-          require('tailwindcss')(tailwindConfig),
-          require('autoprefixer'),
-        ],
-      },
+      options: {},
     },
     {
       resolve: 'gatsby-plugin-google-gtag',

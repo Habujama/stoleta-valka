@@ -261,7 +261,7 @@ const Postavy = () => {
           />
         </div>
       </PageWrapper>
-      <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-20'>
+      <div className='bg-neutral-800/15 bg-blend-screen mt-16 pt-5 pb-20'>
         <div className='relative'>
           {!isMobile && (
             <button

@@ -100,7 +100,7 @@ const PracticalPage = () => {
           <Map link={practicalInfo.mapLink.mapLink} />
         </div>
       </PageWrapper>
-      <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 pt-10 pb-2 px-20 my-14'>
+      <div className='bg-neutral-800/15 bg-blend-screen pt-10 pb-2 px-20 my-14'>
         <TextBlockWithTitle
           title={'Co je v ceně'}
           paragraph={Included}
@@ -116,7 +116,7 @@ const PracticalPage = () => {
           withoutTopMargin
         />
       </PageWrapper>
-      <div className='bg-neutral-800 bg-blend-screen bg-opacity-15 pt-10 pb-2 px-20 my-14'>
+      <div className='bg-neutral-800/15 bg-blend-screen pt-10 pb-2 px-20 my-14'>
         <TextBlockWithTitle
           title={'Harmonogram'}
           paragraph={TimePlan}
