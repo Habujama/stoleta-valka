@@ -192,6 +192,7 @@ const PlayersHandbook = () => (
               'V kombinaci s kasárnou lze vytvářet obléhací zbraně, v kombinaci s loděnicí obléhací lodě.',
               '4',
             ],
+            ['Stáje', 'Získáš komoditu koně.', '4'],
             ['Loděnice', 'Umožňuje stavbu lodí.', '3'],
             [
               'Přístav',
