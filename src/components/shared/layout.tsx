@@ -9,6 +9,8 @@ import Footer from '../footer';
 
 const { screens } = theme;
 
+console.log(screens);
+
 interface LayoutProps {
   children: ReactNode;
 }
@@ -21,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
     }
-    mobileBackground: file(relativePath: { eq: "pozadi-mobile.jpg" }) {
+    mobileBackground: file(relativePath: { eq: "pozadi-mobilni.jpg" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
@@ -29,20 +31,21 @@ const Layout = ({ children }: LayoutProps) => {
   }
   `);
 
-  const imageSrc = getSrc(data.background.childImageSharp.gatsbyImageData);
-  const mobileImageSrc = getSrc(
-    data.mobileBackground.childImageSharp.gatsbyImageData,
-  );
+const imageSrc = getSrc(data.background?.childImageSharp?.gatsbyImageData);
+const mobileImageSrc = getSrc(
+  data.mobileBackground?.childImageSharp?.gatsbyImageData,
+);
 
-  const isBig = useMedia(`(min-width: ${screens['2xl']})`);
-  const isMobile = useMedia(`(max-width: ${screens['lg']})`);
+const isMobile = useMedia(`(max-width: 1024px)`, false);
+
+const activeBackground = isMobile && mobileImageSrc ? mobileImageSrc : imageSrc;
 
   return (
     <div>
       <main
         style={{
-          backgroundImage: `url(${isMobile ? mobileImageSrc : imageSrc})`,
-          backgroundSize: `${isBig ? 'cover' : isMobile ? '' : 'contain'}`,
+          backgroundImage: `url(${activeBackground})`,
+          backgroundSize: `${!isMobile ? 'cover' : isMobile ? '' : 'contain'}`,
           backgroundRepeat: 'repeat-y',
           backgroundPosition: 'center center',
           backgroundAttachment: isMobile ? 'scroll' : 'fixed',

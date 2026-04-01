@@ -120,7 +120,7 @@ const PravidlaPage = () => {
         />
       </PageWrapper>
       <div
-        className='flex flex-col sm:flex-row justify-center bg-neutral-800 bg-blend-screen bg-opacity-15 mt-16 pt-5 pb-10 sm:pb-20 px-4 sm:px-20'
+        className='flex flex-col sm:flex-row justify-center bg-neutral-800/15 bg-blend-screen mt-16 pt-5 pb-10 sm:pb-20 px-4 sm:px-20'
         id='1'
       >
         <div className='w-auto 2xl:max-w-7xl sm:flex 2xl:justify-center'>

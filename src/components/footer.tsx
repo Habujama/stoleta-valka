@@ -74,7 +74,7 @@ const Footer = () => {
               </a>
               <div className='mx-4 hidden md:block'>|</div>
               <div>
-                Hana Matoušková in&nbsp;
+                Hana Myšková in&nbsp;
                 <a href='https://www.gatsbyjs.com'>Gatsby JS</a>
                 {` `}© {new Date().getFullYear()}
               </div>

@@ -82,7 +82,7 @@ const Gallery = () => {
         )}
         <div
           ref={galleryRef}
-          className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll no-scrollbar p-4 bg-neutral-800 bg-blend-screen bg-opacity-15'
+          className='grid grid-flow-col auto-cols-max gap-1 w-full whitespace-nowrap overflow-x-scroll no-scrollbar p-4 bg-neutral-800/15 bg-blend-screen'
         >
           {contentfulFotogalerie.fotky.map(
             (
@@ -132,7 +132,7 @@ const Gallery = () => {
 
       {selectedImage && (
         <div
-          className='fixed inset-0 bg-black bg-opacity-80 hover:cursor-pointer flex items-center justify-center z-50'
+          className='fixed inset-0 bg-black/80 hover:cursor-pointer flex items-center justify-center z-50'
           onClick={() => setSelectedImage(null)}
         >
           <div className='relative p-44'>

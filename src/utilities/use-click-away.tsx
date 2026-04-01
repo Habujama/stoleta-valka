@@ -1,7 +1,7 @@
 import { useEffect, RefObject, useCallback } from 'react';
 
 type ClickOutside = {
-  (ref: RefObject<HTMLElement>, callback: () => void): void;
+  (ref: RefObject<HTMLElement | null>, callback: () => void): void;
 };
 
 const useClickAway: ClickOutside = (ref, callback) => {
