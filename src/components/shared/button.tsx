@@ -54,14 +54,14 @@ const Button: FC<ButtonProps> = ({
       : undefined;
 
   const css = classNames(
-    'block text-center outline-none whitespace-no-wrap hover:scale-110 hover:ease-in-out active:scale-90',
+    'block text-center outline-none whitespace-no-wrap hover:scale-110 hover:ease-in-out active:scale-90 cursor-pointer',
     {
       'bg-center bg-no-repeat':
         ButtonType.PRIMARY === buttonType ||
         buttonType === ButtonType.SECONDARY,
     },
     {
-      'bg-transparent p-4': ButtonType.GHOST === buttonType,
+      'p-2 font-serif font-bold': ButtonType.GHOST === buttonType,
     },
     {
       'w-[600px]': ButtonType.MAIN === buttonType,

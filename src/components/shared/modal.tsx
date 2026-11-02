@@ -40,7 +40,7 @@ const Modal = ({
         <Button
           onClick={onClose}
           buttonType={ButtonType.GHOST}
-          className='absolute top-3 right-3 bg-yellow-100 py-2 px-12 rounded-md font-bold font-serif border-solid border-1 border-black z-50'
+          className='absolute top-3 right-3 bg-yellow-100 py-2 px-12 rounded-md font-serif border-solid border-black z-50'
         >
           Zavřít
         </Button>

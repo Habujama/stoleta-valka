@@ -6,6 +6,7 @@ import { getSrc } from 'gatsby-plugin-image';
 
 import Header from '../header';
 import Footer from '../footer';
+import CookieBanner from '../cookie-bar';
 
 const { screens } = theme;
 
@@ -56,6 +57,7 @@ const activeBackground = isMobile && mobileImageSrc ? mobileImageSrc : imageSrc;
         {children}
         <Footer />
       </main>
+      <CookieBanner />
     </div>
   );
 };

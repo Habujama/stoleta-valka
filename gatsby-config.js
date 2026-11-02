@@ -63,6 +63,27 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-FKCMQYGWDR"
+        ],
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          delayOnRouteUpdate: 300,
+        },
+        gtagConfig: {
+          consent: {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+        },
+      },
+      },
+    },
    {
     resolve: 'gatsby-source-filesystem',
     options: {
