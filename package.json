@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^16.1.6",
+    "@contentful/rich-text-react-renderer": "^16.2.2",
     "@mdx-js/react": "^3.0.1",
     "@tailwindcss/postcss": "^4.2.2",
     "@types/lodash": "^4.17.13",
