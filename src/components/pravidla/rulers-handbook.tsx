@@ -82,6 +82,17 @@ const RulersHandbook = () => {
       />
       <hr className='border-yellow-800' />
       <SmallTextBlockWithTitle
+        title='KARAVANA'
+        paragraph={
+          <p>
+            Každý vládce by se měl snažit, aby Kastilská karavana navštívila
+            jeho zemi. Každý tah, který karavana zakončí na území daného vládce,
+            znamená 2&nbsp;stříbrné navíc při výběru daní.
+          </p>
+        }
+      />
+      <hr className='border-yellow-800' />
+      <SmallTextBlockWithTitle
         title='TECHNOLOGIE'
         paragraph={
           <>
@@ -155,6 +166,17 @@ const RulersHandbook = () => {
                   Volný průchod vojsk přes alianční území
                 </li>
                 <li className='pl-4'>Jinak jako obranný pakt</li>
+              </ol>
+            </div>
+
+            <div className='mb-4'>
+              <h4 className='text-lg font-bold'>PRIVILEGIUM VOLNÉH OBCHODU</h4>
+              <ol className='list-[upper-roman]'>
+                <li className='pl-4'>
+                  Země mohou po vzájemné dohodě uzavřít Privilegium volného
+                  obchodu. Obchodníci obou zemí mohou na území druhé země
+                  nakupovat bez placení cel a obchodních poplatků.
+                </li>
               </ol>
             </div>
           </>
