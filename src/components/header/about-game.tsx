@@ -21,9 +21,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
-        Úvod
-      </p>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>Úvod</p>
     </Button>
 
     <Button
@@ -32,7 +30,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Postavy
       </p>
     </Button>
@@ -43,7 +41,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Galerie
       </p>
     </Button>
@@ -54,7 +52,7 @@ const AboutGame = ({ toggleOpen }: AboutGameProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Pravidla
       </p>
     </Button>

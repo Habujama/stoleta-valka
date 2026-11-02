@@ -29,9 +29,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
-        Hráči
-      </p>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>Hráči</p>
     </Button>
 
     <Button
@@ -48,7 +46,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg  lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg  lg:text-xl 2xl:text-2xl'>
         Pomocníci
       </p>
     </Button>
@@ -65,7 +63,7 @@ const Register = ({ toggleOpen }: RegisterProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Platby
       </p>
     </Button>

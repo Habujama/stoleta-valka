@@ -21,7 +21,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Místo a čas
       </p>
     </Button>
@@ -32,7 +32,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Co je v ceně
       </p>
     </Button>
@@ -43,7 +43,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Harmonogram
       </p>
     </Button>
@@ -54,7 +54,7 @@ const Practical = ({ toggleOpen }: PracticalProps) => (
       buttonType={ButtonType.GHOST}
       className='w-40'
     >
-      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl font-bold'>
+      <p className='whitespace-nowrap text-lg lg:text-xl 2xl:text-2xl'>
         Kontakty
       </p>
     </Button>

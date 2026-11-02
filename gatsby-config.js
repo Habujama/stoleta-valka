@@ -74,6 +74,14 @@ module.exports = {
           respectDNT: true,
           delayOnRouteUpdate: 300,
         },
+        gtagConfig: {
+          consent: {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+        },
+      },
       },
     },
    {
