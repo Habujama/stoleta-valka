@@ -23,6 +23,17 @@ const MainCTAButton = () => {
           href='https://forms.gle/13pdNp5YJQ1uUnKr6'
           target='_blank'
           rel='noopener noreferrer'
+          onClick={() => {
+            if (typeof window !== 'undefined' && (window as any).gtag) {
+              (window as any).gtag(
+                'event',
+                'click_register_players_on_main_page',
+                {
+                  transport: 'beacon',
+                },
+              );
+            }
+          }}
           className='relative block bg-center bg-no-repeat hover:scale-110 hover:ease-in-out active:scale-90'
           style={{
             backgroundImage: `url(${CrownedButton})`,

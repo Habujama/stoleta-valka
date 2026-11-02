@@ -63,6 +63,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-FKCMQYGWDR"
+        ],
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          delayOnRouteUpdate: 300,
+        },
+      },
+    },
    {
     resolve: 'gatsby-source-filesystem',
     options: {

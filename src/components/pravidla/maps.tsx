@@ -60,7 +60,7 @@ const Maps = ({ setSelectedGroup }: MapsProps) => {
                   navigate('?selection=Prirucka_armady#1');
                   setSelectedGroup('Prirucka_armady');
                 }}
-                className='underline cursor-pointer'
+                className='underline hover:no-underline cursor-pointer'
               >
                 armády
               </span>{' '}
@@ -70,7 +70,7 @@ const Maps = ({ setSelectedGroup }: MapsProps) => {
                   navigate('?selection=Prirucka_flotily#1');
                   setSelectedGroup('Prirucka_flotily');
                 }}
-                className='underline cursor-pointer'
+                className='underline hover:no-underline cursor-pointer'
               >
                 flotily
               </span>
