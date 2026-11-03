@@ -10,8 +10,6 @@ import CookieBanner from '../cookie-bar';
 
 const { screens } = theme;
 
-console.log(screens);
-
 interface LayoutProps {
   children: ReactNode;
 }
