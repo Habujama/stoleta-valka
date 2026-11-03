@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { useMedia } from 'react-use';
-import theme from 'tailwindcss/defaultTheme';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getSrc } from 'gatsby-plugin-image';
 
@@ -8,9 +7,6 @@ import Header from '../header';
 import Footer from '../footer';
 import CookieBanner from '../cookie-bar';
 
-const { screens } = theme;
-
-console.log(screens);
 
 interface LayoutProps {
   children: ReactNode;
