@@ -1,0 +1,140 @@
+# Stoletá Válka (1337) - Kompletní kontext a pravidla pro AI
+
+> Tento dokument slouží jako souhrnný zdroj informací o larpové a taktické hře Stoletá Válka pro jazykové modely a AI asistenty.
+
+---
+
+## 1. Úvod a zasazení (Lore)
+- **Období a místo:** Rok 1337, Evropa.
+- **Historický kontext:** Počátek stoleté války, napětí mezi anglickou korunou, francouzským králem a autonomními flanderskými městy (Ghent, Bruggy, Ypr). Do sporu se ale zapojují všechna evropská království, knížectví a obchodní města, stejně tak jako Maroko a Tunis.
+- **Atmosféra:** Drsný středověk, diplomacie, obchodní zájmy, intriky, boj o moc a přežití.
+- **Workshopy:** Před hrou jsou krátké workshopy, které pomáhají hráčům lépe pochopit herní mechaniky a historické zasazení hry. Doporučujeme ale pročíst si pravidla své frakce předem.
+
+
+---
+
+## 2. Herní mechaniky a pravidla
+- **Základní principy hry:** Hra se odehrává v jednotlivých kolech, během kterých chodí většina hráčů postupně k mapě (viz Strategická mapa níže). Pokud hráči zrovna nejsou u mapy, interagují s ostatními hráči, CP, obchodníkem nebo agentem. Každé kolo se uzavírá tzv. moderováním, kde se vyhlašují nejdůležitější události, které se v daném kole staly. Jedno kolo trvá půl roku (jaro+léto, podzim+zima).
+- **Diplomacie a vyjednávání:** Klíčový prvek hry. Smlouvy, spojenectví a zrady mají 
+  přímý dopad na herní vývoj. Můžete vyslat své agenty, aby zatopili vašim nepřátelům nebo rovnou otevřeli bránu obléhaného města. Zmínka v básni od známého umělce zase umí udělat zázraky s vaším vlivem.
+- **Ekonomika a zdroje:** Vládce každé kolo hry vybírá daně od poddaných, ale z příjmů musí živit armádu, agenty a pokrýt další náklady. Šikovný obchodník vám umí vydělat jmění, stačí vědět kde co prodat a nakoupit. 
+- **Focení:** Na hře fotíme. Hodně. Fotky poté zveřejňujeme na Facebookové stránce hry https://www.facebook.com/groups/743333052902010. Pokud hráči nechtějí být na fotkách vůbec, domluví se PŘED ZAČÁTKEM akce s fotografem.
+- **Délka hry:** V závislosti na konkrétním běhu má hra jeden nebo dva herní dny. Herní doba je doba, po kterou hráč drží roli a chová se jako daná postava. Tato doba začíná prvním kolem v pátek a  končí posledním kolem v sobotu.
+
+### Strategická mapa
+
+#### Armáda
+
+1. ★ až 3 oddíly v armádě
+2. ★ ★ až 5 oddílů v armádě
+3. ★ ★ ★ až 7 oddílů v armádě
+
+Armáda se pohybuje podle nejpomalejší jednotky. Nejrychlejší je jízda, pomalejší jsou střelci, pak pěchota a nejpomalejší jsou obléhací stroje.
+
+#### Flotila
+
+Může být použita pro převoz pěší armády. Při napadení nebo podpoře města se sama o sobě počítá jako prapor odpovídající síly. Rychlost po vodě je oproti souši zhruba dvojnásobná.
+
+#### Co umí agenti
+
+Úspěchy agentů závisí na jejich úrovni (a vaší peněžní podpoře). Čím dál je pošlete, tím později se vrátí.
+
+- **Velvyslanec:** Může zlepšovat vztahy či zažehnávat konflikty. Také může vyvolat rozbroje, povstání, pokoušet se o konverzi nebo přesvědčit k přeběhnutí.
+- **Špeh:** Může špehovat a manipulovat s informacemi, roznášet pomluvy či krást. Úspěch závisí na úrovni.
+- **Obchodník:** Může být vyslán za účelem získání surovin.
+
+#### Ekonomika
+
+##### Příjmy
+Příjmy plynou z provincií jen tam, kde nejsou v okolí žádné války, povstání apod. Další příjmy plynou z obchodu, od ostatních národů (např. výpalné, úplatky) a rabování (měst i provincií).
+
+#### Dohody mezi národy
+
+Uznávané dohody (potřeba vložit do BOXU NA SMLOUVY):
+
+##### Dohoda o neútočení
+1. Zakázán vojenský akt
+2. Zákaz vstupu vojsk na území bez souhlasu
+
+##### Obranný pakt
+1. Pokud je jedna strana napadena agresorem, druhá se zavazuje ji bránit: vyhlásit válku a v rámci možností se jí účastnit (např. i finančně)
+2. Zákaz vstupu vojsk na území bez souhlasu
+
+##### Vojenská aliance
+1. Vyhlašování války ostatním probíhá vždy po schválení všech členů aliance
+2. Volný průchod vojsk po aliančním území
+
+---
+
+## 3. Praktické informace pro účastníky
+- **Lokace:** Penzion Althanský palác, Horní náměstí 9/3, 66902 Znojmo - zkontrolujte aktuální informace na webu, liší se dle běhu.
+- **Termín:** 21. – 24. 1. 2027
+- **Kostýmy a rekvizity:** Na jídlo si s sebou vezměte dobové nádobí (miska, lžíce, kalíšek). Nejsme LH akce, ale dbáme na atmosféru akce. Moderní výrazné boty proto nechte doma. Pokud hráč nosí brýle, vymění je na akci za čočky. Pokud to z individuálních důvodů nejde, brýle jsou tolerovatelné. Pokud si berete vlastní kostým, výchozím bodem je pro něj móda 13.–14. století v Evropě. (Ideální je koukatelné minimum, pokud si nejste jistí, konzultujte to s orgy.) Pokud hráči nemají vlastní kostým, půjčujeme ho. Hráči jsou za kostým zodpovědní od chvíle, kdy si ho převezmou v cépkárně až do chvíle, než ho tam osobně vrátí.
+- **Jídlo:** Na hře zajišťujeme jídlo v následujících variantách: masožravé / vegetariánské / bezlepkové ve frekvenice snídaně, svačina, oběd a večeře a nápoje (káva, čaj, voda). Alkohol je možné konzumovat jen na afterparty a na tu si jej každý zajišťuje sám.
+
+### Co je v ceně
+    - Hra a herní materiály (předherní informace, potřebné materiály k samotné hře, rekvizity, příprava prostor, úklid prostor po skončení akce, bylinky na psychickou podporu hráčů)
+    - Ubytování a herní prostory (prostory na spaní, středověké stany a posezení přes den)
+    - Strava na pátek a sobotu (snídaně, oběd, večeře) i neděli (snídaně) + zobání během hry (ovoce, sušené ovoce, koláč, sýry atd.). K pití je zajištěn čaj, káva a voda, mošt.
+    - Poskytujeme základní kostým (kromě bot a šperků).
+
+### Co s sebou
+    - Spacák a karimatku (pokud jste zvolili variantu hry s ubytováním v posteli, spacák ani karimatku nepotřebujete)
+    - Teplé oblečení - prostory nebudou vytápěny
+    - Dobové nádobí a lžíce (případně i rekvizity/nábytek – faldistoria, stolečky, hra díky tomu bude ještě hezčí).
+    - Vytisknuté materiály s vašimi postavami.
+    - Středověké boty či jakékoliv nevýrazné kožené.
+    - Jakékoliv kalhoty černé nevýrazné, ty nezapůjčujeme.
+
+Před hrou budeme informovat o detailech místa a postelí.
+
+### Harmonogram
+
+#### Čtvrtek
+    - **17.00** – příjezd hráčů, registrace, půjčení kostýmu, konzultace postav, úvodní informace
+    - **19.00** – Workshop: úvod do hry, historie jednotlivých zemí
+    - Začíná kostýmová povinnost!
+    - Začátek hry – 0. kolo
+
+#### Pátek
+    - **8:30** – snídaně
+    - **9.30** – seřazení hráčů podle vlivu a věku
+    - Poté ranní modlitba
+
+#### Sobota
+    - **8:30** – snídaně
+    - **13:00** (kolem poledne) – oběd: čas na oběd si během hry každý řeší sám podle toho, jak bude mít čas
+    - **17.00** – předpokládaný konec hry (resp. dokončí se dané kolo), vyhodnocení (končí kostýmová povinnost)
+    - Následuje večeře, párty
+
+#### Neděle
+    - **do 11.00** – Úklid a odjezd
+
+---
+
+## 4. Přehled postav a frakcí (Stručný výtah)
+- **Celkem rolí:** 39 hratelných postav (27 mužských, 12 ženských).
+- **Země, za jejichž vládce, královny, dědice, velitele vojsk, umělce a obchodníky můžete hrát:** 
+    - Anglie
+    - Aragon
+    - Benátky
+    - Bretaň
+    - Flandry
+    - Francie
+    - Irsko
+    - Kastilie
+    - Navarra
+    - Neapol
+    - Piráti
+    - Savojsko
+    - Skotsko
+    - SVŘŘ
+    - Švédsko
+    - Granada
+    - Janov
+    - Papežské státy
+    - Portugalsko
+    - Sicílie
+    - Tunis
+    - Ženeva
+- **Seznam postav** je k dispozici na https://stoletavalka.netlify.app/postavy/#title - zde si můžete vybrat konkrétní zemi a postavu. Po kliknutí na obrázek postavy se vám zobrazí krátký medailonek. Obrázek postavy sám o sobě napovídá symboly v rámečku, o čem její hra je.

@@ -1,0 +1,16 @@
+# Stoletá Válka (1337) - Historický larp a taktická desková hra
+
+> Stoletá Válka je jedinečný projekt spojující atmosféru dramatických historických larpů s taktickými prvky deskové hry. Zasazuje hráče do roku 1337 do období vyostřeného anglo-francouzského konfliktu, který má dopad na celou Evropu.
+
+## Klíčové informace
+- [O hře](https://stoletavalka.netlify.app/o-hre): Podrobný přehled historického pozadí, diplomatických mechanik a pravidel.
+- [Praktické informace](https://stoletavalka.netlify.app/prakticke): Termíny, lokace (hrad Švihov / fara v Domaslavi / Zlín), dobové kostýmy a logistika.
+- [Herní postavy](https://stoletavalka.netlify.app/postavy): Kompletní seznam 39 hratelných rolí (27 mužských a 12 ženských) včetně diplomatů, obchodníků, korzárů a šlechticů.
+
+## Hlavní herní prvky pro LLM kontext
+- **Diplomacie:** Vyjednávání, intriky, uzavírání a porušování spojenectví.
+- **Konflikty:** Agenti, ochrana měst, přepadávání lodí a ovlivňování dějin.
+- **Strategie:** Vedení armád a rozhodování na bitevním poli i mimo něj.
+
+## Kompletní obsah (Pro AI indexaci)
+- [Úplná pravidla a lore (Markdown)](https://stoletavalka.netlify.app/llms-full.txt): Kompletní textová verze podkladů a scénářů pro hlubší kontextovou analýzu LLM.
